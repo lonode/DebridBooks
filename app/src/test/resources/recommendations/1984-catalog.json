@@ -1,0 +1,1419 @@
+{
+ "products": [
+  {
+   "asin": "2821154232",
+   "title": "1984",
+   "language": "french",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 717,
+   "content_type": "Product",
+   "release_date": "2021-01-01"
+  },
+  {
+   "asin": "B016E6JSA6",
+   "title": "1984",
+   "language": "english",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      },
+      {
+       "id": "21229674031",
+       "name": "Politique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 739,
+   "content_type": "Product",
+   "release_date": "2015-11-05"
+  },
+  {
+   "asin": "B0DL6J2CV5",
+   "title": "1984",
+   "language": "french",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    },
+    {
+     "name": "Sylvie Denis - traducteur"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 207,
+   "content_type": "Performance",
+   "release_date": "2024-12-04"
+  },
+  {
+   "asin": "B00YMWX7J8",
+   "title": "1984",
+   "language": "french",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 705,
+   "content_type": "Product",
+   "release_date": "2015-06-01"
+  },
+  {
+   "asin": "B0CRS4S8QS",
+   "title": "George Orwell’s 1984",
+   "language": "english",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    },
+    {
+     "name": "Joe White - adaptation"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228876031",
+       "name": "Policier, thrillers et œuvres à suspense"
+      },
+      {
+       "id": "21228906031",
+       "name": "Thrillers et romans à suspense"
+      },
+      {
+       "id": "21229157031",
+       "name": "Espions et politique"
+      },
+      {
+       "id": "21230198031",
+       "name": "Politique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 207,
+   "content_type": "Product",
+   "release_date": "2024-04-04"
+  },
+  {
+   "asin": "B08QSGZCBX",
+   "title": "Orwell Collection",
+   "language": "english",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 978,
+   "content_type": "Product",
+   "release_date": "2021-01-12"
+  },
+  {
+   "asin": "B0GNMWQWW5",
+   "title": "1984",
+   "language": "english",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 654,
+   "content_type": "Product",
+   "release_date": "2026-02-16"
+  },
+  {
+   "asin": "B0DQVNMR7H",
+   "title": "1984",
+   "language": "english",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      },
+      {
+       "id": "21229674031",
+       "name": "Politique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229680031",
+       "name": "Histoire alternative"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 738,
+   "content_type": "Product",
+   "release_date": "2024-12-31"
+  },
+  {
+   "asin": "B0HM3KLH58",
+   "title": "1984",
+   "language": "swedish",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    },
+    {
+     "name": "Joe White"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228876031",
+       "name": "Policier, thrillers et œuvres à suspense"
+      },
+      {
+       "id": "21228906031",
+       "name": "Thrillers et romans à suspense"
+      },
+      {
+       "id": "21229157031",
+       "name": "Espions et politique"
+      },
+      {
+       "id": "21230198031",
+       "name": "Politique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      },
+      {
+       "id": "21229674031",
+       "name": "Politique"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 207,
+   "content_type": "Product",
+   "release_date": "2026-10-16"
+  },
+  {
+   "asin": "B0DD5NG98P",
+   "title": "The British Classics Collection - Volume One: 20+ Stories from Dickens, Brontë, Austen, Orwell, & More",
+   "language": "english",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    },
+    {
+     "asin": "B000APYNYE",
+     "name": "Charles Dickens"
+    },
+    {
+     "asin": "B000APVQDK",
+     "name": "Thomas Hardy"
+    },
+    {
+     "asin": "B000APYTLG",
+     "name": "D. H. Lawrence"
+    },
+    {
+     "asin": "B000APWOKO",
+     "name": "Jane Austen"
+    },
+    {
+     "asin": "B000APRKSA",
+     "name": "Emily Brontë"
+    },
+    {
+     "asin": "B000APWO72",
+     "name": "Charlotte Brontë"
+    },
+    {
+     "asin": "B00KEZJQU6",
+     "name": "George Eliot"
+    },
+    {
+     "asin": "B00R1DJSQQ",
+     "name": "Mary Shelley"
+    },
+    {
+     "asin": "B000AQ1T7W",
+     "name": "Virginia Woolf"
+    }
+   ],
+   "series": [
+    {
+     "asin": "B0FC6RRFT9",
+     "sequence": "",
+     "title": "The British Classics Collection (SNR Audio)",
+     "url": "/pd/The-British-Classics-Collection-SNR-Audio-Livre-Audio/B0FC6RRFT9"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 13452,
+   "content_type": "Product",
+   "release_date": "2024-12-05"
+  },
+  {
+   "asin": "B0GY5QLVJH",
+   "title": "1984 (Dutch Edition)",
+   "language": "dutch",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    },
+    {
+     "name": "Joe White"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228876031",
+       "name": "Policier, thrillers et œuvres à suspense"
+      },
+      {
+       "id": "21228906031",
+       "name": "Thrillers et romans à suspense"
+      },
+      {
+       "id": "21229157031",
+       "name": "Espions et politique"
+      },
+      {
+       "id": "21230198031",
+       "name": "Politique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 208,
+   "content_type": "Product",
+   "release_date": "2026-08-13"
+  },
+  {
+   "asin": "B087QLMZBT",
+   "title": "1984",
+   "language": "english",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229018031",
+       "name": "Littérature du monde"
+      },
+      {
+       "id": "21229650031",
+       "name": "Européenne"
+      },
+      {
+       "id": "21230551031",
+       "name": "Anglaise, irlandaise, écossaise, et galloise"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      },
+      {
+       "id": "21229664031",
+       "name": "Psychologie"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      },
+      {
+       "id": "21229674031",
+       "name": "Politique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228886031",
+       "name": "Arts et divertissement"
+      },
+      {
+       "id": "21229024031",
+       "name": "Musique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228887031",
+       "name": "Éducation et apprentissage"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 670,
+   "content_type": "Product",
+   "release_date": "2020-04-28"
+  },
+  {
+   "asin": "3837154270",
+   "title": "1984",
+   "language": "german",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 671,
+   "content_type": "Product",
+   "release_date": "2021-01-25"
+  },
+  {
+   "asin": "B0BZZNZHK5",
+   "title": "1984",
+   "language": "english",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      },
+      {
+       "id": "21229674031",
+       "name": "Politique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 203,
+   "content_type": "Product",
+   "release_date": "2023-03-31"
+  },
+  {
+   "asin": "B09NMNKJPP",
+   "title": "1984",
+   "language": "english",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229018031",
+       "name": "Littérature du monde"
+      },
+      {
+       "id": "21229650031",
+       "name": "Européenne"
+      },
+      {
+       "id": "21230551031",
+       "name": "Anglaise, irlandaise, écossaise, et galloise"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      },
+      {
+       "id": "21229664031",
+       "name": "Psychologie"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      },
+      {
+       "id": "21229674031",
+       "name": "Politique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228886031",
+       "name": "Arts et divertissement"
+      },
+      {
+       "id": "21229024031",
+       "name": "Musique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228887031",
+       "name": "Éducation et apprentissage"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 659,
+   "content_type": "Product",
+   "release_date": "2021-12-15"
+  },
+  {
+   "asin": "B0CHN4KXS9",
+   "title": "1984 (Portuguese Edition)",
+   "language": "portuguese",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    },
+    {
+     "name": "Karla Lima - tradução"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228876031",
+       "name": "Policier, thrillers et œuvres à suspense"
+      },
+      {
+       "id": "21228906031",
+       "name": "Thrillers et romans à suspense"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      },
+      {
+       "id": "21229674031",
+       "name": "Politique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 768,
+   "content_type": "Product",
+   "release_date": "2023-10-02"
+  },
+  {
+   "asin": "B08RF135MM",
+   "title": "1984",
+   "language": "italian",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 711,
+   "content_type": "Product",
+   "release_date": "2021-01-01"
+  },
+  {
+   "asin": "B0CLVP884H",
+   "title": "1984",
+   "language": "english",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229018031",
+       "name": "Littérature du monde"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      },
+      {
+       "id": "21229674031",
+       "name": "Politique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 689,
+   "content_type": "Product",
+   "release_date": "2023-11-02"
+  },
+  {
+   "asin": "B018Y9QDHW",
+   "title": "1984 [Spanish Edition]",
+   "language": "spanish",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    },
+    {
+     "name": "Miguel Temprano García"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228895031",
+       "name": "Adolescents et jeunes adultes"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 645,
+   "content_type": "Product",
+   "release_date": "2015-12-07"
+  },
+  {
+   "asin": "B00TOELF0C",
+   "title": "1984",
+   "language": "german",
+   "authors": [
+    {
+     "asin": "B000AQ0KKY",
+     "name": "George Orwell"
+    }
+   ],
+   "category_ladders": [
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229007031",
+       "name": "Classiques"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      },
+      {
+       "id": "21229655031",
+       "name": "Passage à l'âge adulte"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228884031",
+       "name": "Littérature, romans et fiction"
+      },
+      {
+       "id": "21229019031",
+       "name": "Fiction"
+      },
+      {
+       "id": "21229674031",
+       "name": "Politique"
+      }
+     ],
+     "root": "Genres"
+    },
+    {
+     "ladder": [
+      {
+       "id": "21228885031",
+       "name": "Science-Fiction et fantasy"
+      },
+      {
+       "id": "21229020031",
+       "name": "Science-fiction"
+      },
+      {
+       "id": "21229685031",
+       "name": "Dystopique"
+      }
+     ],
+     "root": "Genres"
+    }
+   ],
+   "runtime_length_min": 744,
+   "content_type": "Product",
+   "release_date": "2013-07-12"
+  }
+ ]
+}

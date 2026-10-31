@@ -1,0 +1,15 @@
+others/
+# Native Android build and local tooling
+.gradle/
+.kotlin/
+**/build/
+local.properties
+*.jks
+*.keystore
+.idea/
+*.iml
+# Local server configuration can contain provider credentials
+.env
+.env.*
+!.env.example
+backlog.md

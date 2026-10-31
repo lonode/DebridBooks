@@ -1,0 +1,9 @@
+// Opt-in manual source set. The normal app test suite never includes live audits.
+allprojects { project ->
+    project.afterEvaluate {
+        if (project.path == ':app') {
+            project.android.sourceSets.getByName('test').java.srcDir(
+                project.rootProject.file('tools/verification/native'))
+        }
+    }
+}

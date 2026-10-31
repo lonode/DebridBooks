@@ -1,0 +1,35 @@
+Bring your audiobooks and comics together in DebridBooks. Search your configured sources, listen to audiobooks, read comics and manga, and keep downloads available offline.
+
+DebridBooks runs directly on your Android device. No DebridBooks server is required: the app contacts your configured services directly.
+
+<b>Your library</b>
+<ul>
+<li>Keep audiobooks and comics in one place</li>
+<li>Resume listening and reading where you left off</li>
+<li>Download audiobooks and comics for offline use</li>
+<li>Find similar books and rate your books</li>
+</ul>
+
+<b>Find your next book</b>
+<ul>
+<li>Search audiobooks with cover artwork</li>
+<li>Choose MangaDex or torrent sources for comics and manga</li>
+<li>Use AudiobookBay and optional French sources: C411, Tr4ker and YggReborn</li>
+</ul>
+
+<b>Listen and read your way</b>
+<ul>
+<li>Audiobook chapters, bookmarks and time navigation</li>
+<li>Adjustable playback speed and quick rewind and forward controls</li>
+<li>A sleep timer for bedtime listening</li>
+<li>Comic reading in paged, vertical and fullscreen modes</li>
+</ul>
+
+For torrent playback and downloads, configure your own AllDebrid account and any required source credentials. AllDebrid is a proprietary third-party service. Books, recordings, comics and provider credentials are not bundled with the app.
+
+DebridBooks is intended for accessing public-domain works, openly licensed content, and other material you are authorized to access and download. Do not use it to infringe copyright. Users must comply with applicable laws and the terms of the services they use.
+
+<b>Screenshot credits</b>
+Comic shown: Pepper&amp;Carrot — Episode 26: Books Are Great, by David Revoy and contributors, licensed under CC BY 4.0. Artwork is scaled to fit the reader; no artwork edits were made.
+Source and full credits: https://www.peppercarrot.com/en/webcomic-sources/ep26_Books-Are-Great.html
+Licence: https://creativecommons.org/licenses/by/4.0/

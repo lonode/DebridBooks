@@ -1,0 +1,7 @@
+OkHttp 5.3.0
+Copyright 2019 Square, Inc.
+https://github.com/square/okhttp/tree/parent-5.3.0
+
+Licensed under the Apache License, Version 2.0.
+The upstream license is retained in OkHttp.txt.
+Okio 3.16.2's upstream Apache-2.0 license is retained in Okio.txt.

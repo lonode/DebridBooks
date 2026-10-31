@@ -1,0 +1,6389 @@
+{
+ "match": {
+  "products": [
+   {
+    "asin": "B06Y66DT8R",
+    "title": "Harry Potter à l'École des Sorciers",
+    "subtitle": "Harry Potter 1",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "1",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "1",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 501,
+    "content_type": "Product",
+    "release_date": "2017-05-11",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B06Y64F54M",
+    "title": "Harry Potter et la Chambre des Secrets",
+    "subtitle": "Harry Potter 2",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "2",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "2",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 563,
+    "content_type": "Product",
+    "release_date": "2017-05-11"
+   },
+   {
+    "asin": "B06Y66H419",
+    "title": "Harry Potter et le Prisonnier d'Azkaban",
+    "subtitle": "Harry Potter 3",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "3",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "3",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 695,
+    "content_type": "Product",
+    "release_date": "2017-05-11"
+   },
+   {
+    "asin": "B075K7Q8TZ",
+    "title": "Harry Potter et les Reliques de la Mort",
+    "subtitle": "Harry Potter 7",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "7",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "7",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 1554,
+    "content_type": "Product",
+    "release_date": "2017-10-12"
+   },
+   {
+    "asin": "B06Y5TVGWQ",
+    "title": "Harry Potter et l'Ordre du Phénix",
+    "subtitle": "Harry Potter 5",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "5",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "5",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 1872,
+    "content_type": "Product",
+    "release_date": "2017-05-11"
+   },
+   {
+    "asin": "B06Y67451Q",
+    "title": "Harry Potter et le Prince de Sang-Mêlé",
+    "subtitle": "Harry Potter 6",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "6",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "6",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 1283,
+    "content_type": "Product",
+    "release_date": "2017-05-11"
+   },
+   {
+    "asin": "B06Y628XNL",
+    "title": "Harry Potter et la Coupe de Feu",
+    "subtitle": "Harry Potter 4",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "4",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "4",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 1316,
+    "content_type": "Product",
+    "release_date": "2017-05-11"
+   },
+   {
+    "asin": "B0F14P8YQC",
+    "title": "Harry Potter and the Deathly Hallows (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "7",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 1230,
+    "content_type": "Product",
+    "release_date": "2026-05-12"
+   },
+   {
+    "asin": "B0HPMCF6D2",
+    "title": "Harry Potter: Can Death Eaters Cast a Patronus?",
+    "runtime_length_min": 17,
+    "content_type": "Podcast",
+    "release_date": "2026-10-28"
+   },
+   {
+    "asin": "B07CM5GF3W",
+    "title": "Les Animaux fantastiques",
+    "subtitle": "Harry Potter Livre De La Bibliothèque De Poudlard",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     },
+     {
+      "asin": "B000AP9A6K",
+      "name": "Norbert Dragonneau"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B07FNR21R8",
+      "sequence": "",
+      "title": "La bibliothèque de Poudlard",
+      "url": "/pd/La-bibliotheque-de-Poudlard-Livre-Audio/B07FNR21R8"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 114,
+    "content_type": "Product",
+    "release_date": "2018-06-01"
+   },
+   {
+    "asin": "B0HPNB9LJH",
+    "title": "Harry Potter and The Goblet of Fire",
+    "runtime_length_min": 105,
+    "content_type": "Podcast",
+    "release_date": "2026-10-29"
+   },
+   {
+    "asin": "B0HPMDHM7Q",
+    "title": "Harry Potter ist ein Loser",
+    "runtime_length_min": 60,
+    "content_type": "Podcast",
+    "release_date": "2026-10-28"
+   },
+   {
+    "asin": "B08K5Y2B5K",
+    "title": "Fréquence 9 3/4 - Le podcast Harry Potter chapitre par chapitre",
+    "language": "french",
+    "authors": [
+     {
+      "name": "Jérémy & Marina"
+     }
+    ],
+    "content_type": "Podcast",
+    "release_date": "2021-11-16"
+   },
+   {
+    "asin": "B0HPGY48W7",
+    "title": "Why Didn't Voldemort Know Harry Was a Horcrux? - Harry Potter Theory",
+    "runtime_length_min": 17,
+    "content_type": "Podcast",
+    "release_date": "2026-10-27"
+   },
+   {
+    "asin": "B0F14P97Y8",
+    "title": "Harry Potter and the Philosopher’s Stone (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "1",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 521,
+    "content_type": "Product",
+    "release_date": "2025-11-04",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229178031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229316031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0F14P23W6",
+    "title": "Harry Potter and the Half-Blood Prince (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "6",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 1044,
+    "content_type": "Product",
+    "release_date": "2026-04-14"
+   },
+   {
+    "asin": "B0F1522ZM5",
+    "title": "Harry Potter and the Chamber of Secrets (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "2",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 577,
+    "content_type": "Product",
+    "release_date": "2025-12-16"
+   },
+   {
+    "asin": "B0F14PWPWX",
+    "title": "Harry Potter and the Prisoner of Azkaban (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "3",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 692,
+    "content_type": "Product",
+    "release_date": "2026-01-13"
+   },
+   {
+    "asin": "B0HPL8DLLV",
+    "title": "All Eyez On Harry Potter | Goblet of Fire",
+    "runtime_length_min": 86,
+    "content_type": "Podcast",
+    "release_date": "2026-10-28"
+   },
+   {
+    "asin": "B08K5XBL2Q",
+    "title": "La Grande Salle - le podcast des fans d'Harry Potter !",
+    "language": "french",
+    "authors": [
+     {
+      "name": "La Grande Salle"
+     }
+    ],
+    "content_type": "Podcast",
+    "release_date": "2021-07-23"
+   }
+  ]
+ },
+ "raw": {
+  "similar_products": [
+   {
+    "asin": "1781105413",
+    "title": "Les Contes de Beedle le Barde",
+    "subtitle": "Harry Potter Livre de la Bibliothèque de Poudlard",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B07FNR21R8",
+      "sequence": "",
+      "title": "La bibliothèque de Poudlard",
+      "url": "/pd/La-bibliotheque-de-Poudlard-Livre-Audio/B07FNR21R8"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 95,
+    "content_type": "Product",
+    "release_date": "2021-04-29",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228895031",
+        "name": "Adolescents et jeunes adultes"
+       },
+       {
+        "id": "21229103031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21230013031",
+        "name": "Fantasy"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228895031",
+        "name": "Adolescents et jeunes adultes"
+       },
+       {
+        "id": "21229103031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21230013031",
+        "name": "Fantasy"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228895031",
+        "name": "Adolescents et jeunes adultes"
+       },
+       {
+        "id": "21229103031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21230013031",
+        "name": "Fantasy"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228895031",
+        "name": "Adolescents et jeunes adultes"
+       },
+       {
+        "id": "21229103031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21230013031",
+        "name": "Fantasy"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228895031",
+        "name": "Adolescents et jeunes adultes"
+       },
+       {
+        "id": "21229110031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21230089031",
+        "name": "Légendes, mythes et contes de fées"
+       },
+       {
+        "id": "21230845031",
+        "name": "Mythes et légendes"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228895031",
+        "name": "Adolescents et jeunes adultes"
+       },
+       {
+        "id": "21229110031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21230098031",
+        "name": "Produits dérivés de films, séries et jeux vidéo"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0F14P97Y8",
+    "title": "Harry Potter and the Philosopher’s Stone (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "1",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 521,
+    "content_type": "Product",
+    "release_date": "2025-11-04",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229178031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229316031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0DCBZ4CKL",
+    "title": "Wish – Asha et la bonne étoile. Compilation d’histoires audio.",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B00JZCJZ5K",
+      "name": "Disney"
+     }
+    ],
+    "runtime_length_min": 57,
+    "content_type": "Product",
+    "release_date": "2024-09-02",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229318031",
+        "name": "Produits dérivés de films, de la télévision et des jeux vidéo"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0D8TS86TB",
+    "title": "Archives du Monde des Sorciers",
+    "subtitle": "Chroniques, notes et récits de l’univers Harry Potter",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     },
+     {
+      "asin": "B094KSNYF7",
+      "name": "Evanna Lynch - préface"
+     }
+    ],
+    "runtime_length_min": 501,
+    "content_type": "Product",
+    "release_date": "2024-11-25",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228885031",
+        "name": "Science-Fiction et fantasy"
+       },
+       {
+        "id": "21229021031",
+        "name": "Fantasy"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   }
+  ]
+ },
+ "author": {
+  "similar_products": [
+   {
+    "asin": "B017WPKFEQ",
+    "title": "Harry Potter and the Deathly Hallows, Book 7",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0182T3B74",
+      "sequence": "7",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B0182T3B74"
+     },
+     {
+      "asin": "B07CMBF1QQ",
+      "sequence": "7",
+      "title": "Wizarding World",
+      "url": "/pd/Wizarding-World-Livre-Audio/B07CMBF1QQ"
+     }
+    ],
+    "runtime_length_min": 1439,
+    "content_type": "Product",
+    "release_date": "2015-11-20"
+   },
+   {
+    "asin": "B017V5EYMG",
+    "title": "Harry Potter and the Philosopher's Stone, Book 1",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0182T3B74",
+      "sequence": "1",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B0182T3B74"
+     },
+     {
+      "asin": "B07CMBF1QQ",
+      "sequence": "1",
+      "title": "Wizarding World",
+      "url": "/pd/Wizarding-World-Livre-Audio/B07CMBF1QQ"
+     }
+    ],
+    "runtime_length_min": 505,
+    "content_type": "Product",
+    "release_date": "2015-11-20"
+   },
+   {
+    "asin": "B0F14ZXX1D",
+    "title": "Harry Potter and the Goblet of Fire (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "4",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 1213,
+    "content_type": "Product",
+    "release_date": "2026-02-10"
+   },
+   {
+    "asin": "B0F14P23W6",
+    "title": "Harry Potter and the Half-Blood Prince (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "6",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 1044,
+    "content_type": "Product",
+    "release_date": "2026-04-14"
+   },
+   {
+    "asin": "B0F14K7PH3",
+    "title": "Harry Potter and the Order of the Phoenix (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "5",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 1599,
+    "content_type": "Product",
+    "release_date": "2026-03-10"
+   },
+   {
+    "asin": "B06Y66H419",
+    "title": "Harry Potter et le Prisonnier d'Azkaban",
+    "subtitle": "Harry Potter 3",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "3",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "3",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 695,
+    "content_type": "Product",
+    "release_date": "2017-05-11"
+   },
+   {
+    "asin": "B06Y628XNL",
+    "title": "Harry Potter et la Coupe de Feu",
+    "subtitle": "Harry Potter 4",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "4",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "4",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 1316,
+    "content_type": "Product",
+    "release_date": "2017-05-11"
+   },
+   {
+    "asin": "B06Y67451Q",
+    "title": "Harry Potter et le Prince de Sang-Mêlé",
+    "subtitle": "Harry Potter 6",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "6",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "6",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 1283,
+    "content_type": "Product",
+    "release_date": "2017-05-11"
+   },
+   {
+    "asin": "B06Y5TVGWQ",
+    "title": "Harry Potter et l'Ordre du Phénix",
+    "subtitle": "Harry Potter 5",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "5",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "5",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 1872,
+    "content_type": "Product",
+    "release_date": "2017-05-11"
+   },
+   {
+    "asin": "B017WJIVSE",
+    "title": "Harry Potter and the Goblet of Fire, Book 4",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0182T3B74",
+      "sequence": "4",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B0182T3B74"
+     },
+     {
+      "asin": "B07CMBF1QQ",
+      "sequence": "4",
+      "title": "Wizarding World",
+      "url": "/pd/Wizarding-World-Livre-Audio/B07CMBF1QQ"
+     }
+    ],
+    "runtime_length_min": 1254,
+    "content_type": "Product",
+    "release_date": "2015-11-20"
+   },
+   {
+    "asin": "B075K7Q8TZ",
+    "title": "Harry Potter et les Reliques de la Mort",
+    "subtitle": "Harry Potter 7",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "7",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "7",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 1554,
+    "content_type": "Product",
+    "release_date": "2017-10-12"
+   },
+   {
+    "asin": "B06Y64F54M",
+    "title": "Harry Potter et la Chambre des Secrets",
+    "subtitle": "Harry Potter 2",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "2",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "2",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 563,
+    "content_type": "Product",
+    "release_date": "2017-05-11"
+   },
+   {
+    "asin": "B017WOSNXC",
+    "title": "Harry Potter and the Half-Blood Prince, Book 6",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0182T3B74",
+      "sequence": "6",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B0182T3B74"
+     },
+     {
+      "asin": "B07CMBF1QQ",
+      "sequence": "6",
+      "title": "Wizarding World",
+      "url": "/pd/Wizarding-World-Livre-Audio/B07CMBF1QQ"
+     }
+    ],
+    "runtime_length_min": 1231,
+    "content_type": "Product",
+    "release_date": "2015-11-20"
+   },
+   {
+    "asin": "B0F1522ZM5",
+    "title": "Harry Potter and the Chamber of Secrets (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "2",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 577,
+    "content_type": "Product",
+    "release_date": "2025-12-16"
+   },
+   {
+    "asin": "B0F14P97Y8",
+    "title": "Harry Potter and the Philosopher’s Stone (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "1",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 521,
+    "content_type": "Product",
+    "release_date": "2025-11-04"
+   },
+   {
+    "asin": "B017WO4MKK",
+    "title": "Harry Potter and the Order of the Phoenix, Book 5",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0182T3B74",
+      "sequence": "5",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B0182T3B74"
+     },
+     {
+      "asin": "B07CMBF1QQ",
+      "sequence": "5",
+      "title": "Wizarding World",
+      "url": "/pd/Wizarding-World-Livre-Audio/B07CMBF1QQ"
+     }
+    ],
+    "runtime_length_min": 1741,
+    "content_type": "Product",
+    "release_date": "2015-11-20"
+   },
+   {
+    "asin": "B0F14PWPWX",
+    "title": "Harry Potter and the Prisoner of Azkaban (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "3",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 692,
+    "content_type": "Product",
+    "release_date": "2026-01-13"
+   },
+   {
+    "asin": "B0F14P8YQC",
+    "title": "Harry Potter and the Deathly Hallows (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "7",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 1230,
+    "content_type": "Product",
+    "release_date": "2026-05-12"
+   },
+   {
+    "asin": "B01LZF1ZRQ",
+    "title": "Harry Potter und der Feuerkelch - Gesprochen von Rufus Beck",
+    "subtitle": "Harry Potter 4",
+    "language": "german",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B01MAY4EW7",
+      "sequence": "4",
+      "title": "Harry Potter - Gesprochen von Rufus Beck",
+      "url": "/pd/Harry-Potter-Gesprochen-von-Rufus-Beck-Livre-Audio/B01MAY4EW7"
+     }
+    ],
+    "runtime_length_min": 1409,
+    "content_type": "Product",
+    "release_date": "2016-10-18"
+   },
+   {
+    "asin": "B017WGMHX2",
+    "title": "Harry Potter and the Prisoner of Azkaban, Book 3",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B07CMBF1QQ",
+      "sequence": "3",
+      "title": "Wizarding World",
+      "url": "/pd/Wizarding-World-Livre-Audio/B07CMBF1QQ"
+     },
+     {
+      "asin": "B0182T3B74",
+      "sequence": "3",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B0182T3B74"
+     }
+    ],
+    "runtime_length_min": 723,
+    "content_type": "Product",
+    "release_date": "2015-11-20"
+   }
+  ]
+ },
+ "category": {
+  "products": [
+   {
+    "asin": "B017WPKFEQ",
+    "title": "Harry Potter and the Deathly Hallows, Book 7",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0182T3B74",
+      "sequence": "7",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B0182T3B74"
+     },
+     {
+      "asin": "B07CMBF1QQ",
+      "sequence": "7",
+      "title": "Wizarding World",
+      "url": "/pd/Wizarding-World-Livre-Audio/B07CMBF1QQ"
+     }
+    ],
+    "runtime_length_min": 1439,
+    "content_type": "Product",
+    "release_date": "2015-11-20",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229178031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229316031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B017V5EYMG",
+    "title": "Harry Potter and the Philosopher's Stone, Book 1",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0182T3B74",
+      "sequence": "1",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B0182T3B74"
+     },
+     {
+      "asin": "B07CMBF1QQ",
+      "sequence": "1",
+      "title": "Wizarding World",
+      "url": "/pd/Wizarding-World-Livre-Audio/B07CMBF1QQ"
+     }
+    ],
+    "runtime_length_min": 505,
+    "content_type": "Product",
+    "release_date": "2015-11-20",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229178031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229316031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0F14ZXX1D",
+    "title": "Harry Potter and the Goblet of Fire (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "4",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 1213,
+    "content_type": "Product",
+    "release_date": "2026-02-10",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229178031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229316031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0819317ZR",
+    "title": "Le Wundereur",
+    "subtitle": "Nevermoor 2",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B07GT6HGW6",
+      "name": "Jessica Townsend"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B081QPFF9T",
+      "sequence": "2",
+      "title": "Nevermoor",
+      "url": "/pd/Nevermoor-Livre-Audio/B081QPFF9T"
+     }
+    ],
+    "runtime_length_min": 673,
+    "content_type": "Product",
+    "release_date": "2019-11-14",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228884031",
+        "name": "Littérature, romans et fiction"
+       },
+       {
+        "id": "21229019031",
+        "name": "Fiction"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0F14P23W6",
+    "title": "Harry Potter and the Half-Blood Prince (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "6",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 1044,
+    "content_type": "Product",
+    "release_date": "2026-04-14",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229178031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229316031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0F14K7PH3",
+    "title": "Harry Potter and the Order of the Phoenix (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "5",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 1599,
+    "content_type": "Product",
+    "release_date": "2026-03-10",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229178031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229316031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B06Y66H419",
+    "title": "Harry Potter et le Prisonnier d'Azkaban",
+    "subtitle": "Harry Potter 3",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "3",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "3",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 695,
+    "content_type": "Product",
+    "release_date": "2017-05-11",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B06Y628XNL",
+    "title": "Harry Potter et la Coupe de Feu",
+    "subtitle": "Harry Potter 4",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "4",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "4",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 1316,
+    "content_type": "Product",
+    "release_date": "2017-05-11",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B06Y67451Q",
+    "title": "Harry Potter et le Prince de Sang-Mêlé",
+    "subtitle": "Harry Potter 6",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "6",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "6",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 1283,
+    "content_type": "Product",
+    "release_date": "2017-05-11",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B06Y5TVGWQ",
+    "title": "Harry Potter et l'Ordre du Phénix",
+    "subtitle": "Harry Potter 5",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "5",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "5",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 1872,
+    "content_type": "Product",
+    "release_date": "2017-05-11",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B017WJIVSE",
+    "title": "Harry Potter and the Goblet of Fire, Book 4",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0182T3B74",
+      "sequence": "4",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B0182T3B74"
+     },
+     {
+      "asin": "B07CMBF1QQ",
+      "sequence": "4",
+      "title": "Wizarding World",
+      "url": "/pd/Wizarding-World-Livre-Audio/B07CMBF1QQ"
+     }
+    ],
+    "runtime_length_min": 1254,
+    "content_type": "Product",
+    "release_date": "2015-11-20",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B075K7Q8TZ",
+    "title": "Harry Potter et les Reliques de la Mort",
+    "subtitle": "Harry Potter 7",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "7",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "7",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 1554,
+    "content_type": "Product",
+    "release_date": "2017-10-12",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B06Y64F54M",
+    "title": "Harry Potter et la Chambre des Secrets",
+    "subtitle": "Harry Potter 2",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "2",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "2",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 563,
+    "content_type": "Product",
+    "release_date": "2017-05-11",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228912031",
+        "name": "Contes de fées et  populaires et mythes"
+       },
+       {
+        "id": "21229220031",
+        "name": "Collections et anthologies"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B017WOSNXC",
+    "title": "Harry Potter and the Half-Blood Prince, Book 6",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0182T3B74",
+      "sequence": "6",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B0182T3B74"
+     },
+     {
+      "asin": "B07CMBF1QQ",
+      "sequence": "6",
+      "title": "Wizarding World",
+      "url": "/pd/Wizarding-World-Livre-Audio/B07CMBF1QQ"
+     }
+    ],
+    "runtime_length_min": 1231,
+    "content_type": "Product",
+    "release_date": "2015-11-20",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229178031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229316031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0F1522ZM5",
+    "title": "Harry Potter and the Chamber of Secrets (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "2",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 577,
+    "content_type": "Product",
+    "release_date": "2025-12-16",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229178031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229316031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0F14P97Y8",
+    "title": "Harry Potter and the Philosopher’s Stone (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "1",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 521,
+    "content_type": "Product",
+    "release_date": "2025-11-04",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229178031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229316031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B06Y66DT8R",
+    "title": "Harry Potter à l'École des Sorciers",
+    "subtitle": "Harry Potter 1",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B06Y67Q9FY",
+      "sequence": "1",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+     },
+     {
+      "asin": "B08XMX5P9B",
+      "sequence": "1",
+      "title": "Le Monde des sorciers",
+      "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+     }
+    ],
+    "runtime_length_min": 501,
+    "content_type": "Product",
+    "release_date": "2017-05-11",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B017WO4MKK",
+    "title": "Harry Potter and the Order of the Phoenix, Book 5",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0182T3B74",
+      "sequence": "5",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B0182T3B74"
+     },
+     {
+      "asin": "B07CMBF1QQ",
+      "sequence": "5",
+      "title": "Wizarding World",
+      "url": "/pd/Wizarding-World-Livre-Audio/B07CMBF1QQ"
+     }
+    ],
+    "runtime_length_min": 1741,
+    "content_type": "Product",
+    "release_date": "2015-11-20",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229178031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229316031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0C7CVMH2M",
+    "title": "Le Sang de l'Olympe",
+    "subtitle": "Héros de l'Olympe 5",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B001HD0WE8",
+      "name": "Rick Riordan"
+     },
+     {
+      "name": "Mona de Pracontal - traductrice"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0C2ZSTYDT",
+      "sequence": "5",
+      "title": "Héros de l'Olympe",
+      "url": "/pd/Heros-de-lOlympe-Livre-Audio/B0C2ZSTYDT"
+     }
+    ],
+    "runtime_length_min": 808,
+    "content_type": "Product",
+    "release_date": "2023-11-22",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228912031",
+        "name": "Contes de fées et  populaires et mythes"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228885031",
+        "name": "Science-Fiction et fantasy"
+       },
+       {
+        "id": "21229020031",
+        "name": "Science-fiction"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0BNHVQ9V5",
+    "title": "La Mémoire de la lune",
+    "subtitle": "La Passeuse de mots 3",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B08WCKZN8N",
+      "name": "Alric & Jennifer Twice"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0BNHWXFTD",
+      "sequence": "3",
+      "title": "La Passeuse de mots",
+      "url": "/pd/La-Passeuse-de-mots-Livre-Audio/B0BNHWXFTD"
+     }
+    ],
+    "runtime_length_min": 1490,
+    "content_type": "Product",
+    "release_date": "2023-04-26",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228884031",
+        "name": "Littérature, romans et fiction"
+       },
+       {
+        "id": "21229019031",
+        "name": "Fiction"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228885031",
+        "name": "Science-Fiction et fantasy"
+       },
+       {
+        "id": "21229021031",
+        "name": "Fantasy"
+       },
+       {
+        "id": "21229712031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B08KW7WZGZ",
+    "title": "Histoires de Princesses",
+    "language": "french",
+    "authors": [
+     {
+      "name": "Disney"
+     }
+    ],
+    "runtime_length_min": 119,
+    "content_type": "Product",
+    "release_date": "2020-11-12",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228912031",
+        "name": "Contes de fées et  populaires et mythes"
+       },
+       {
+        "id": "21229211031",
+        "name": "Adaptations"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228912031",
+        "name": "Contes de fées et  populaires et mythes"
+       },
+       {
+        "id": "21229220031",
+        "name": "Collections et anthologies"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229327031",
+        "name": "Classiques"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0F14P8YQC",
+    "title": "Harry Potter and the Deathly Hallows (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "7",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 1230,
+    "content_type": "Product",
+    "release_date": "2026-05-12",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229178031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229316031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B09KYC7HKD",
+    "title": "Le clan des serpents",
+    "subtitle": "La légende des quatre 3",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B004N2WSJW",
+      "name": "Cassandra O'Donnell"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B09HHHPJQD",
+      "sequence": "3",
+      "title": "La légende des quatre",
+      "url": "/pd/La-legende-des-quatre-Livre-Audio/B09HHHPJQD"
+     }
+    ],
+    "runtime_length_min": 366,
+    "content_type": "Product",
+    "release_date": "2021-11-04",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0CK2K1S1Z",
+    "title": "Projet Polaris",
+    "subtitle": "Gardiens des cités perdues 5",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B006N1MEGS",
+      "name": "Shannon Messenger"
+     },
+     {
+      "name": "Mathilde Tamae-Bouhon - traducteur"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B09YTXGMPY",
+      "sequence": "5",
+      "title": "Gardiens des cités perdues",
+      "url": "/pd/Gardiens-des-cites-perdues-Livre-Audio/B09YTXGMPY"
+     }
+    ],
+    "runtime_length_min": 913,
+    "content_type": "Product",
+    "release_date": "2023-10-12",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0857JYDQN",
+    "title": "Une sombre prophétie",
+    "subtitle": "La guerre des clans 6",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B001H6NITG",
+      "name": "Erin Hunter"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B07RBFLR3J",
+      "sequence": "6",
+      "title": "La guerre des clans",
+      "url": "/pd/La-guerre-des-clans-Livre-Audio/B07RBFLR3J"
+     }
+    ],
+    "runtime_length_min": 560,
+    "content_type": "Product",
+    "release_date": "2020-03-12",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0BB37S4SD",
+    "title": "La Nuit-la-plus-Claire",
+    "subtitle": "Les Royaumes de Feu 5",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B001HCV388",
+      "name": "Tui T. Sutherland"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0BLJPKVTT",
+      "sequence": "5",
+      "title": "Les Royaumes de Feu",
+      "url": "/pd/Les-Royaumes-de-Feu-Livre-Audio/B0BLJPKVTT"
+     }
+    ],
+    "runtime_length_min": 500,
+    "content_type": "Product",
+    "release_date": "2023-06-13",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230393031",
+        "name": "Dragons et créatures mythiques"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228885031",
+        "name": "Science-Fiction et fantasy"
+       },
+       {
+        "id": "21229021031",
+        "name": "Fantasy"
+       },
+       {
+        "id": "21229701031",
+        "name": "Épique"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B083NXRQCB",
+    "title": "Sur le sentier de la guerre",
+    "subtitle": "La guerre des clans 5",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B001H6NITG",
+      "name": "Erin Hunter"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B07RBFLR3J",
+      "sequence": "5",
+      "title": "La guerre des clans",
+      "url": "/pd/La-guerre-des-clans-Livre-Audio/B07RBFLR3J"
+     }
+    ],
+    "runtime_length_min": 522,
+    "content_type": "Product",
+    "release_date": "2020-01-09",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B01LZF1ZRQ",
+    "title": "Harry Potter und der Feuerkelch - Gesprochen von Rufus Beck",
+    "subtitle": "Harry Potter 4",
+    "language": "german",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B01MAY4EW7",
+      "sequence": "4",
+      "title": "Harry Potter - Gesprochen von Rufus Beck",
+      "url": "/pd/Harry-Potter-Gesprochen-von-Rufus-Beck-Livre-Audio/B01MAY4EW7"
+     }
+    ],
+    "runtime_length_min": 1409,
+    "content_type": "Product",
+    "release_date": "2016-10-18",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228885031",
+        "name": "Science-Fiction et fantasy"
+       },
+       {
+        "id": "21229021031",
+        "name": "Fantasy"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0D36B4P3D",
+    "title": "Les Belles Histoires - 7 histoires de dragons, Vol. 1",
+    "language": "french",
+    "authors": [
+     {
+      "name": "Géraldine Menuet"
+     },
+     {
+      "name": "Alain Korkos"
+     },
+     {
+      "name": "Christos"
+     },
+     {
+      "name": "Luciano Lozano"
+     },
+     {
+      "name": "Sylvain Zorzin"
+     },
+     {
+      "name": "Catherine de Lasa"
+     },
+     {
+      "name": "Elsa Devernois"
+     },
+     {
+      "name": "Valérie Cros"
+     },
+     {
+      "name": "Katharina Bubhoff"
+     },
+     {
+      "name": "Daniel Kerleroux"
+     },
+     {
+      "name": "Pierre Pratt"
+     },
+     {
+      "name": "Clément Devaux"
+     },
+     {
+      "name": "Yves Calarnou"
+     },
+     {
+      "name": "Peter Elliott"
+     }
+    ],
+    "runtime_length_min": 51,
+    "content_type": "Product",
+    "release_date": "2024-05-02",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230393031",
+        "name": "Dragons et créatures mythiques"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0BB37L9KR",
+    "title": "L'île au Secret",
+    "subtitle": "Les Royaumes de Feu 4",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B001HCV388",
+      "name": "Tui T. Sutherland"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0BLJPKVTT",
+      "sequence": "4",
+      "title": "Les Royaumes de Feu",
+      "url": "/pd/Les-Royaumes-de-Feu-Livre-Audio/B0BLJPKVTT"
+     }
+    ],
+    "runtime_length_min": 465,
+    "content_type": "Product",
+    "release_date": "2023-03-14",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230393031",
+        "name": "Dragons et créatures mythiques"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228885031",
+        "name": "Science-Fiction et fantasy"
+       },
+       {
+        "id": "21229021031",
+        "name": "Fantasy"
+       },
+       {
+        "id": "21229701031",
+        "name": "Épique"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0813VRJ88",
+    "title": "La Bataille du labyrinthe",
+    "subtitle": "Percy Jackson 4",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B001HD0WE8",
+      "name": "Rick Riordan"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B07125HZSY",
+      "sequence": "4",
+      "title": "Percy Jackson",
+      "url": "/pd/Percy-Jackson-Livre-Audio/B07125HZSY"
+     }
+    ],
+    "runtime_length_min": 636,
+    "content_type": "Product",
+    "release_date": "2019-11-27",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228912031",
+        "name": "Contes de fées et  populaires et mythes"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B017WGMHX2",
+    "title": "Harry Potter and the Prisoner of Azkaban, Book 3",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0182T3B74",
+      "sequence": "3",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B0182T3B74"
+     },
+     {
+      "asin": "B07CMBF1QQ",
+      "sequence": "3",
+      "title": "Wizarding World",
+      "url": "/pd/Wizarding-World-Livre-Audio/B07CMBF1QQ"
+     }
+    ],
+    "runtime_length_min": 723,
+    "content_type": "Product",
+    "release_date": "2015-11-20",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0F6CN9HBN",
+    "title": "Le Calice des dieux",
+    "subtitle": "Percy Jackson, Vol. 6",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B001HD0WE8",
+      "name": "Rick Riordan"
+     },
+     {
+      "name": "Mona de Pracontal - traducteur"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B07125HZSY",
+      "sequence": "6",
+      "title": "Percy Jackson",
+      "url": "/pd/Percy-Jackson-Livre-Audio/B07125HZSY"
+     }
+    ],
+    "runtime_length_min": 409,
+    "content_type": "Product",
+    "release_date": "2025-07-16",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228912031",
+        "name": "Contes de fées et  populaires et mythes"
+       },
+       {
+        "id": "21229214031",
+        "name": "Grecs et romains"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0F14PWPWX",
+    "title": "Harry Potter and the Prisoner of Azkaban (Full-Cast Edition)",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0FJMKKSQ7",
+      "sequence": "3",
+      "title": "Harry Potter (Full-Cast Editions)",
+      "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+     }
+    ],
+    "runtime_length_min": 692,
+    "content_type": "Product",
+    "release_date": "2026-01-13",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229178031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229316031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0791DND3Z",
+    "title": "La fraternité de l'anneau",
+    "subtitle": "Le seigneur des anneaux 1",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000ARC6KA",
+      "name": "J. R. R. Tolkien"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B07BG9D7PY",
+      "sequence": "1",
+      "title": "Le seigneur des anneaux",
+      "url": "/pd/Le-seigneur-des-anneaux-Livre-Audio/B07BG9D7PY"
+     }
+    ],
+    "runtime_length_min": 1252,
+    "content_type": "Product",
+    "release_date": "2018-02-14",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228885031",
+        "name": "Science-Fiction et fantasy"
+       },
+       {
+        "id": "21229021031",
+        "name": "Fantasy"
+       },
+       {
+        "id": "21229701031",
+        "name": "Épique"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228885031",
+        "name": "Science-Fiction et fantasy"
+       },
+       {
+        "id": "21229021031",
+        "name": "Fantasy"
+       },
+       {
+        "id": "21229712031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0C7CV3MYJ",
+    "title": "La Maison d'Hadès",
+    "subtitle": "Héros de l'Olympe 4",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B001HD0WE8",
+      "name": "Rick Riordan"
+     },
+     {
+      "name": "Mona de Pracontal - traductrice"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0C2ZSTYDT",
+      "sequence": "4",
+      "title": "Héros de l'Olympe",
+      "url": "/pd/Heros-de-lOlympe-Livre-Audio/B0C2ZSTYDT"
+     }
+    ],
+    "runtime_length_min": 948,
+    "content_type": "Product",
+    "release_date": "2023-10-25",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228912031",
+        "name": "Contes de fées et  populaires et mythes"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B09CVW2BQ6",
+    "title": "Jack et la Grande Aventure du Cochon de Noël",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "runtime_length_min": 368,
+    "content_type": "Product",
+    "release_date": "2021-10-12",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228911031",
+        "name": "Fêtes et célébrations"
+       },
+       {
+        "id": "21229206031",
+        "name": "Noël"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0H7JK6D4V",
+    "title": "Journal D'Un Noob",
+    "subtitle": "Journal D'Un Noob - Minecraft, Tome 8",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B00U7CTIVI",
+      "name": "Cube Kid"
+     },
+     {
+      "name": "Agathe Franck"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0H46JWS4K",
+      "sequence": "8",
+      "title": "Journal D'Un Noob - Minecraft",
+      "url": "/pd/Journal-DUn-Noob-Minecraft-Livre-Audio/B0H46JWS4K"
+     }
+    ],
+    "runtime_length_min": 178,
+    "content_type": "Product",
+    "release_date": "2026-07-03",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0BQN8JLFS",
+    "title": "Percy Jackson et les dieux grecs",
+    "subtitle": "Percy Jackson 6",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B001HD0WE8",
+      "name": "Rick Riordan"
+     },
+     {
+      "name": "Nathalie Serval"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B07125HZSY",
+      "sequence": "6",
+      "title": "Percy Jackson",
+      "url": "/pd/Percy-Jackson-Livre-Audio/B07125HZSY"
+     }
+    ],
+    "runtime_length_min": 683,
+    "content_type": "Product",
+    "release_date": "2023-01-25",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228912031",
+        "name": "Contes de fées et  populaires et mythes"
+       },
+       {
+        "id": "21229214031",
+        "name": "Grecs et romains"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B017V6792W",
+    "title": "Harry Potter and the Chamber of Secrets, Book 2",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0182T3B74",
+      "sequence": "2",
+      "title": "Harry Potter",
+      "url": "/pd/Harry-Potter-Livre-Audio/B0182T3B74"
+     },
+     {
+      "asin": "B07CMBF1QQ",
+      "sequence": "2",
+      "title": "Wizarding World",
+      "url": "/pd/Wizarding-World-Livre-Audio/B07CMBF1QQ"
+     }
+    ],
+    "runtime_length_min": 583,
+    "content_type": "Product",
+    "release_date": "2015-11-20",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229178031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228908031",
+        "name": "Passage à l'âge adulte, choses de la vie"
+       },
+       {
+        "id": "21229179031",
+        "name": "Sociabilité et compétences essentielles"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229316031",
+        "name": "Vie de famille"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0FXL3WBGM",
+    "title": "La Forêt de Varogg",
+    "subtitle": "Frigiel et Fluffy, Vol. 3",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B004MQ293Y",
+      "name": "Nicolas Digard"
+     },
+     {
+      "asin": "B06XNM79PX",
+      "name": "Frigiel"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B078H5ZFPF",
+      "sequence": "3",
+      "title": "Frigiel et Fluffy",
+      "url": "/pd/Frigiel-et-Fluffy-Livre-Audio/B078H5ZFPF"
+     }
+    ],
+    "runtime_length_min": 367,
+    "content_type": "Product",
+    "release_date": "2025-11-19",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B01LZQOWTL",
+    "title": "Harry Potter und der Orden des Phönix - Gesprochen von Rufus Beck",
+    "subtitle": "Harry Potter 5",
+    "language": "german",
+    "authors": [
+     {
+      "asin": "B000AP9A6K",
+      "name": "J.K. Rowling"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B01MAY4EW7",
+      "sequence": "5",
+      "title": "Harry Potter - Gesprochen von Rufus Beck",
+      "url": "/pd/Harry-Potter-Gesprochen-von-Rufus-Beck-Livre-Audio/B01MAY4EW7"
+     }
+    ],
+    "runtime_length_min": 1983,
+    "content_type": "Product",
+    "release_date": "2016-10-18",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228885031",
+        "name": "Science-Fiction et fantasy"
+       },
+       {
+        "id": "21229021031",
+        "name": "Fantasy"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B081CYTP8J",
+    "title": "Avant la tempête",
+    "subtitle": "La guerre des clans 4",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B001H6NITG",
+      "name": "Erin Hunter"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B07RBFLR3J",
+      "sequence": "4",
+      "title": "La guerre des clans",
+      "url": "/pd/La-guerre-des-clans-Livre-Audio/B07RBFLR3J"
+     }
+    ],
+    "runtime_length_min": 478,
+    "content_type": "Product",
+    "release_date": "2019-11-14",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0D2622JTX",
+    "title": "Les Larmes du Saule",
+    "subtitle": "La Passeuse de mots 4",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B08WCKZN8N",
+      "name": "Alric & Jennifer Twice"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B0BNHWXFTD",
+      "sequence": "4",
+      "title": "La Passeuse de mots",
+      "url": "/pd/La-Passeuse-de-mots-Livre-Audio/B0BNHWXFTD"
+     }
+    ],
+    "runtime_length_min": 2246,
+    "content_type": "Product",
+    "release_date": "2024-06-12",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228884031",
+        "name": "Littérature, romans et fiction"
+       },
+       {
+        "id": "21229019031",
+        "name": "Fiction"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228885031",
+        "name": "Science-Fiction et fantasy"
+       },
+       {
+        "id": "21229021031",
+        "name": "Fantasy"
+       },
+       {
+        "id": "21229712031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B06XSHWZGM",
+    "title": "Le Voleur de foudre",
+    "subtitle": "Percy Jackson 1",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B001HD0WE8",
+      "name": "Rick Riordan"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B07125HZSY",
+      "sequence": "1",
+      "title": "Percy Jackson",
+      "url": "/pd/Percy-Jackson-Livre-Audio/B07125HZSY"
+     }
+    ],
+    "runtime_length_min": 666,
+    "content_type": "Product",
+    "release_date": "2017-03-22",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228912031",
+        "name": "Contes de fées et  populaires et mythes"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0C9TLJV8Q",
+    "title": "Les oubliés d'Astrelune",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B07NJ33DLN",
+      "name": "Laure Dargelos"
+     }
+    ],
+    "runtime_length_min": 694,
+    "content_type": "Product",
+    "release_date": "2023-07-13",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229339031",
+        "name": "Science-fiction"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228895031",
+        "name": "Adolescents et jeunes adultes"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B07658SHTM",
+    "title": "Vaiana. La légende du bout du monde",
+    "language": "french",
+    "authors": [
+     {
+      "name": "Walt Disney"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B085TQ688Q",
+      "sequence": "4",
+      "title": "Walt Disney",
+      "url": "/pd/Walt-Disney-Livre-Audio/B085TQ688Q"
+     }
+    ],
+    "runtime_length_min": 49,
+    "content_type": "Product",
+    "release_date": "2017-11-02",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229318031",
+        "name": "Produits dérivés de films, de la télévision et des jeux vidéo"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B09YMP5T4T",
+    "title": "Exil",
+    "subtitle": "Gardiens des cités perdues 2",
+    "language": "french",
+    "authors": [
+     {
+      "asin": "B006N1MEGS",
+      "name": "Shannon Messenger"
+     },
+     {
+      "name": "Mathilde Bouhon - traducteur"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B09YTXGMPY",
+      "sequence": "2",
+      "title": "Gardiens des cités perdues",
+      "url": "/pd/Gardiens-des-cites-perdues-Livre-Audio/B09YTXGMPY"
+     }
+    ],
+    "runtime_length_min": 787,
+    "content_type": "Product",
+    "release_date": "2022-05-12",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B0092ECYHM",
+    "title": "Percy Jackson and the Sea of Monsters",
+    "subtitle": "Percy Jackson, Book 2",
+    "language": "english",
+    "authors": [
+     {
+      "asin": "B0C7WDNTN3",
+      "name": "Rick Riordan"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B072NYYMVP",
+      "sequence": "2",
+      "title": "Percy Jackson and the Olympians",
+      "url": "/pd/Percy-Jackson-and-the-Olympians-Livre-Audio/B072NYYMVP"
+     }
+    ],
+    "runtime_length_min": 475,
+    "content_type": "Product",
+    "release_date": "2010-01-15",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228912031",
+        "name": "Contes de fées et  populaires et mythes"
+       },
+       {
+        "id": "21229214031",
+        "name": "Grecs et romains"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230396031",
+        "name": "Action et aventure"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   },
+   {
+    "asin": "B07658LDM7",
+    "title": "Le retour de l'Ender Dragon",
+    "subtitle": "Frigiel et Fluffy 1",
+    "language": "french",
+    "authors": [
+     {
+      "name": "Nicolas Digard"
+     },
+     {
+      "name": "Frigiel"
+     }
+    ],
+    "series": [
+     {
+      "asin": "B078H5ZFPF",
+      "sequence": "1",
+      "title": "Frigiel et Fluffy",
+      "url": "/pd/Frigiel-et-Fluffy-Livre-Audio/B078H5ZFPF"
+     }
+    ],
+    "runtime_length_min": 250,
+    "content_type": "Product",
+    "release_date": "2017-11-02",
+    "category_ladders": [
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228924031",
+        "name": "Roman et littérature"
+       },
+       {
+        "id": "21229318031",
+        "name": "Produits dérivés de films, de la télévision et des jeux vidéo"
+       }
+      ],
+      "root": "Genres"
+     },
+     {
+      "ladder": [
+       {
+        "id": "21228877031",
+        "name": "Jeunesse"
+       },
+       {
+        "id": "21228926031",
+        "name": "Science-fiction et fantasy"
+       },
+       {
+        "id": "21229338031",
+        "name": "Fantasy et magie"
+       },
+       {
+        "id": "21230393031",
+        "name": "Dragons et créatures mythiques"
+       }
+      ],
+      "root": "Genres"
+     }
+    ]
+   }
+  ]
+ },
+ "starts": {
+  "Nevermoor": {
+   "products": [
+    {
+     "asin": "B07Q379VFL",
+     "title": "Les Défis de Morrigane Crow",
+     "subtitle": "Nevermoor 1",
+     "language": "french",
+     "authors": [
+      {
+       "name": "Jessica Townsend"
+      }
+     ],
+     "series": [
+      {
+       "asin": "B081QPFF9T",
+       "sequence": "1",
+       "title": "Nevermoor",
+       "url": "/pd/Nevermoor-Livre-Audio/B081QPFF9T"
+      }
+     ],
+     "runtime_length_min": 652,
+     "content_type": "Product",
+     "release_date": "2019-04-11",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    },
+    {
+     "asin": "B075NQ2JGC",
+     "title": "Nevermoor",
+     "subtitle": "The Trials of Morrigan Crow Book 1: Step boldly into this fantastical children's series",
+     "language": "english",
+     "authors": [
+      {
+       "asin": "B0034P9AUO",
+       "name": "Jessica Townsend"
+      }
+     ],
+     "series": [
+      {
+       "asin": "B07K4CB25M",
+       "sequence": "1",
+       "title": "Nevermoor",
+       "url": "/pd/Nevermoor-Livre-Audio/B07K4CB25M"
+      }
+     ],
+     "runtime_length_min": 660,
+     "content_type": "Product",
+     "release_date": "2017-10-12",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        },
+        {
+         "id": "21230396031",
+         "name": "Action et aventure"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    }
+   ]
+  },
+  "Le Monde des sorciers": {
+   "products": [
+    {
+     "asin": "B06Y66DT8R",
+     "title": "Harry Potter à l'École des Sorciers",
+     "subtitle": "Harry Potter 1",
+     "language": "french",
+     "authors": [
+      {
+       "asin": "B000AP9A6K",
+       "name": "J.K. Rowling"
+      }
+     ],
+     "series": [
+      {
+       "asin": "B06Y67Q9FY",
+       "sequence": "1",
+       "title": "Harry Potter",
+       "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+      },
+      {
+       "asin": "B08XMX5P9B",
+       "sequence": "1",
+       "title": "Le Monde des sorciers",
+       "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+      }
+     ],
+     "runtime_length_min": 501,
+     "content_type": "Product",
+     "release_date": "2017-05-11",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    }
+   ]
+  },
+  "Héros de l'Olympe": {
+   "products": [
+    {
+     "asin": "B0BWFMBQBX",
+     "title": "Le Héros perdu",
+     "subtitle": "Héros de l'Olympe 1",
+     "language": "french",
+     "authors": [
+      {
+       "asin": "B001HD0WE8",
+       "name": "Rick Riordan"
+      },
+      {
+       "name": "Mona de Pracontal - traductrice"
+      }
+     ],
+     "series": [
+      {
+       "asin": "B0C2ZSTYDT",
+       "sequence": "1",
+       "title": "Héros de l'Olympe",
+       "url": "/pd/Heros-de-lOlympe-Livre-Audio/B0C2ZSTYDT"
+      }
+     ],
+     "runtime_length_min": 987,
+     "content_type": "Product",
+     "release_date": "2023-03-29",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228912031",
+         "name": "Contes de fées et  populaires et mythes"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        },
+        {
+         "id": "21230396031",
+         "name": "Action et aventure"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    }
+   ]
+  },
+  "La Passeuse de mots": {
+   "products": [
+    {
+     "asin": "B0B4F44KH6",
+     "title": "La Passeuse de mots",
+     "subtitle": "La Passeuse de mots 1",
+     "language": "french",
+     "authors": [
+      {
+       "asin": "B08WCKZN8N",
+       "name": "Alric & Jennifer Twice"
+      }
+     ],
+     "series": [
+      {
+       "asin": "B0BNHWXFTD",
+       "sequence": "1",
+       "title": "La Passeuse de mots",
+       "url": "/pd/La-Passeuse-de-mots-Livre-Audio/B0BNHWXFTD"
+      }
+     ],
+     "runtime_length_min": 1426,
+     "content_type": "Product",
+     "release_date": "2022-07-20",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        },
+        {
+         "id": "21230396031",
+         "name": "Action et aventure"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228884031",
+         "name": "Littérature, romans et fiction"
+        },
+        {
+         "id": "21229016031",
+         "name": "Action et aventure"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228884031",
+         "name": "Littérature, romans et fiction"
+        },
+        {
+         "id": "21229019031",
+         "name": "Fiction"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228885031",
+         "name": "Science-Fiction et fantasy"
+        },
+        {
+         "id": "21229021031",
+         "name": "Fantasy"
+        },
+        {
+         "id": "21229711031",
+         "name": "Urbain et paranormal"
+        },
+        {
+         "id": "21230568031",
+         "name": "Contemporain"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    }
+   ]
+  },
+  "La légende des quatre": {
+   "products": []
+  },
+  "Gardiens des cités perdues": {
+   "products": [
+    {
+     "asin": "B09R2JJ8ZK",
+     "title": "Gardiens des cités perdues",
+     "subtitle": "Gardiens des cités perdues 1",
+     "language": "french",
+     "authors": [
+      {
+       "asin": "B006N1MEGS",
+       "name": "Shannon Messenger"
+      },
+      {
+       "name": "Mathilde Bouhon - traductrice"
+      }
+     ],
+     "series": [
+      {
+       "asin": "B09YTXGMPY",
+       "sequence": "1",
+       "title": "Gardiens des cités perdues",
+       "url": "/pd/Gardiens-des-cites-perdues-Livre-Audio/B09YTXGMPY"
+      }
+     ],
+     "runtime_length_min": 724,
+     "content_type": "Product",
+     "release_date": "2022-02-10",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228885031",
+         "name": "Science-Fiction et fantasy"
+        },
+        {
+         "id": "21229020031",
+         "name": "Science-fiction"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "rawBySeed": {
+  "B06Y66DT8R": {
+   "similar_products": [
+    {
+     "asin": "1781105413",
+     "title": "Les Contes de Beedle le Barde",
+     "subtitle": "Harry Potter Livre de la Bibliothèque de Poudlard",
+     "language": "french",
+     "authors": [
+      {
+       "asin": "B000AP9A6K",
+       "name": "J.K. Rowling"
+      }
+     ],
+     "series": [
+      {
+       "asin": "B07FNR21R8",
+       "sequence": "",
+       "title": "La bibliothèque de Poudlard",
+       "url": "/pd/La-bibliotheque-de-Poudlard-Livre-Audio/B07FNR21R8"
+      },
+      {
+       "asin": "B08XMX5P9B",
+       "sequence": "",
+       "title": "Le Monde des sorciers",
+       "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+      }
+     ],
+     "runtime_length_min": 95,
+     "content_type": "Product",
+     "release_date": "2021-04-29",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228895031",
+         "name": "Adolescents et jeunes adultes"
+        },
+        {
+         "id": "21229103031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21230013031",
+         "name": "Fantasy"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228895031",
+         "name": "Adolescents et jeunes adultes"
+        },
+        {
+         "id": "21229103031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21230013031",
+         "name": "Fantasy"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228895031",
+         "name": "Adolescents et jeunes adultes"
+        },
+        {
+         "id": "21229103031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21230013031",
+         "name": "Fantasy"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228895031",
+         "name": "Adolescents et jeunes adultes"
+        },
+        {
+         "id": "21229103031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21230013031",
+         "name": "Fantasy"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228895031",
+         "name": "Adolescents et jeunes adultes"
+        },
+        {
+         "id": "21229110031",
+         "name": "Roman et littérature"
+        },
+        {
+         "id": "21230089031",
+         "name": "Légendes, mythes et contes de fées"
+        },
+        {
+         "id": "21230845031",
+         "name": "Mythes et légendes"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228895031",
+         "name": "Adolescents et jeunes adultes"
+        },
+        {
+         "id": "21229110031",
+         "name": "Roman et littérature"
+        },
+        {
+         "id": "21230098031",
+         "name": "Produits dérivés de films, séries et jeux vidéo"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    },
+    {
+     "asin": "B0F14P97Y8",
+     "title": "Harry Potter and the Philosopher’s Stone (Full-Cast Edition)",
+     "language": "english",
+     "authors": [
+      {
+       "asin": "B000AP9A6K",
+       "name": "J.K. Rowling"
+      }
+     ],
+     "series": [
+      {
+       "asin": "B0FJMKKSQ7",
+       "sequence": "1",
+       "title": "Harry Potter (Full-Cast Editions)",
+       "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+      }
+     ],
+     "runtime_length_min": 521,
+     "content_type": "Product",
+     "release_date": "2025-11-04",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228908031",
+         "name": "Passage à l'âge adulte, choses de la vie"
+        },
+        {
+         "id": "21229178031",
+         "name": "Vie de famille"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228908031",
+         "name": "Passage à l'âge adulte, choses de la vie"
+        },
+        {
+         "id": "21229179031",
+         "name": "Sociabilité et compétences essentielles"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228924031",
+         "name": "Roman et littérature"
+        },
+        {
+         "id": "21229316031",
+         "name": "Vie de famille"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        },
+        {
+         "id": "21230396031",
+         "name": "Action et aventure"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    },
+    {
+     "asin": "B0DCBZ4CKL",
+     "title": "Wish – Asha et la bonne étoile. Compilation d’histoires audio.",
+     "language": "french",
+     "authors": [
+      {
+       "asin": "B00JZCJZ5K",
+       "name": "Disney"
+      }
+     ],
+     "runtime_length_min": 57,
+     "content_type": "Product",
+     "release_date": "2024-09-02",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228924031",
+         "name": "Roman et littérature"
+        },
+        {
+         "id": "21229318031",
+         "name": "Produits dérivés de films, de la télévision et des jeux vidéo"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    },
+    {
+     "asin": "B0D8TS86TB",
+     "title": "Archives du Monde des Sorciers",
+     "subtitle": "Chroniques, notes et récits de l’univers Harry Potter",
+     "language": "french",
+     "authors": [
+      {
+       "asin": "B000AP9A6K",
+       "name": "J.K. Rowling"
+      },
+      {
+       "asin": "B094KSNYF7",
+       "name": "Evanna Lynch - préface"
+      }
+     ],
+     "runtime_length_min": 501,
+     "content_type": "Product",
+     "release_date": "2024-11-25",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228885031",
+         "name": "Science-Fiction et fantasy"
+        },
+        {
+         "id": "21229021031",
+         "name": "Fantasy"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    }
+   ]
+  },
+  "B06Y64F54M": {
+   "similar_products": [
+    {
+     "asin": "B06Y66DT8R",
+     "title": "Harry Potter à l'École des Sorciers",
+     "subtitle": "Harry Potter 1",
+     "language": "french",
+     "authors": [
+      {
+       "asin": "B000AP9A6K",
+       "name": "J.K. Rowling"
+      }
+     ],
+     "series": [
+      {
+       "asin": "B06Y67Q9FY",
+       "sequence": "1",
+       "title": "Harry Potter",
+       "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+      },
+      {
+       "asin": "B08XMX5P9B",
+       "sequence": "1",
+       "title": "Le Monde des sorciers",
+       "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+      }
+     ],
+     "runtime_length_min": 501,
+     "content_type": "Product",
+     "release_date": "2017-05-11",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    },
+    {
+     "asin": "1781105413",
+     "title": "Les Contes de Beedle le Barde",
+     "subtitle": "Harry Potter Livre de la Bibliothèque de Poudlard",
+     "language": "french",
+     "authors": [
+      {
+       "asin": "B000AP9A6K",
+       "name": "J.K. Rowling"
+      }
+     ],
+     "series": [
+      {
+       "asin": "B07FNR21R8",
+       "sequence": "",
+       "title": "La bibliothèque de Poudlard",
+       "url": "/pd/La-bibliotheque-de-Poudlard-Livre-Audio/B07FNR21R8"
+      },
+      {
+       "asin": "B08XMX5P9B",
+       "sequence": "",
+       "title": "Le Monde des sorciers",
+       "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+      }
+     ],
+     "runtime_length_min": 95,
+     "content_type": "Product",
+     "release_date": "2021-04-29",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228895031",
+         "name": "Adolescents et jeunes adultes"
+        },
+        {
+         "id": "21229103031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21230013031",
+         "name": "Fantasy"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228895031",
+         "name": "Adolescents et jeunes adultes"
+        },
+        {
+         "id": "21229103031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21230013031",
+         "name": "Fantasy"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228895031",
+         "name": "Adolescents et jeunes adultes"
+        },
+        {
+         "id": "21229103031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21230013031",
+         "name": "Fantasy"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228895031",
+         "name": "Adolescents et jeunes adultes"
+        },
+        {
+         "id": "21229103031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21230013031",
+         "name": "Fantasy"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228895031",
+         "name": "Adolescents et jeunes adultes"
+        },
+        {
+         "id": "21229110031",
+         "name": "Roman et littérature"
+        },
+        {
+         "id": "21230089031",
+         "name": "Légendes, mythes et contes de fées"
+        },
+        {
+         "id": "21230845031",
+         "name": "Mythes et légendes"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228895031",
+         "name": "Adolescents et jeunes adultes"
+        },
+        {
+         "id": "21229110031",
+         "name": "Roman et littérature"
+        },
+        {
+         "id": "21230098031",
+         "name": "Produits dérivés de films, séries et jeux vidéo"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    },
+    {
+     "asin": "B0D8TS86TB",
+     "title": "Archives du Monde des Sorciers",
+     "subtitle": "Chroniques, notes et récits de l’univers Harry Potter",
+     "language": "french",
+     "authors": [
+      {
+       "asin": "B000AP9A6K",
+       "name": "J.K. Rowling"
+      },
+      {
+       "asin": "B094KSNYF7",
+       "name": "Evanna Lynch - préface"
+      }
+     ],
+     "runtime_length_min": 501,
+     "content_type": "Product",
+     "release_date": "2024-11-25",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228885031",
+         "name": "Science-Fiction et fantasy"
+        },
+        {
+         "id": "21229021031",
+         "name": "Fantasy"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    },
+    {
+     "asin": "B0H2934VMQ",
+     "title": "KPop Demon Hunters - Le roman officiel du film Netflix",
+     "language": "french",
+     "authors": [
+      {
+       "asin": "B0F5BXZLZM",
+       "name": "Jessica Yoon"
+      },
+      {
+       "name": "Fabienne Berganz - traducteur"
+      }
+     ],
+     "runtime_length_min": 176,
+     "content_type": "Product",
+     "release_date": "2026-05-19",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        },
+        {
+         "id": "21230396031",
+         "name": "Action et aventure"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    }
+   ]
+  },
+  "B06Y66H419": {
+   "similar_products": [
+    {
+     "asin": "B06Y66DT8R",
+     "title": "Harry Potter à l'École des Sorciers",
+     "subtitle": "Harry Potter 1",
+     "language": "french",
+     "authors": [
+      {
+       "asin": "B000AP9A6K",
+       "name": "J.K. Rowling"
+      }
+     ],
+     "series": [
+      {
+       "asin": "B06Y67Q9FY",
+       "sequence": "1",
+       "title": "Harry Potter",
+       "url": "/pd/Harry-Potter-Livre-Audio/B06Y67Q9FY"
+      },
+      {
+       "asin": "B08XMX5P9B",
+       "sequence": "1",
+       "title": "Le Monde des sorciers",
+       "url": "/pd/Le-Monde-des-sorciers-Livre-Audio/B08XMX5P9B"
+      }
+     ],
+     "runtime_length_min": 501,
+     "content_type": "Product",
+     "release_date": "2017-05-11",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    },
+    {
+     "asin": "B0F4DQ6FM1",
+     "title": "Le duc de Penford Hall",
+     "subtitle": "Les mystères de Tante Dimity, Vol. 0",
+     "language": "french",
+     "authors": [
+      {
+       "asin": "B000AQ3JGG",
+       "name": "Nancy Atherton"
+      },
+      {
+       "name": "Axelle Demoulin - traducteur"
+      },
+      {
+       "name": "Nicolas Ancion - traducteur"
+      }
+     ],
+     "series": [
+      {
+       "asin": "B0DX2FPPG4",
+       "sequence": "0",
+       "title": "Les Mystères de Tante Dimity",
+       "url": "/pd/Les-Mysteres-de-Tante-Dimity-Livre-Audio/B0DX2FPPG4"
+      }
+     ],
+     "runtime_length_min": 502,
+     "content_type": "Product",
+     "release_date": "2025-05-08",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228876031",
+         "name": "Policier, thrillers et œuvres à suspense"
+        },
+        {
+         "id": "21228905031",
+         "name": "Policier"
+        },
+        {
+         "id": "21229150031",
+         "name": "Cozy"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    },
+    {
+     "asin": "B0BTJ1RGSZ",
+     "title": "Don Camillo 1953-1954",
+     "language": "french",
+     "authors": [
+      {
+       "name": "Julien Duvivier"
+      }
+     ],
+     "runtime_length_min": 74,
+     "content_type": "Product",
+     "release_date": "2023-02-01",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228884031",
+         "name": "Littérature, romans et fiction"
+        },
+        {
+         "id": "21229007031",
+         "name": "Classiques"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    },
+    {
+     "asin": "B0791DND3Z",
+     "title": "La fraternité de l'anneau",
+     "subtitle": "Le seigneur des anneaux 1",
+     "language": "french",
+     "authors": [
+      {
+       "asin": "B000ARC6KA",
+       "name": "J. R. R. Tolkien"
+      }
+     ],
+     "series": [
+      {
+       "asin": "B07BG9D7PY",
+       "sequence": "1",
+       "title": "Le seigneur des anneaux",
+       "url": "/pd/Le-seigneur-des-anneaux-Livre-Audio/B07BG9D7PY"
+      }
+     ],
+     "runtime_length_min": 1252,
+     "content_type": "Product",
+     "release_date": "2018-02-14",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        },
+        {
+         "id": "21230396031",
+         "name": "Action et aventure"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228885031",
+         "name": "Science-Fiction et fantasy"
+        },
+        {
+         "id": "21229021031",
+         "name": "Fantasy"
+        },
+        {
+         "id": "21229701031",
+         "name": "Épique"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228885031",
+         "name": "Science-Fiction et fantasy"
+        },
+        {
+         "id": "21229021031",
+         "name": "Fantasy"
+        },
+        {
+         "id": "21229712031",
+         "name": "Action et aventure"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    },
+    {
+     "asin": "B0F14P97Y8",
+     "title": "Harry Potter and the Philosopher’s Stone (Full-Cast Edition)",
+     "language": "english",
+     "authors": [
+      {
+       "asin": "B000AP9A6K",
+       "name": "J.K. Rowling"
+      }
+     ],
+     "series": [
+      {
+       "asin": "B0FJMKKSQ7",
+       "sequence": "1",
+       "title": "Harry Potter (Full-Cast Editions)",
+       "url": "/pd/Harry-Potter-Full-Cast-Editions-Livre-Audio/B0FJMKKSQ7"
+      }
+     ],
+     "runtime_length_min": 521,
+     "content_type": "Product",
+     "release_date": "2025-11-04",
+     "category_ladders": [
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228908031",
+         "name": "Passage à l'âge adulte, choses de la vie"
+        },
+        {
+         "id": "21229178031",
+         "name": "Vie de famille"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228908031",
+         "name": "Passage à l'âge adulte, choses de la vie"
+        },
+        {
+         "id": "21229179031",
+         "name": "Sociabilité et compétences essentielles"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228924031",
+         "name": "Roman et littérature"
+        },
+        {
+         "id": "21229316031",
+         "name": "Vie de famille"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        },
+        {
+         "id": "21230396031",
+         "name": "Action et aventure"
+        }
+       ],
+       "root": "Genres"
+      },
+      {
+       "ladder": [
+        {
+         "id": "21228877031",
+         "name": "Jeunesse"
+        },
+        {
+         "id": "21228926031",
+         "name": "Science-fiction et fantasy"
+        },
+        {
+         "id": "21229338031",
+         "name": "Fantasy et magie"
+        }
+       ],
+       "root": "Genres"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

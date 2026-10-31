@@ -1,0 +1,775 @@
+{
+  "captured": "2026-10-29",
+  "method": "Reviewed identity expectations with factual, sanitized, live-captured catalogue candidate sets. No keys, torrent links, hashes or resolver IDs.",
+  "cases": [
+    {
+      "releaseName": "Moby.Dick.Herman.Melville.2004.FR.[MP3.192kbps]-NOTAG",
+      "language": "fr",
+      "expectedTitle": "Moby Dick",
+      "expectedAuthor": "Herman Melville",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=Moby+Dick+Herman+Melville",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby Dick"
+              },
+              {
+                "artistName": "Herman Melville, Livres audio en français & Moby Dick en francais",
+                "collectionName": "Moby Dick - Livre Audio"
+              },
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby Dick"
+              },
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby-Dick"
+              },
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby Dick (Unabridged)"
+              },
+              {
+                "artistName": "Herman Melville & The Peter Pan Players",
+                "collectionName": "Moby Dick"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "releaseName": "Moby.Dick.Herman.Melville.1851.FR.[MP3.128kbps]-NOTAG",
+      "language": "fr",
+      "expectedTitle": "Moby Dick",
+      "expectedAuthor": "Herman Melville",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=Moby+Dick+Herman+Melville",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby Dick"
+              },
+              {
+                "artistName": "Herman Melville, Livres audio en français & Moby Dick en francais",
+                "collectionName": "Moby Dick - Livre Audio"
+              },
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby Dick"
+              },
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby-Dick"
+              },
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby Dick (Unabridged)"
+              },
+              {
+                "artistName": "Herman Melville & The Peter Pan Players",
+                "collectionName": "Moby Dick"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "releaseName": "(pièce radio) Herman Melville - Moby Dick - 1968 [MP3 128kbps]",
+      "language": "fr",
+      "expectedTitle": "Moby Dick",
+      "expectedAuthor": "Herman Melville",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=Herman+Melville+Moby+Dick",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby Dick"
+              },
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby Dick"
+              },
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Herman Melville, Moby Dick"
+              },
+              {
+                "artistName": "Herman Melville, Livres audio en français & Moby Dick en francais",
+                "collectionName": "Moby Dick - Livre Audio"
+              },
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby Dick"
+              },
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby-Dick"
+              }
+            ]
+          }
+        }
+      },
+      "expectedPreservedTitle": "(pièce radio) Herman Melville - Moby Dick - 1968",
+      "expectedPreservedAuthor": ""
+    },
+    {
+      "releaseName": "Herman Melville- Moby Dick 1851 [MP3 - 192kbps]",
+      "language": "fr",
+      "expectedTitle": "Moby Dick",
+      "expectedAuthor": "Herman Melville",
+      "responses": {},
+      "expectedPreservedTitle": "Moby Dick 1851",
+      "expectedPreservedAuthor": "Herman Melville"
+    },
+    {
+      "releaseName": "Herman Melville - Moby Dick - Lectrice benevole (64 kbits MP3)",
+      "language": "fr",
+      "expectedTitle": "Moby Dick",
+      "expectedAuthor": "Herman Melville",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=Herman+Melville+Moby+Dick",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby Dick"
+              },
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby Dick"
+              },
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Herman Melville, Moby Dick"
+              },
+              {
+                "artistName": "Herman Melville, Livres audio en français & Moby Dick en francais",
+                "collectionName": "Moby Dick - Livre Audio"
+              },
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby Dick"
+              },
+              {
+                "artistName": "Herman Melville",
+                "collectionName": "Moby-Dick"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "releaseName": "Anna.Karenina.Leo.Tolstoy.[Anna.Karenine.Leon.Tolstoi].complet.ENG.MP3",
+      "language": "en",
+      "expectedTitle": "Anna Karenina",
+      "expectedAuthor": "Leo Tolstoy",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=US&term=Anna+Karenina+Leo+Tolstoy",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Leo Tolstoy",
+                "collectionName": "Anna Karenina"
+              },
+              {
+                "artistName": "Leo Tolstoy",
+                "collectionName": "Anna Karenina"
+              },
+              {
+                "artistName": "Leo Tolstoy",
+                "collectionName": "Anna Karenina (Unabridged)"
+              },
+              {
+                "artistName": "Leo Tolstoy, Classic Audiobooks & Anna Karenina",
+                "collectionName": "Anna Karenina - Audiobook"
+              },
+              {
+                "artistName": "Leo Tolstoy",
+                "collectionName": "Anna Karenina (Unabridged)"
+              },
+              {
+                "artistName": "Leo Tolstoy",
+                "collectionName": "Anna Karenina"
+              }
+            ]
+          }
+        }
+      },
+      "expectedPreservedTitle": "Anna Karenina Leo Tolstoy [Anna.Karenine.Leon.Tolstoi] complet",
+      "expectedPreservedAuthor": ""
+    },
+    {
+      "releaseName": "Lolita.Vladimir.Nabokov.2024.FR.[Mp3.128.Kbps]-NOTAG",
+      "language": "fr",
+      "expectedTitle": "Lolita",
+      "expectedAuthor": "Vladimir Nabokov",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=Lolita+Vladimir+Nabokov",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Vladimir Nabokov",
+                "collectionName": "Lolita"
+              },
+              {
+                "artistName": "Vladimir Nabokov",
+                "collectionName": "Lolita (Unabridged)"
+              },
+              {
+                "artistName": "Vladimir Nabokov",
+                "collectionName": "Lolita"
+              },
+              {
+                "artistName": "Vladimir Nabokov",
+                "collectionName": "Lolita"
+              },
+              {
+                "artistName": "Vladimir Nabokov",
+                "collectionName": "Lolita"
+              },
+              {
+                "artistName": "Vladimir Nabokov",
+                "collectionName": "Lolita"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "releaseName": "Vladimir Nabokov  - Lolita [2024] [mp3 à 128 kb/s]",
+      "language": "fr",
+      "expectedTitle": "Lolita",
+      "expectedAuthor": "Vladimir Nabokov",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=Vladimir+Nabokov+Lolita",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Vladimir Nabokov",
+                "collectionName": "Lolita"
+              },
+              {
+                "artistName": "Vladimir Nabokov",
+                "collectionName": "Lolita (Unabridged)"
+              },
+              {
+                "artistName": "Vladimir Nabokov",
+                "collectionName": "Lolita"
+              },
+              {
+                "artistName": "Vladimir Nabokov",
+                "collectionName": "Lolita"
+              },
+              {
+                "artistName": "Vladimir Nabokov",
+                "collectionName": "Lolita"
+              },
+              {
+                "artistName": "Vladimir Nabokov",
+                "collectionName": "Lolita"
+              }
+            ]
+          }
+        }
+      },
+      "expectedPreservedTitle": "Lolita [2024]",
+      "expectedPreservedAuthor": "Vladimir Nabokov"
+    },
+    {
+      "releaseName": "Madame.Bovary.Gustave.Flaubert.VFF.[MP3.128kbps]-NOTAG",
+      "language": "fr",
+      "expectedTitle": "Madame Bovary",
+      "expectedAuthor": "Gustave Flaubert",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=Madame+Bovary+Gustave+Flaubert",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Gustave Flaubert",
+                "collectionName": "Madame Bovary"
+              },
+              {
+                "artistName": "Gustave Flaubert",
+                "collectionName": "Madame Bovary"
+              },
+              {
+                "artistName": "Gustave Flaubert",
+                "collectionName": "Madame Bovary"
+              },
+              {
+                "artistName": "Gustave Flaubert",
+                "collectionName": "Madame Bovary"
+              },
+              {
+                "artistName": "Gustave Flaubert, Livres audio en français & Livre audio classique",
+                "collectionName": "Madame Bovary  - Livre Audio"
+              },
+              {
+                "artistName": "Gustave Flaubert",
+                "collectionName": "Madame Bovary"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "releaseName": "(pièce radio) GUSTAVE FLAUBERT - Madame Bovary & Le Procès de Madame Bovary (1948 & 2009) [MP3 128kbps]",
+      "language": "fr",
+      "expectedTitle": "Madame Bovary & Le Procès de Madame Bovary",
+      "expectedAuthor": "Gustave Flaubert",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=GUSTAVE+FLAUBERT+Madame+Bovary+%26+Le+Proc%C3%A8s+de+Madame+Bovary",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Gustave Flaubert",
+                "collectionName": "Madame Bovary"
+              },
+              {
+                "artistName": "Gustave Flaubert",
+                "collectionName": "Madame Bovary"
+              },
+              {
+                "artistName": "Gustave Flaubert",
+                "collectionName": "Madame Bovary"
+              },
+              {
+                "artistName": "Gustave Flaubert",
+                "collectionName": "Madame Bovary / Jean-Paul Sartre parle de Flaubert / Attiré par Flaubert, repoussé par Flaubert"
+              },
+              {
+                "artistName": "Gustave Flaubert",
+                "collectionName": "Madame Bovary"
+              },
+              {
+                "artistName": "Gustave Flaubert & René Bougival",
+                "collectionName": "Madame Bovary. Explication de texte: Collection Facile à Lire"
+              }
+            ]
+          }
+        }
+      },
+      "expectedPreservedTitle": "(pièce radio) GUSTAVE FLAUBERT - Madame Bovary & Le Procès de Madame Bovary (1948 & 2009)",
+      "expectedPreservedAuthor": ""
+    },
+    {
+      "releaseName": "Olivier Millet - Histoire de la Bible - Un cours particulier [mp3  128kbps]",
+      "language": "fr",
+      "expectedTitle": "Histoire de la Bible - Un cours particulier",
+      "expectedAuthor": "Olivier Millet",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=Olivier+Millet+Histoire+de+la+Bible+Un+cours+particulier",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Olivier Millet",
+                "collectionName": "Histoire de la Bible. Un cours particulier de Olivier Millet"
+              }
+            ]
+          }
+        },
+        "www.googleapis.com": {
+          "url": "https://www.googleapis.com/books/v1/volumes?q=Olivier+Millet+Histoire+de+la+Bible+Un+cours+particulier&maxResults=5&langRestrict=fr",
+          "status": 429,
+          "body": {
+            "items": []
+          }
+        }
+      }
+    },
+    {
+      "releaseName": "Ãric-Emmanuel Schmitt - FÃ©lix et la source invisible [2019] [256kbps]",
+      "language": "fr",
+      "expectedTitle": "Félix et la source invisible",
+      "expectedAuthor": "Éric-Emmanuel Schmitt",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=%C3%89ric-Emmanuel+Schmitt+F%C3%A9lix+et+la+source+invisible",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Éric-Emmanuel Schmitt",
+                "collectionName": "Félix et la source invisible"
+              },
+              {
+                "artistName": "Éric-Emmanuel Schmitt",
+                "collectionName": "Felix und die Quelle des Lebens"
+              }
+            ]
+          }
+        }
+      },
+      "expectedPreservedTitle": "Félix et la source invisible [2019]",
+      "expectedPreservedAuthor": "Éric-Emmanuel Schmitt"
+    },
+    {
+      "releaseName": "Frankenstein.L.Alchimie.De.La.Chair.Simon.Rousseau.2026.FR.[M4B.128.kbps]-AG404",
+      "language": "fr",
+      "expectedTitle": "Frankenstein, l’alchimie de la chair",
+      "expectedAuthor": "Simon Rousseau",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=Frankenstein+L+Alchimie+De+La+Chair+Simon+Rousseau",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Simon Rousseau",
+                "collectionName": "Frankenstein, l'alchimie de la chair: Les classiques interdits (Unabridged)"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "releaseName": "Simon Rousseau - Frankenstein, l'alchimie de la chair",
+      "language": "fr",
+      "expectedTitle": "Frankenstein, l’alchimie de la chair",
+      "expectedAuthor": "Simon Rousseau",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=Simon+Rousseau+Frankenstein%2C+l%27alchimie+de+la+chair",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Simon Rousseau",
+                "collectionName": "Frankenstein, l'alchimie de la chair: Les classiques interdits (Unabridged)"
+              }
+            ]
+          }
+        },
+        "www.googleapis.com": {
+          "url": "https://www.googleapis.com/books/v1/volumes?q=Simon+Rousseau+Frankenstein%2C+l%27alchimie+de+la+chair&maxResults=5&langRestrict=fr",
+          "status": 429,
+          "body": {
+            "items": []
+          }
+        },
+        "openlibrary.org": {
+          "url": "https://openlibrary.org/search.json?q=Simon+Rousseau+Frankenstein%2C+l%27alchimie+de+la+chair&limit=5&fields=title%2Cauthor_name%2Ccover_i",
+          "status": 200,
+          "body": {
+            "docs": []
+          }
+        }
+      }
+    },
+    {
+      "releaseName": "Pierre Lemaitre - Au revoir là-haut [Fr.mp3.160]",
+      "language": "fr",
+      "expectedTitle": "Au revoir là-haut",
+      "expectedAuthor": "Pierre Lemaitre",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=Pierre+Lemaitre+Au+revoir+la%CC%80-haut",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Pierre Lemaitre",
+                "collectionName": "Au revoir là-haut"
+              },
+              {
+                "artistName": "lePetitLitteraire, Magali Vienne & Apolline Boulanger",
+                "collectionName": "Au revoir là-haut de Pierre Lemaitre (Analyse d'oeuvre)"
+              },
+              {
+                "artistName": "Pierre Lemaitre & Jean-Luc Hees",
+                "collectionName": "L'Ecrivain - Pierre Lemaitre - Entretien inédit par Jean-Luc Hees"
+              },
+              {
+                "artistName": "Pierre Lemaitre",
+                "collectionName": "Miroir de nos peines"
+              }
+            ]
+          }
+        },
+        "openlibrary.org": {
+          "url": "https://openlibrary.org/search.json?q=Pierre+Lemaitre+Au+revoir+la%CC%80-haut&limit=5&fields=title%2Cauthor_name%2Ccover_i",
+          "status": 200,
+          "body": {
+            "docs": []
+          }
+        }
+      }
+    },
+    {
+      "releaseName": "Rebecca.Yarros.Onyx.Storm.2025.FR.MP3.128kbps-NoTAG",
+      "language": "fr",
+      "expectedTitle": "Onyx Storm",
+      "expectedAuthor": "Rebecca Yarros",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=Rebecca+Yarros+Onyx+Storm",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Rebecca Yarros",
+                "collectionName": "Onyx Storm (Empyrean)"
+              },
+              {
+                "artistName": "Rebecca Yarros",
+                "collectionName": "Onyx Storm (Empyrean)"
+              },
+              {
+                "artistName": "Rebecca Yarros",
+                "collectionName": "Onyx Storm (1 of 2) [Dramatized Adaptation] : The Empyrean 3 (Empyrean)"
+              },
+              {
+                "artistName": "Rebecca Yarros",
+                "collectionName": "Onyx Storm (2 of 2) [Dramatized Adaptation] : The Empyrean 3 (Empyrean)"
+              },
+              {
+                "artistName": "Rebecca Yarros",
+                "collectionName": "Onyx Storm – Flammengeküsst (Flammengeküsst-Reihe 3)"
+              },
+              {
+                "artistName": "Rebecca Yarros",
+                "collectionName": "Onyx Storm: The Empyrean Series - Vol. 3"
+              }
+            ]
+          }
+        },
+        "www.googleapis.com": {
+          "url": "https://www.googleapis.com/books/v1/volumes?q=Rebecca+Yarros+Onyx+Storm&maxResults=5&langRestrict=fr",
+          "status": 429,
+          "body": {
+            "items": []
+          }
+        }
+      },
+      "expectedPreservedTitle": "Onyx Storm 2025",
+      "expectedPreservedAuthor": "Rebecca Yarros"
+    },
+    {
+      "releaseName": "La.Vie.En.Vrai.Emma.Green.2023.FR.[MP3.128.kbps]-NOTAG",
+      "language": "fr",
+      "expectedTitle": "La Vie en vrai",
+      "expectedAuthor": "Emma Green",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=La+Vie+En+Vrai+Emma+Green",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Emma Green",
+                "collectionName": "La Vie en vrai"
+              },
+              {
+                "artistName": "Emma Green",
+                "collectionName": "Âmes indociles - Le troisième volet de la saga d'Emma Green"
+              },
+              {
+                "artistName": "Emma Becker",
+                "collectionName": "Le Mal joli"
+              },
+              {
+                "artistName": "Emma Becker",
+                "collectionName": "La maison"
+              },
+              {
+                "artistName": "Emma Saint-Clair",
+                "collectionName": "L'Écho des Secrets"
+              },
+              {
+                "artistName": "Taylor Jenkins Reid & Marie Chivot-Buhler - traducteur",
+                "collectionName": "Le(s) vrai(es) amour(s)"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "releaseName": "A.Nos.Coeurs.Battants.Emma.Green.2024.FR.[MP3.128kbps]-CSSRV",
+      "language": "fr",
+      "expectedTitle": "À nos cœurs battants",
+      "expectedAuthor": "Emma Green",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=A+Nos+Coeurs+Battants+Emma+Green",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Emma Green",
+                "collectionName": "A nos cœurs battants"
+              },
+              {
+                "artistName": "Morgan Rice",
+                "collectionName": "L’Epée des Ténèbres (L’Epée des Ténèbres – Livre Un): Narration par une voix synthétisée"
+              },
+              {
+                "artistName": "Morgan Rice",
+                "collectionName": "Le Royaume des Dragons (Le Temps des Sorciers — Tome Un)"
+              },
+              {
+                "artistName": "Morgan Rice",
+                "collectionName": "Le Trône des Dragons (Le Temps des Sorciers — Tome Deux)"
+              },
+              {
+                "artistName": "Morgan Rice",
+                "collectionName": "Le Fils des Dragons (Le Temps des Sorciers — Tome Trois)"
+              },
+              {
+                "artistName": "Edith Wharton",
+                "collectionName": "L'Âge de l'innocence"
+              }
+            ]
+          }
+        },
+        "www.googleapis.com": {
+          "url": "https://www.googleapis.com/books/v1/volumes?q=A+nos+coeurs+battants+Emma+Green&maxResults=5&langRestrict=fr",
+          "status": 429,
+          "body": {
+            "items": []
+          }
+        },
+        "openlibrary.org": {
+          "url": "https://openlibrary.org/search.json?q=A+Nos+Coeurs+Battants+Emma+Green&limit=5&fields=title%2Cauthor_name%2Ccover_i",
+          "status": 200,
+          "body": {
+            "docs": []
+          }
+        }
+      }
+    },
+    {
+      "releaseName": "Chere.Debbie.Freida.McFadden.2026.FR.[Mp3.128.Kbps]-NOTAG",
+      "language": "fr",
+      "expectedTitle": "Chère Debbie",
+      "expectedAuthor": "Freida McFadden",
+      "responses": {
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=Chere+Debbie+Freida+McFadden",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Freida McFadden",
+                "collectionName": "Chère Debbie"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "releaseName": "Les.Evadees.Partie.1.Marc.Levy.2026.FR.[MP3.128.kbps]-KIKI",
+      "language": "fr",
+      "expectedTitle": "Les Évadées - Partie 1",
+      "expectedAuthor": "Marc Levy",
+      "responses": {
+        "openlibrary.org": {
+          "url": "https://openlibrary.org/search.json?q=Les+Evadees+Partie+1+Marc+Levy&limit=5&fields=title%2Cauthor_name%2Ccover_i",
+          "status": 200,
+          "body": {
+            "docs": []
+          }
+        },
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=Les+Evadees+Partie+1+Marc+Levy",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Marc Levy",
+                "collectionName": "Les Évadées - Partie 1"
+              },
+              {
+                "artistName": "Marc Levy",
+                "collectionName": "Les Évadées - Partie 2"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "releaseName": "Sarah J. Maas - Un palais d'épines et de roses 1 [2023] [mp3-64Kb/s]",
+      "language": "fr",
+      "expectedTitle": "Un palais d’épines et de roses 1",
+      "expectedAuthor": "Sarah J. Maas",
+      "responses": {
+        "openlibrary.org": {
+          "url": "https://openlibrary.org/search.json?q=Sarah+J+Maas+Un+palais+d%27%C3%A9pines+et+de+roses+1&limit=5&fields=title%2Cauthor_name%2Ccover_i",
+          "status": 200,
+          "body": {
+            "docs": []
+          }
+        },
+        "api.audible.fr": {
+          "url": "https://api.audible.fr/1.0/catalog/products?keywords=Sarah+J+Maas+Un+palais+d%27%C3%A9pines+et+de+roses+1&num_results=10&products_sort_by=Relevance&response_groups=contributors%2Cmedia%2Cproduct_attrs",
+          "status": 200,
+          "body": {
+            "products": [
+              {
+                "asin": "B0C4TKDFPH",
+                "authors": [
+                  {
+                    "asin": "B0070291GK",
+                    "name": "Sarah J. Maas"
+                  },
+                  {
+                    "name": "Anne-Judith Descombey - traductrice"
+                  }
+                ],
+                "language": "french",
+                "title": "Un palais d'épines et de roses"
+              }
+            ]
+          }
+        },
+        "itunes.apple.com": {
+          "url": "https://itunes.apple.com/search?media=audiobook&limit=5&country=FR&term=Sarah+J+Maas+Un+palais+d%27%C3%A9pines+et+de+roses+1",
+          "status": 200,
+          "body": {
+            "results": [
+              {
+                "artistName": "Sarah J. Maas",
+                "collectionName": "Un palais d'épines et de roses"
+              }
+            ]
+          }
+        }
+      },
+      "expectedPreservedTitle": "Un palais d'épines et de roses 1 [2023]",
+      "expectedPreservedAuthor": "Sarah J. Maas"
+    }
+  ],
+  "preservationReview": "2026-10-30: Original expectedTitle/expectedAuthor retain the reviewed work identity. expectedPreservedTitle/expectedPreservedAuthor describe the intentionally conservative display, including retained uncertain text or an unresolved author."
+}
