@@ -8,6 +8,14 @@ DebridBooks is intended for accessing public-domain works, openly licensed conte
 
 <INSERT F DROID LINK>
 
+## Screenshots
+
+|                                                                        Library                                                                        |                                                                             Player                                                                             |                                                                                Comics                                                                                |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/01-library.png" width="220" alt="Library with cover artwork and offline listening"> | <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/02-player.png" width="220" alt="Audiobook player with chapter, playback and sleep controls"> | <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/05-comic-reader.png" width="220" alt="Pepper and Carrot in the comic reader with page navigation"> |
+
+[Full screenshot credits](fastlane/SCREENSHOTS.md).
+
 # Features
 
 - Serverless : Unlike other stremio-like apps where a server is deployed somewhere, this app is entirely standalone. Plug your keys in the app and voila.
