@@ -29,7 +29,7 @@ object ReadinessJobs {
         if (!manager.areNotificationsEnabled()) return false
         manager.createNotificationChannel(NotificationChannel("book-notices", "Book notifications", NotificationManager.IMPORTANCE_DEFAULT))
         val open = PendingIntent.getActivity(app, id, Intent(app, MainActivity::class.java).apply { if (query != null) putExtra("search_query", query.take(500)) else putExtra("open_library", true) }, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
-        manager.notify(id, Notification.Builder(app, "book-notices").setSmallIcon(R.drawable.ic_app).setContentTitle(title.take(100))
+        manager.notify(id, Notification.Builder(app, "book-notices").setSmallIcon(R.drawable.ic_notification).setContentTitle(title.take(100))
             .setContentText(text.take(300)).setContentIntent(open).setAutoCancel(true).build())
         return true
     }

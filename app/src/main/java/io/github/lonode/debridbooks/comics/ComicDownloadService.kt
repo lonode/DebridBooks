@@ -82,7 +82,7 @@ class ComicDownloadService : Service() {
         val open = PendingIntent.getActivity(this, 0, Intent(this, MainActivity::class.java), PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
         val pause = PendingIntent.getService(this, 1, Intent(this, ComicDownloadService::class.java).setAction("pause")
             .putExtra("account", active?.first).putExtra("volume", active?.second), PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
-        return Notification.Builder(this, "comic-downloads").setSmallIcon(R.drawable.ic_app)
+        return Notification.Builder(this, "comic-downloads").setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(getString(R.string.app_name)).setContentText(message).setContentIntent(open).setOngoing(true)
             .addAction(Notification.Action.Builder(null, "Pause", pause).build()).build()
     }

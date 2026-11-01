@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+<title id="title">DebridBooks — Story panels</title>
+<desc id="description">A comic speech bubble with panels and a play symbol. Emphasizes the comics plus audio combination.</desc>
+<rect width="512" height="512" rx="112" fill="#222638"/>
+
+<path d="M146 112H366Q405 112 405 152V322Q405 362 366 362H241L173 414L186 362H146Q107 362 107 322V152Q107 112 146 112Z" fill="#FFF0CF"/>
+<rect x="137" y="144" width="76" height="78" rx="13" fill="#AA9DF5"/>
+<rect x="137" y="240" width="76" height="90" rx="13" fill="#AA9DF5"/>
+<rect x="231" y="144" width="143" height="186" rx="15" fill="#EBAA54"/>
+<path d="M278 201L330 237L278 273Z" fill="#222638" stroke="#222638" stroke-width="9" stroke-linejoin="round"/>
+</svg>
