@@ -28,6 +28,7 @@ jobs:
         run: |
           sha256sum --check gradle/wrapper/gradle-wrapper.jar.sha256
           python3 scripts/check-release.py
+          python3 -m unittest discover -s scripts -p 'test_*.py'
       - name: Install pinned Android SDK packages
         run: |
           "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" 'cmdline-tools;19.0'
