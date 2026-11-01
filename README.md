@@ -40,7 +40,8 @@ DebridBooks is intended for accessing public-domain works, openly licensed conte
 
 # Install
 
-- F droid preferred for security reason.
+F droid should ALWAYS be preferred for security reason, as they build the APK from source. Unfortunately since this app is quite recent the f droid inclusion [has been rejected](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/55289).   
+In the meantime, download it from [github release](https://github.com/lonode/DebridBooks/releases).
 
 # Roadmap
 

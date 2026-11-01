@@ -1,5 +1,11 @@
 # F-Droid submission
 
+Submission is deferred following the development-age policy rejection. GitHub
+Releases currently distributes signed APKs. See [RELEASING.md](../RELEASING.md)
+for signing and reproducibility checks. The recipe is prepared to verify the
+same upstream signing identity when the app becomes eligible; it is not an
+active F-Droid distribution.
+
 [The build recipe](metadata/io.github.lonode.debridbooks.yml) pins the full public
 commit hash of a tagged release in `https://github.com/lonode/DebridBooks`. The app version is defined in
 [`version.properties`](../version.properties).

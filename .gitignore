@@ -6,6 +6,8 @@ others/
 local.properties
 *.jks
 *.keystore
+*.p12
+*.pfx
 .idea/
 *.iml
 # Local server configuration can contain provider credentials

@@ -2,7 +2,7 @@
 
 - Native Android app using Kotlin, Jetpack Compose and AndroidX Media3.
 - Product name: **DebridBooks**. Keep application ID/namespace `io.github.lonode.debridbooks` and debug application ID `io.github.lonode.debridbooks.debug` stable.
-- F-Droid is the only official distribution channel. GitHub Actions builds test and release APK artifacts. Do not add other distribution channels or an in-app updater without explicit authorization.
+- GitHub Releases distributes signed release APKs. F-Droid submission will use reproducible builds with the same signing identity when eligible. Keep the private release key out of Git, logs and artifacts; do not add an in-app updater without explicit authorization.
 - Standalone architecture: configure AllDebrid and optional source API keys in the app. Contact providers, trackers and MangaDex directly; no DebridBooks server is required.
 - Support audiobooks, torrent comics/CBZ/images, MangaDex chapters, reading history and offline listening/reading. Preserve existing library data, progress, offline content and encrypted configuration compatibility.
 - Keep local reference trees out of commits and build dependencies.

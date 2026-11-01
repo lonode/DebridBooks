@@ -29,7 +29,7 @@ android {
             versionNameSuffix = "-debug"
         }
         release {
-            // F-Droid signs its source build. Never silently sign with a debug key.
+            // Build unsigned reproducible APKs; the release workflow signs after verification.
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))

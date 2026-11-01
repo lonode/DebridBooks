@@ -1,3 +1,5 @@
+> Submission deferred following the development-age policy rejection. GitHub Releases now uses a maintainer signing key; the future F-Droid recipe is configured to verify the same signature. See [RELEASING.md](../RELEASING.md). Recheck the release hash, version, eligibility and pipeline before resubmitting.
+
 ## Abstract for new app inclusion
 
 ### Functions and usage
@@ -62,11 +64,11 @@ This is a new app and i'd like it to be distributed on a secure platform such as
 - [x] No external Git source repositories or srclibs are needed; dependencies are fetched through Gradle from Maven repositories.
 - [x] ABI splitting was considered: the checked release APK is approximately 3.2 MiB, so separate ABI builds are not requested.
 - [x] Only version 1.0.0 is included and no build entry is disabled.
-- [x] `commit` is the full public hash `99ede54ae5ce82d692f0af63b278a2614571d586`.
+- [x] `commit` is the full public hash `bed354928a28346e2c540b947d27ba7dbc031cb9`.
 
 ### Pipeline
 
-- [x] All GitLab MR pipelines pass.
-- [x] Any warnings and errors in the Reports tab are fixed or explained.
+- [ ] All GitLab MR pipelines pass.
+- [ ] Any warnings and errors in the Reports tab are fixed or explained.
 - [x] If GitLab asks for payment details or phone verification to run CI, I will leave a note for F-Droid maintainers to trigger it instead.
 

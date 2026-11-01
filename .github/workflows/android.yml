@@ -66,3 +66,73 @@ jobs:
             app/build/reports/
             app/build/test-results/
           if-no-files-found: warn
+
+  release:
+    name: Rebuild, sign and publish
+    needs: build
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4
+        with:
+          distribution: temurin
+          java-version: '17.0.18+8'
+      - name: Install pinned Android SDK packages
+        run: |
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" 'cmdline-tools;19.0'
+          "$ANDROID_HOME/cmdline-tools/19.0/bin/sdkmanager" 'platforms;android-36' 'build-tools;35.0.0'
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: DebridBooks-unsigned-release-${{ github.sha }}
+          path: ${{ runner.temp }}/release-input
+      - name: Independently rebuild the tagged source
+        run: |
+          python3 scripts/check-release.py
+          sha256sum --check gradle/wrapper/gradle-wrapper.jar.sha256
+          test "$(cat "$RUNNER_TEMP/release-input/build/artifacts/source-commit.txt")" = "$GITHUB_SHA"
+          ./gradlew --no-daemon --no-build-cache --no-configuration-cache assembleRelease
+          python3 scripts/check-reproducible.py \
+            "$RUNNER_TEMP/release-input/app/build/outputs/apk/release/app-release-unsigned.apk" \
+            app/build/outputs/apk/release/app-release-unsigned.apk
+      - name: Sign and verify release APK
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          python3 scripts/sign-release.py \
+            app/build/outputs/apk/release/app-release-unsigned.apk \
+            "build/release/DebridBooks-$GITHUB_REF_NAME.apk"
+      - name: Prepare public release assets
+        run: |
+          cp signing/release-certificate.pem build/release/
+          cp signing/release-certificate.sha256 build/release/
+          cp version.properties build/release/
+          git rev-parse HEAD > build/release/source-commit.txt
+          (cd build/release && sha256sum *.apk > SHA256SUMS)
+      - name: Verify F-Droid signature copying
+        run: |
+          python3 -m venv "$RUNNER_TEMP/apksigcopier"
+          "$RUNNER_TEMP/apksigcopier/bin/pip" install --require-hashes --only-binary=:all: \
+            -r scripts/reproducibility-requirements.txt
+          PATH="$ANDROID_HOME/build-tools/35.0.0:$PATH" \
+            "$RUNNER_TEMP/apksigcopier/bin/apksigcopier" compare --unsigned \
+            "build/release/DebridBooks-$GITHUB_REF_NAME.apk" \
+            "$RUNNER_TEMP/release-input/app/build/outputs/apk/release/app-release-unsigned.apk"
+      - name: Publish verified release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          code=$(sed -n 's/^versionCode=//p' version.properties)
+          notes="fastlane/metadata/android/en-US/changelogs/$code.txt"
+          test -s "$notes"
+          gh release create "$GITHUB_REF_NAME" build/release/* \
+            --verify-tag --draft --title "DebridBooks $GITHUB_REF_NAME" --notes-file "$notes"
+          gh release edit "$GITHUB_REF_NAME" --draft=false --latest

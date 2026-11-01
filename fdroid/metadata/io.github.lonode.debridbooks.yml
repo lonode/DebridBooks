@@ -15,11 +15,12 @@ AutoName: DebridBooks
 
 RepoType: git
 Repo: https://github.com/lonode/DebridBooks.git
+Binaries: https://github.com/lonode/DebridBooks/releases/download/%v/DebridBooks-%v.apk
 
 Builds:
   - versionName: 1.0.0
     versionCode: 1
-    commit: 
+    commit: 1.0.0
     subdir: app
     sudo:
       - echo 'deb https://deb.debian.org/debian bookworm main' > /etc/apt/sources.list.d/db-jdk17.list
@@ -27,6 +28,8 @@ Builds:
       - apt-get install -y --no-install-recommends openjdk-17-jdk-headless
     gradle:
       - yes
+
+AllowedAPKSigningKeys: 4a79631adb8e9edf853a81edb4a702f588b20af70956c58726b143a4215f2a76
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags ^[0-9]+\.[0-9]+\.[0-9]+$
