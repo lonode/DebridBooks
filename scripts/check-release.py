@@ -13,6 +13,6 @@ code = int(values["versionCode"])
 if not 1 <= code <= 2_100_000_000:
     raise SystemExit("versionCode is outside Android's supported release range")
 if os.environ.get("GITHUB_REF_TYPE") == "tag":
-    if os.environ.get("GITHUB_REF_NAME") != f"v{version}":
+    if os.environ.get("GITHUB_REF_NAME") != version:
         raise SystemExit("Release tag does not match version.properties")
 print(f"Version checked: {version} ({code})")

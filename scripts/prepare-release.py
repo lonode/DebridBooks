@@ -73,7 +73,7 @@ def prepare(root, version, notes):
         raise ValueError(f"Refusing to overwrite existing changelog {next_code}.txt")
     new_build = replace_field(latest.rstrip(), "versionName", version, indent="  - ")
     new_build = replace_field(new_build, "versionCode", next_code, indent="    ")
-    new_build = replace_field(new_build, "commit", f"v{version}", indent="    ")
+    new_build = replace_field(new_build, "commit", version, indent="    ")
     recipe_text = recipe_text[:builds.end()].rstrip() + "\n\n" + new_build + "\n\n" + recipe_text[builds.end():]
     recipe_text = replace_field(recipe_text, "CurrentVersion", version)
     recipe_text = replace_field(recipe_text, "CurrentVersionCode", next_code)
@@ -103,7 +103,7 @@ def main():
                 print(f"Updated {relative}")
     except (ValueError, OSError) as failure:
         parser.exit(1, f"Release preparation failed: {failure}\n")
-    print(f"{'Preview' if args.dry_run else 'Prepared'}: {args.version} (versionCode {code}), tag v{args.version}")
+    print(f"{'Preview' if args.dry_run else 'Prepared'}: {args.version} (versionCode {code}), tag {args.version}")
     print("No commit, tag or push was performed.")
 
 

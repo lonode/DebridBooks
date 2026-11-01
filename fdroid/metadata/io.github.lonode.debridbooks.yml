@@ -6,6 +6,8 @@ Categories:
   - Multimedia
   - Reading
 License: AGPL-3.0-only
+AuthorName: lonode
+AuthorWebSite: https://github.com/lonode
 SourceCode: https://github.com/lonode/DebridBooks
 IssueTracker: https://github.com/lonode/DebridBooks/issues
 
@@ -17,7 +19,7 @@ Repo: https://github.com/lonode/DebridBooks.git
 Builds:
   - versionName: 1.0.0
     versionCode: 1
-    commit: v1.0.0
+    commit: 
     subdir: app
     sudo:
       - echo 'deb https://deb.debian.org/debian bookworm main' > /etc/apt/sources.list.d/db-jdk17.list
@@ -27,7 +29,7 @@ Builds:
       - yes
 
 AutoUpdateMode: Version
-UpdateCheckMode: Tags ^v[0-9]+\.[0-9]+\.[0-9]+$
+UpdateCheckMode: Tags ^[0-9]+\.[0-9]+\.[0-9]+$
 UpdateCheckData: version.properties|versionCode=(\d+)|.|versionName=(.+)
 CurrentVersion: 1.0.0
 CurrentVersionCode: 1

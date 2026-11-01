@@ -1,12 +1,14 @@
 # F-Droid submission
 
-[The build recipe](metadata/io.github.lonode.debridbooks.yml) targets a release
-tag in `https://github.com/lonode/DebridBooks`. The app version is defined in
+[The build recipe](metadata/io.github.lonode.debridbooks.yml) pins the full public
+commit hash of a tagged release in `https://github.com/lonode/DebridBooks`. The app version is defined in
 [`version.properties`](../version.properties).
 
 Commit the source, recipe and store assets together, then tag that commit
-`v<versionName>`. Publish the commit and tag to the repository named in the recipe before
-submitting it to F-Droid. The tag does not need to exist when writing this file.
+`<versionName>`. Publish the commit and tag to the repository named in the recipe before
+submitting it to F-Droid. After publishing the tag, resolve it to a full hash with
+`git rev-parse <versionName>^{commit}` and use that hash in the initial submission
+recipe. The tagged commit does not need to contain a recipe pointing to itself.
 
 Copy the recipe into `metadata/io.github.lonode.debridbooks.yml` in a fork of
 `fdroid/fdroiddata` on GitLab. Validate it with F-Droid's tools and open a merge
@@ -31,5 +33,5 @@ build entries and changelogs are preserved. Notes must fit within 500 characters
 including the final newline. Review any build configuration changes before use.
 
 It does not commit, create tags or push. Review and commit the changes, then
-publish the matching `v<versionName>` tag. Ordinary development commits do not
+publish the matching `<versionName>` tag. Ordinary development commits do not
 need a release version bump. Update checks read `version.properties`.
