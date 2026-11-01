@@ -12,9 +12,9 @@ Copy the recipe into `metadata/io.github.lonode.debridbooks.yml` in a fork of
 `fdroid/fdroiddata` on GitLab. Validate it with F-Droid's tools and open a merge
 request. F-Droid fetches the tagged source from GitHub and builds the release APK.
 
-Store descriptions and screenshots live in
+Store descriptions, icon, screenshots and release notes live in
 [`fastlane/metadata/android/en-US`](../fastlane/metadata/android/en-US).
-Complete the store icon and versionCode changelog before submission. Preserve the
+Publish those files with the release tag. Preserve the
 [screenshot attribution](../fastlane/SCREENSHOTS.md) when publishing the listing.
 
 To prepare a later release, run from the repository root:

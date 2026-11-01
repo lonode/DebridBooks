@@ -1,0 +1,5 @@
+Initial native Android release.
+- Direct AllDebrid and torrent-source setup
+- Audiobook playback, downloads, bookmarks and sleep timer
+- Comics and MangaDex with offline reading
+- Progressive search and cancellable cover lookups
