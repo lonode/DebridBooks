@@ -58,6 +58,10 @@ The below depends on the requests received:
 - Add normal books ?
 - Adapting speed ?
 
+# Developpement
+
+- `scripts/prepare-release.py` generates the f-droid changelog and tag.
+
 # Help needed
 
 Having a server to store hash/cache status will cost money, so any contributions is welcome.
