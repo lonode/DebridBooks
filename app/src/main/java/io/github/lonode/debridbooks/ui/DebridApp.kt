@@ -1,5 +1,6 @@
 package io.github.lonode.debridbooks.ui
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -37,6 +38,9 @@ fun DebridApp(model: LibraryViewModel, externalQuery: String? = null, libraryEve
     val controller = rememberPlayerController()
     val uriHandler = LocalUriHandler.current
     var tab by rememberSaveable { mutableStateOf(MainTab.Library) }
+    // Dialog windows handle Back first. Library is the root destination;
+    // another Back there retains Android's normal leave-app behavior.
+    BackHandler(enabled = tab != MainTab.Library) { tab = MainTab.Library }
     LaunchedEffect(externalQuery) { if (externalQuery != null) tab = MainTab.Search }
     LaunchedEffect(libraryEvent) { if (libraryEvent > 0) tab = MainTab.Library }
     val app = LocalContext.current.applicationContext as DebridApplication

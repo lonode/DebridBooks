@@ -32,6 +32,50 @@ class CatalogCoverMatchTest {
         assertEquals("Tr4ker", result.searchSource)
     }
 
+    @Test fun `French series subtitle supplies a cover while keeping torrent identity and volume`() = runBlocking {
+        val raw = "Divergente 2 [MP3]"
+        val http = DirectTransport { request -> if (URI(request.url).host == "api.audible.fr")
+            ok("""{"products":[{"asin":"B012345672","title":"L'insurrection","subtitle":"Divergente, Tome 2","language":"french","authors":[{"name":"Veronica Roth"}],"product_images":{"500":"https://images.invalid/divergente2.jpg"}}]}""")
+            else ok("{}") }
+        val original = item(raw)
+        val result = CatalogClient(http).enrich(original)
+        assertEquals("https://images.invalid/divergente2.jpg", result.poster)
+        assertEquals("Veronica Roth", result.author)
+        assertEquals(original.id, result.id)
+        assertEquals(raw, result.releaseName)
+        assertEquals(original.language, result.language)
+        assertTrue(result.title.contains("2"))
+    }
+
+    @Test fun `series sequence identifies artwork when product title is the individual work`() = runBlocking {
+        val http = DirectTransport { request -> if (URI(request.url).host == "api.audible.fr")
+            ok("""{"products":[{"asin":"B012345673","title":"The Cedar Rebellion","language":"french","authors":[{"name":"Regression Writer"}],"series":[{"title":"Cedar Saga","sequence":"3"}],"product_images":{"500":"https://images.invalid/cedarsaga3.jpg"}}]}""")
+            else ok("{}") }
+        val result = CatalogClient(http).enrich(item("Cedar Saga 3"))
+        assertEquals("https://images.invalid/cedarsaga3.jpg", result.poster)
+    }
+
+    @Test fun `expanded catalogue subtitle does not discard a matching series cover`() = runBlocking {
+        val http = DirectTransport { request -> if (URI(request.url).host == "itunes.apple.com")
+            ok("""{"results":[{"collectionName":"Cedar Chronicle - Tome 2 : The Rebellion","artistName":"Regression Writer","artworkUrl100":"https://images.invalid/cedarchronicle2.jpg"}]}""")
+            else ok("{}") }
+        assertEquals("https://images.invalid/cedarchronicle2.jpg", CatalogClient(http).enrich(item("Cedar Chronicle 2")).poster)
+    }
+
+    @Test fun `subtitle cannot override explicit conflicting volume or language`() = runBlocking {
+        val http = DirectTransport { request -> if (URI(request.url).host == "api.audible.fr")
+            ok("""{"products":[{"asin":"B012345674","title":"Conflicting Cedar Tome 1","subtitle":"Conflicting Cedar Tome 2","language":"french","authors":[{"name":"Regression Writer"}],"product_images":{"500":"https://images.invalid/wrong-volume.jpg"}},{"asin":"B012345675","title":"Conflicting Cedar","subtitle":"Conflicting Cedar Tome 2","language":"english","authors":[{"name":"Regression Writer"}],"product_images":{"500":"https://images.invalid/wrong-language.jpg"}}]}""")
+            else ok("{}") }
+        assertNull(CatalogClient(http).enrich(item("Conflicting Cedar Tome 2")).poster)
+    }
+
+    @Test fun `series subtitle never borrows artwork from a summary or a bare wrong volume`() = runBlocking {
+        val http = DirectTransport { request -> if (URI(request.url).host == "api.audible.fr")
+            ok("""{"products":[{"asin":"B012345676","title":"Summary of Guarded Cedar","subtitle":"Guarded Cedar Tome 2","language":"french","authors":[{"name":"Regression Writer"}],"product_images":{"500":"https://images.invalid/summary.jpg"}},{"asin":"B012345677","title":"Guarded Cedar 1","subtitle":"Guarded Cedar Tome 2","language":"french","authors":[{"name":"Regression Writer"}],"product_images":{"500":"https://images.invalid/bare-wrong-volume.jpg"}}]}""")
+            else ok("{}") }
+        assertNull(CatalogClient(http).enrich(item("Guarded Cedar Tome 2")).poster)
+    }
+
     @Test fun `Sombre Herboriste keeps artwork when catalogue moves the series and omits Tome label`() = runBlocking {
         val query = "Le Sombre Herboriste Tome 1 Testeur De Contenu"
         for (raw in listOf(query, "Michael Atamanov - $query")) {

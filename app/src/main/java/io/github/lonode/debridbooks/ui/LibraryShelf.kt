@@ -43,6 +43,8 @@ internal fun ShelfVolume(row: ShelfBook, source: AudioLibraryItem?, opening: Lib
         row.personal.saved -> "Saved for later"
         else -> "In your library"
     }
+    val overall = io.github.lonode.debridbooks.playback.audiobookProgress(row.personal.audioParts, row.personal.audioDurationsMs,
+        row.progress?.partId, row.progress?.positionMs ?: 0, row.progress?.completed == true)
     val actionLabel = if (target?.message != null || localError != null) "Try again" else if(grid) "Play" else if(row.inProgress()) "Resume listening" else if(row.download?.state=="COMPLETE") "Listen offline" else "Listen"
     val gradient = Brush.linearGradient(listOf(Color(0xFF2D263F), Color(0xFF49365F)))
     Surface(modifier.fillMaxWidth(), shape=RoundedCornerShape(if(hero) 26.dp else 18.dp),
@@ -66,6 +68,7 @@ internal fun ShelfVolume(row: ShelfBook, source: AudioLibraryItem?, opening: Lib
                         }
                     }
                 }
+                Text(overall?.label ?: "Book progress unavailable", style = MaterialTheme.typography.labelMedium)
                 Text(status, style=MaterialTheme.typography.labelMedium,color=LocalContentColor.current.copy(alpha=.8f))
             }
             if(grid && !hero) {

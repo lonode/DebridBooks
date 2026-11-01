@@ -110,16 +110,33 @@ class ComicViewModel(private val app: DebridApplication) : ViewModel() {
         }
     }
     fun select(item: SearchItem) {
+        if (connection == null) return
+        if (mutable.value.searching) cancelSearch() else job?.cancel()
+        mutable.update { it.copy(selected = item, streams = emptyList(), chapters = emptyList(), hasMoreChapters = false,
+            busy = false, searching = false, message = "", loadProgress = null) }
+        // Browsing a torrent's details must not add it to the provider account.
+        if (item.provider == "mangadex") prepareSelection()
+    }
+    fun prepareSelection() = prepareSelection(readWhenReady = false)
+    fun readSelection() = prepareSelection(readWhenReady = true)
+    private fun prepareSelection(readWhenReady: Boolean) {
         val current = connection ?: return
-        if (mutable.value.searching) cancelSearch()
-        mutable.update { it.copy(selected = item, streams = emptyList(), chapters = emptyList(), hasMoreChapters = false) }
+        val item = mutable.value.selected ?: return
         work {
             if (item.provider == "mangadex") {
                 val page = MobileApi(current).chapters(item.id)
+                currentCoroutineContext().ensureActive()
                 mutable.update { it.copy(chapters = page.chapters, hasMoreChapters = page.hasMore) }
             } else {
                 val result = MobileApi(current).resolve(item.id)
+                currentCoroutineContext().ensureActive()
                 mutable.update { it.copy(streams = result.streams, message = if (result.ready) "" else result.preparationMessage()) }
+                if (readWhenReady && result.ready) {
+                    val volumes = result.streams.filter { (it.filename ?: it.title).endsWith(".cbz", true) }
+                    val pages = result.streams.filter { ComicArchive.image(it.filename ?: it.title) }
+                    if (volumes.size == 1) openSession(item, null, volumes)
+                    else if (volumes.isEmpty() && pages.isNotEmpty()) openSession(item, null, pages)
+                }
             }
         }
     }
@@ -140,13 +157,15 @@ class ComicViewModel(private val app: DebridApplication) : ViewModel() {
     }
     private fun reportProgress(value: ComicLoadProgress) { mutable.update { it.copy(loadProgress = value) } }
     fun open(item: SearchItem, chapter: Chapter? = null, streams: List<MediaPart>? = null) {
+        if (connection == null) return
+        work { openSession(item, chapter, streams) }
+    }
+    private suspend fun openSession(item: SearchItem, chapter: Chapter?, streams: List<MediaPart>?) {
         val current = connection ?: return
-        work {
-            val session = repository.open(current, item, chapter, streams, mutable.value.saver, onProgress = ::reportProgress)
-            currentCoroutineContext().ensureActive()
-            activeItem = item; activeChapter = chapter; activeStreams = streams
-            mutable.update { it.copy(reader = session, page = session.entry.page.coerceIn(0, session.pages.lastIndex)) }
-        }
+        val session = repository.open(current, item, chapter, streams, mutable.value.saver, onProgress = ::reportProgress)
+        currentCoroutineContext().ensureActive()
+        activeItem = item; activeChapter = chapter; activeStreams = streams
+        mutable.update { it.copy(reader = session, page = session.entry.page.coerceIn(0, session.pages.lastIndex)) }
     }
     fun history(entry: ComicEntity, fromStart: Boolean = false) = work {
         if (fromStart) repository.checkpoint(entry, 0)

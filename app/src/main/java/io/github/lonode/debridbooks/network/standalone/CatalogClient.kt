@@ -54,6 +54,9 @@ class CatalogClient(private val http: DirectTransport = DirectHttp, private val 
                     if (!cover.poster.isNullOrBlank()) return@run cover
                     identity = cover
                 }
+                alternativeCover(name, candidates,
+                    { listOfNotNull(it.string("collectionName") ?: it.string("trackName")) },
+                    { it.string("artistName") }, { it.string("artworkUrl100")?.replace(Regex("/[0-9]+x[0-9]+bb\\."), "/600x600bb.") })?.let { return@run it }
                 val audio = if (item.type == "comic") null else audioCover(name, item)
                 if (audio != null) {
                     if (!audio.poster.isNullOrBlank()) return@run audio
@@ -68,6 +71,8 @@ class CatalogClient(private val http: DirectTransport = DirectHttp, private val 
                     if (!cover.poster.isNullOrBlank()) return@run cover
                     if (identity == null) identity = cover
                 }
+                alternativeCover(name, volumes, { listOfNotNull(it.string("title"), it.string("subtitle")) },
+                    { authors(it, "authors") }, { (it["imageLinks"] as? JsonObject)?.string("thumbnail")?.replace("http:", "https:") })?.let { return@run it }
                 val docs = optional { json("https://openlibrary.org/search.json?${parameters(listOf("q" to name.query, "limit" to "5", "fields" to "title,author_name,cover_i"))}").objects("docs") }.orEmpty()
                 val doc = best(name, docs, { it.string("title") }, { authors(it, "author_name") })
                 val cover = Cover(doc?.second?.title ?: title, doc?.second?.author ?: name.author ?: item.author, doc?.first?.string("cover_i")?.toLongOrNull()?.takeIf {
@@ -83,10 +88,42 @@ class CatalogClient(private val http: DirectTransport = DirectHttp, private val 
     private suspend fun audioCover(name: ReleaseName, item: SearchItem): Cover? {
         val language = if (item.language == "fr") "fr" else "en"
         val products = optional { audible(language, params = listOf("keywords" to name.query, "num_results" to "10", "products_sort_by" to "Relevance",
-            "response_groups" to "contributors,media,product_attrs")).objects("products").filter { validProduct(it, language) } }.orEmpty()
+            "response_groups" to "contributors,media,product_attrs,series")).objects("products").filter { validProduct(it, language) } }.orEmpty()
+        alternativeCover(name, products, { row ->
+            listOfNotNull(row.string("title"), row.string("subtitle")) + row.objects("series").mapNotNull { series ->
+                val title = series.string("title") ?: return@mapNotNull null
+                val sequence = series.string("sequence") ?: return@mapNotNull null
+                "$title Tome $sequence"
+            }
+        }, { authors(it) }, { (it["product_images"] as? JsonObject)?.string("500") })?.let { return it }
         val selected = best(name, products, { it.string("title") }, { authors(it) }) ?: return null
         val poster = (selected.first["product_images"] as? JsonObject)?.string("500")?.takeIf { sameTitle(selected.second.title, selected.first.string("title").orEmpty()) }
         return Cover(selected.second.title, selected.second.author, poster ?: item.poster)
+    }
+    /** A catalogue subtitle/series can identify the work without rewriting the release title.
+     * Every alias still requires complete title/number agreement and an unambiguous author. */
+    private fun alternativeCover(name: ReleaseName, rows: List<JsonObject>, labels: (JsonObject) -> List<String>,
+        author: (JsonObject) -> String?, poster: (JsonObject) -> String?): Cover? {
+        val full = listOfNotNull(name.title, name.author).joinToString(" - ")
+        val requestedVolume = volume(full) ?: numbers(full).singleOrNull()
+        val matches = rows.flatMap { row ->
+            if (poster(row).isNullOrBlank()) return@flatMap emptyList()
+            val titles = labels(row)
+            // Explicit volume evidence takes precedence over a shortened title alias.
+            val primary = titles.firstOrNull().orEmpty()
+            if (summaryPattern.containsMatchIn(primary) && !summaryPattern.containsMatchIn(full)) return@flatMap emptyList()
+            if (companionPattern.containsMatchIn(primary) && !companionPattern.containsMatchIn(full)) return@flatMap emptyList()
+            if (requestedVolume != null && titles.mapNotNull(::volume).any { it != requestedVolume }) return@flatMap emptyList()
+            if (requestedVolume != null && numbers(primary).isNotEmpty() && requestedVolume !in numbers(primary)) return@flatMap emptyList()
+            titles.flatMap { label -> listOf(label, label.substringBefore(":")) }.distinct().mapNotNull { label ->
+                val match = matchName(name, label, author(row).orEmpty()) ?: return@mapNotNull null
+                if (!sameTitle(match.title, label)) return@mapNotNull null
+                Cover(match.title, match.author, poster(row))
+            }
+        }
+        // Different catalogue editions may share artwork identity; different works may not.
+        val identities = matches.distinctBy { words(it.title) to words(it.author.orEmpty()) }
+        return identities.singleOrNull()
     }
     private suspend fun itunes(title: String, language: String?): List<JsonObject> = json("https://itunes.apple.com/search?${parameters(listOf("media" to "audiobook", "limit" to "5", "country" to if (language == "fr") "FR" else "US", "term" to title))}").objects("results")
     private suspend fun books(title: String, language: String?): List<JsonObject> = json("https://www.googleapis.com/books/v1/volumes?${parameters(listOf("q" to title, "maxResults" to "5") + if (language in setOf("fr", "en")) listOf("langRestrict" to language!!) else emptyList())}")

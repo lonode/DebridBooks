@@ -99,6 +99,7 @@ internal fun PlayerLayout(state: PlaybackSnapshot, runtime: RuntimeState, chapte
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                     Text(playbackTime(if (dragging) (preview * dragDuration).toLong() else (state.position - rangeStart).coerceAtLeast(0)),
                         style = MaterialTheme.typography.labelMedium)
+                    Text(state.overallProgress?.label ?: "Book progress unavailable", style = MaterialTheme.typography.labelMedium)
                     Text(if (duration <= 0) "−:−−" else if (remainingTime) "−${playbackTime((rangeEnd - state.position).coerceAtLeast(0))}" else playbackTime(duration),
                         style = MaterialTheme.typography.labelMedium)
                 }

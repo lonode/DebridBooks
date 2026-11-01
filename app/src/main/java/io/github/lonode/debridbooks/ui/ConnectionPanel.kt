@@ -2,6 +2,9 @@ package io.github.lonode.debridbooks.ui
 
 import android.content.ComponentName
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -179,7 +182,6 @@ fun ConnectionPanel(controller: MediaController?, destination: MainTab, external
                         Text("Enter your AllDebrid and source keys in Settings to search for audiobooks.")
                         Button(onClick = { onNavigate(MainTab.Settings) }) { Text("Set up API keys") }
                     } else {
-                        OutlinedTextField(query, { query = it }, label = { Text("Title or author") }, singleLine = true, modifier = Modifier.fillMaxWidth())
                         fun search(request: SearchRequest) {
                             focusManager.clearFocus(); keyboard?.hide()
                             searchJob?.cancel()
@@ -207,6 +209,10 @@ fun ConnectionPanel(controller: MediaController?, destination: MainTab, external
                                 finally { if (currentCoroutineContext().isActive) busy = false }
                             }
                         }
+                        OutlinedTextField(query, { query = it }, label = { Text("Title or author") }, singleLine = true,
+                            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
+                            keyboardActions = KeyboardActions(onSearch = { if (!busy && query.isNotBlank()) search(SearchRequest(query.trim(), refresh = true)) }),
+                            modifier = Modifier.fillMaxWidth())
                         LaunchedEffect(requestedSearch, busy) { if (!busy) requestedSearch?.takeIf { it.isNotBlank() }?.let { search(SearchRequest(it, refresh = true)); requestedSearch = null } }
                         if(busy && searchJob?.isActive==true) {
                             OutlinedButton(onClick={

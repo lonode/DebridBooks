@@ -8,7 +8,8 @@ import kotlinx.serialization.json.Json
 @Serializable data class AudioChapter(val title: String, val startMs: Long)
 @Serializable data class AudioBookmark(val id: String, val partId: String, val positionMs: Long, val title: String, val note: String = "", val createdAt: Long)
 @Serializable data class BookExtras(val saved: Boolean = false, val alertSince: String? = null, val alerted: Set<String> = emptySet(), val releaseCheckedAt: Long = 0, val rating: Int = 0, val speed: Float? = null,
-    val bookmarks: List<AudioBookmark> = emptyList(), val discovery: io.github.lonode.debridbooks.domain.DiscoveryRecord? = null, val chapters: Map<String, List<AudioChapter>> = emptyMap())
+    val bookmarks: List<AudioBookmark> = emptyList(), val discovery: io.github.lonode.debridbooks.domain.DiscoveryRecord? = null, val chapters: Map<String, List<AudioChapter>> = emptyMap(),
+    val audioParts: List<String> = emptyList(), val audioDurationsMs: Map<String, Long> = emptyMap())
 @Entity(tableName = "audio_personal", primaryKeys = ["accountId", "itemId"], foreignKeys = [ForeignKey(
     entity = BookEntity::class, parentColumns = ["accountId", "itemId"], childColumns = ["accountId", "itemId"], onDelete = ForeignKey.CASCADE)])
 data class AudioPersonal(val accountId: String, val itemId: String, val json: String, val updatedAt: Long)
@@ -35,6 +36,8 @@ fun AudioPersonal?.extras(): BookExtras = try { this?.let { libraryJson.decodeFr
     @Transaction open suspend fun updatePersonal(account: String, item: String, change: (BookExtras) -> BookExtras) {
         val previous = personal(account, item)?.let { libraryJson.decodeFromString<BookExtras>(it.json) } ?: BookExtras()
         val value = change(previous)
+        require(value.audioParts.size <= 5000 && value.audioParts.all { it.length <= 100 })
+        require(value.audioDurationsMs.size <= 5000 && value.audioDurationsMs.all { (id, duration) -> id.length <= 100 && duration > 0 })
         require(value.rating in 0..5 && (value.speed == null || value.speed.isFinite() && value.speed in .5f..3.5f))
         require(value.bookmarks.size <= 1000 && value.bookmarks.all { it.positionMs >= 0 && it.note.length <= 2000 && it.title.length <= 500 })
         require(value.chapters.values.sumOf { it.size } <= 20000 && value.chapters.size <= 500 && value.chapters.values.all { it.size <= 5000 })

@@ -133,6 +133,8 @@ class LibraryBackup(private val db: LibraryDatabase, private val secrets: Secret
                 require(book.source == null || book.source.id.length <= 32000 && MobileContract.localId(book.source.id) == book.item)
                 book.progress?.let { require(hash.matches(it.part) && it.index in 0..499 && it.position in 0..604800000L && it.speed.isFinite() && it.speed in .5f..3.5f && it.updatedAt >= 0) }
                 require(book.personal.rating in 0..5 && (book.personal.speed == null || book.personal.speed.isFinite() && book.personal.speed in .5f..3.5f))
+                require(book.personal.audioParts.size <= 5000 && book.personal.audioParts.all { it.length <= 100 })
+                require(book.personal.audioDurationsMs.size <= 5000 && book.personal.audioDurationsMs.all { (id, duration) -> id.length <= 100 && duration > 0 })
                 require(book.personal.bookmarks.size <= 1000 && book.personal.chapters.size <= 500)
                 book.personal.bookmarks.forEach { require(it.id.length in 1..100 && hash.matches(it.partId) && it.positionMs in 0..604800000L && it.note.length <= 2000 && it.title.length <= 500) }
                 book.personal.chapters.forEach { (key, chapters) -> require(key.length <= 100 && chapters.size <= 5000 && chapters.all { it.startMs in 0..604800000L && it.title.length <= 500 }) }

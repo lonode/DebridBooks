@@ -43,6 +43,10 @@ DebridBooks is intended for accessing public-domain works, openly licensed conte
 F droid should ALWAYS be preferred for security reason, as they build the APK from source. Unfortunately since this app is quite recent the f droid inclusion [has been rejected](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/55289).   
 In the meantime, download it from [github release](https://github.com/lonode/DebridBooks/releases). While waiting for f droid release, you can use [Obtainium](https://github.com/ImranR98/Obtainium) to always have the latest version.
 
+## Requirements
+
+- Android 8.0 or newer.
+
 # Roadmap
 
 The below depends on the requests received:
@@ -51,6 +55,8 @@ The below depends on the requests received:
 - Implement other debrid providers
 - Other trackers
 - Goodreads or other audiobook catalog integration
+- Add normal books ?
+- Adapting speed ?
 
 # Help needed
 

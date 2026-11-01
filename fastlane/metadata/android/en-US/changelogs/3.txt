@@ -1,0 +1,1 @@
+Percentage of book is now visible. Reworked manga search. Keyboard enter in search now trigger the search

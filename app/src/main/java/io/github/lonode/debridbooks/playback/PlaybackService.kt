@@ -1,5 +1,6 @@
 package io.github.lonode.debridbooks.playback
 
+import androidx.room.withTransaction
 import android.app.PendingIntent
 import android.content.Intent
 import android.os.SystemClock
@@ -51,9 +52,18 @@ class PlaybackService : MediaLibraryService() {
         val book = BookEntity(account, item, extras.getString("title").orEmpty(), extras.getString("author"), now)
         val progress = ProgressEntity(account, item, media.mediaId, player.currentMediaItemIndex, player.currentPosition.coerceAtLeast(0),
             player.playbackParameters.speed, player.playbackState == Player.STATE_ENDED, now)
+        val parts = (0 until player.mediaItemCount).map { player.getMediaItemAt(it).mediaId }
+        val durations = audioPartDurations(player)
         writes.trySend {
-            app.database.library().checkpoint(book, progress)
-            app.database.audio().session(AudioSession(accountId = account, itemId = item))
+            app.database.withTransaction {
+                app.database.library().checkpoint(book, progress)
+                app.database.audio().session(AudioSession(accountId = account, itemId = item))
+                val saved = app.database.audio().personal(account, item).extras()
+                val merged = (saved.audioDurationsMs + durations).filterKeys { it in parts }
+                if (saved.audioParts != parts || saved.audioDurationsMs != merged) {
+                    app.database.audio().updatePersonal(account, item) { it.copy(audioParts = parts, audioDurationsMs = merged) }
+                }
+            }
         }
     }
     private fun listening() {

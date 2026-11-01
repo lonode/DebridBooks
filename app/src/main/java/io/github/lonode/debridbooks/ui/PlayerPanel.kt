@@ -31,7 +31,9 @@ import io.github.lonode.debridbooks.network.fileSizeLabel
 internal data class PlaybackSnapshot(val title: String = "", val author: String = "", val part: String = "", val artwork: String? = null,
     val identity: String = "", val position: Long = 0, val duration: Long = 0, val playing: Boolean = false,
     val fileSize: Long? = null, val index: Int = 0, val count: Int = 0, val buffering: Boolean = false, val failed: Boolean = false, val speed: Float = 1f,
-    val chapterContext: String? = null)
+    val chapterContext: String? = null, val account: String = "", val itemId: String = "",
+    val parts: List<String> = emptyList(), val durations: Map<String, Long> = emptyMap(), val ended: Boolean = false,
+    val overallProgress: AudiobookProgress? = null)
 private fun snapshot(player: Player?): PlaybackSnapshot {
     player ?: return PlaybackSnapshot()
     val item = player.currentMediaItem ?: return PlaybackSnapshot()
@@ -41,13 +43,16 @@ private fun snapshot(player: Player?): PlaybackSnapshot {
         meta.artworkUri?.toString(), meta.extras?.getString("item").orEmpty() + item.mediaId, player.currentPosition.coerceAtLeast(0),
         player.duration.coerceAtLeast(0), player.playWhenReady, meta.extras?.getLong("fileSize", 0)?.takeIf { it > 0 }, player.currentMediaItemIndex, player.mediaItemCount,
         player.playbackState == Player.STATE_BUFFERING, player.playerError != null, player.playbackParameters.speed,
-        meta.extras?.getString("chapterContext") ?: label.context)
+        meta.extras?.getString("chapterContext") ?: label.context,
+        meta.extras?.getString("account").orEmpty(), meta.extras?.getString("item").orEmpty(),
+        (0 until player.mediaItemCount).map { player.getMediaItemAt(it).mediaId }, audioPartDurations(player), player.playbackState == Player.STATE_ENDED)
 }
 @Composable
 fun PlayerPanel(controller: MediaController?, onSpeed: (Float) -> Unit, onSearch: () -> Unit) {
     val app = LocalContext.current.applicationContext as DebridApplication
     val preferences by remember(app) { app.preferences.preferences }.collectAsState(initial = ListeningPreferences())
     val runtime by app.playbackRuntime.state.collectAsState()
+    val personal by remember(app) { app.database.audio().observePersonal() }.collectAsState(initial = emptyList())
     val scope = rememberCoroutineScope()
     var tool by remember { mutableStateOf("") }
     var input by remember { mutableStateOf("") }
@@ -130,7 +135,10 @@ fun PlayerPanel(controller: MediaController?, onSpeed: (Float) -> Unit, onSearch
         undo = { app.playbackRuntime.send(PlaybackAction.Undo) },
         range = { scope.launch { app.preferences.setOptions { it.copy(chapterScrub = !it.chapterScrub) } } },
     )
-    PlayerLayout(state, runtime, embedded.getOrNull(embeddedIndex)?.title ?: state.part, start, end,
+    val saved = personal.firstOrNull { it.accountId == state.account && it.itemId == state.itemId }.extras()
+    val overall = audiobookProgress(state.parts, saved.audioDurationsMs + state.durations,
+        controller?.currentMediaItem?.mediaId, state.position, state.ended)
+    PlayerLayout(state.copy(overallProgress = overall), runtime, embedded.getOrNull(embeddedIndex)?.title ?: state.part, start, end,
         preferences.options.chapterScrub, embedded.size > 1, preferences.options.remainingTime,
         state.index > 0 || embedded.isNotEmpty() || state.position > 3000,
         state.index + 1 < state.count || embeddedIndex + 1 < embedded.size, chapters.isNotEmpty(), actions)
