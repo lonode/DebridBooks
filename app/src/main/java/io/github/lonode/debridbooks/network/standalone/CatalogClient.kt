@@ -10,8 +10,14 @@ import kotlinx.coroutines.sync.withPermit
 import kotlinx.serialization.json.*
 
 /** Public metadata never changes resolver identity, media order, or recording language. */
-class CatalogClient(private val http: DirectTransport = DirectHttp) {
+class CatalogClient(private val http: DirectTransport = DirectHttp, private val requestOwner: Job? = null) {
+    private suspend fun checkRequestActive() {
+        // A parent can be cancelling before every child has received cancellation.
+        requestOwner?.ensureActive()
+        currentCoroutineContext().ensureActive()
+    }
     private suspend fun json(url: String): JsonObject {
+        checkRequestActive()
         val host = java.net.URI(url).host
         val now = System.currentTimeMillis()
         val paused = synchronized(catalogPauses) { catalogPauses[http]?.get(host) ?: 0 }
@@ -25,10 +31,12 @@ class CatalogClient(private val http: DirectTransport = DirectHttp) {
     private suspend fun <T> optional(block: suspend () -> T): T? = try { withTimeoutOrNull(3500) { block() } }
         catch (cancel: CancellationException) { throw cancel } catch (_: Exception) { null }
     suspend fun enrich(item: SearchItem): SearchItem {
+        checkRequestActive()
         val scope = listOf(item.type, item.language).joinToString(":") + ":"
         val key = scope + (item.releaseName ?: item.title)
         cachedIdentity(item)?.takeIf { !it.poster.isNullOrBlank() }?.let { return it }
         return metadataLimit.withPermit {
+            checkRequestActive()
             // A preceding recording may have identified this author while this request queued.
             val known = cachedIdentity(item)
             known?.takeIf { !it.poster.isNullOrBlank() }?.let { return@withPermit it }

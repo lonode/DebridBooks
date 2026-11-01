@@ -88,6 +88,37 @@ class ProgressiveCoverTest {
         assertFalse(result.partial)
     }
 
+    @Test fun `cancelled owner prevents queued covers starting before child cancellation arrives`() = runBlocking {
+        val owner = Job()
+        val started = AtomicInteger()
+        val active = CompletableDeferred<Unit>()
+        val release = CompletableDeferred<Unit>()
+        val http = DirectTransport {
+            if (started.incrementAndGet() == 4) active.complete(Unit)
+            release.await()
+            ok("{}")
+        }
+        val catalog = CatalogClient(http, owner)
+        // Deliberately keep these children active to reproduce the interval between
+        // owner cancellation and delivery of cancellation to each child.
+        val requests = (1..5).map { index -> async {
+            catalog.enrich(SearchItem("owner-cancel-$index", "Owner Cancel Book $index", language = "en"))
+        } }
+        try {
+            withTimeout(5000) { active.await() }
+            assertEquals(4, started.get())
+            owner.cancel()
+            release.complete(Unit)
+            withTimeout(5000) { requests.joinAll() }
+            assertTrue(requests.all { it.isCancelled })
+            assertEquals("Queued books and fallback requests must not start", 4, started.get())
+        } finally {
+            owner.cancel()
+            requests.forEach { it.cancel() }
+            requests.joinAll()
+        }
+    }
+
     @Test fun `cancelling search stops active cover requests and never starts queued books`() = runBlocking {
         val started = AtomicInteger()
         val cancelled = AtomicInteger()

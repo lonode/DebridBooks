@@ -39,7 +39,7 @@ class StandaloneApi(private val config: StandaloneConfig, private val http: Dire
     private suspend fun enrichSearch(query: String, page: Int, comic: Boolean, onlySources: Set<String>, forceAbb: Boolean,
         onProgress: suspend (SearchProgress) -> Unit): SearchPage = coroutineScope {
         val lock = Mutex()
-        val catalog = CatalogClient(http)
+        val catalog = CatalogClient(http, currentCoroutineContext()[Job])
         val scheduled = mutableSetOf<String>()
         val completed = mutableMapOf<String, SearchItem>()
         val parsed = mutableMapOf<String, SearchItem>()
