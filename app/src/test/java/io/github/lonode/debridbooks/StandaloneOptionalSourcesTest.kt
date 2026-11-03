@@ -14,6 +14,8 @@ import org.robolectric.annotation.Config
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [35], application = Application::class)
 class StandaloneOptionalSourcesTest {
+    // Keep these provider-specific fixtures isolated from automatic public discovery.
+    private val testedSources = setOf("C411", "Tr4ker", "YggReborn", "Jackett", "AudiobookBay")
     private fun ok(body: String) = DirectResponse(200, body.toByteArray())
     private val account = """{"status":"success","data":{"magnets":[]}}"""
 
@@ -32,13 +34,13 @@ class StandaloneOptionalSourcesTest {
             }
         }
         val search = TorrentSearch(StandaloneConfig("provider-key", abbDomain = "", jackettUrl = "https://jackett.invalid/jackett", jackettApiKey = "synthetic-key"), http)
-        val comic = search.search("Example", 1, true).results.single()
+        val comic = search.search("Example", 1, true, onlySources = testedSources).results.single()
         assertEquals("https://jackett.invalid/dl/private-torrent?apikey=synthetic-key", ResolverItem.decode(comic.id).u)
         assertEquals("en", comic.language)
         assertTrue(URLDecoder.decode(requests.first().url, "UTF-8").contains("Category[]=7030"))
-        assertTrue(search.search("Example", 2, true).results.isEmpty())
+        assertTrue(search.search("Example", 2, true, onlySources = testedSources).results.isEmpty())
         assertEquals(1, requests.count { URI(it.url).host == "jackett.invalid" })
-        search.search("Example", 1, false)
+        search.search("Example", 1, false, onlySources = testedSources)
         assertFalse(URLDecoder.decode(requests.last { URI(it.url).host == "jackett.invalid" }.url, "UTF-8").contains("Category[]"))
         assertTrue(requests.none { URI(it.url).path.contains("upload") || URI(it.url).path.contains("unlock") })
     }
@@ -56,7 +58,7 @@ class StandaloneOptionalSourcesTest {
                     <a href="/abss/french/" rel="bookmark">French book</a><p>Language: French</p>""")
             }
         }
-        val book = TorrentSearch(StandaloneConfig("key", abbDomain = "abb.invalid", languageFilter = "en"), http).search("book",1,false).results.single()
+        val book = TorrentSearch(StandaloneConfig("key", abbDomain = "abb.invalid", languageFilter = "en"), http).search("book",1,false, onlySources = testedSources).results.single()
         assertEquals("English book",book.title); assertEquals("en",book.language); assertEquals("M4B",book.format)
         assertEquals("1.6 MB",book.sizeText)
         assertEquals("https://abb.invalid/abss/english/",ResolverItem.decode(book.id).a)

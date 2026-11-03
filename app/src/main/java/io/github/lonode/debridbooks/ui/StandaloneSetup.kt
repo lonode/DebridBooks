@@ -26,10 +26,16 @@ class SetupDraft {
     var c411Enabled by mutableStateOf(false); var c411Key by mutableStateOf(""); var c411Url by mutableStateOf("https://c411.org/api/torznab")
     var tr4kerEnabled by mutableStateOf(false); var tr4kerKey by mutableStateOf(""); var tr4kerUrl by mutableStateOf("https://tr4ker.net/api/torznab/all")
     var yggEnabled by mutableStateOf(false); var yggKey by mutableStateOf(""); var yggUrl by mutableStateOf("https://api.yggreborn.org/api")
+    var v3xEnabled by mutableStateOf(false); var v3xKey by mutableStateOf(""); var v3xUrl by mutableStateOf("https://api.v3x.club/torznab/api")
+    var knabenEnabled by mutableStateOf(false)
+    var bayEnabled by mutableStateOf(false); var x1337Enabled by mutableStateOf(false)
     var abbEnabled by mutableStateOf(true)
     var jackettEnabled by mutableStateOf(false); var jackettUrl by mutableStateOf(""); var jackettKey by mutableStateOf("")
     var language by mutableStateOf(""); var format by mutableStateOf(""); var maxSize by mutableStateOf("")
     fun load(config: StandaloneConfig) {
+        knabenEnabled = config.knabenEnabled
+        bayEnabled = config.bayEnabled; x1337Enabled = config.x1337Enabled
+        v3xEnabled = config.v3xApiKey.isNotBlank(); v3xKey = config.v3xApiKey; v3xUrl = config.v3xUrl
         apiKey = config.apiKey
         c411Enabled = config.c411ApiKey.isNotBlank(); c411Key = config.c411ApiKey; c411Url = config.c411Url
         tr4kerEnabled = config.tr4kerApiKey.isNotBlank(); tr4kerKey = config.tr4kerApiKey; tr4kerUrl = config.tr4kerUrl
@@ -41,13 +47,15 @@ class SetupDraft {
     fun config(): StandaloneConfig {
         if (c411Enabled && c411Key.isBlank()) throw SetupProblem("Enter your C411 API key.")
         if (tr4kerEnabled && tr4kerKey.isBlank()) throw SetupProblem("Enter your Tr4ker API key.")
+        if (v3xEnabled && v3xKey.isBlank()) throw SetupProblem("Enter your V3X API key.")
         if (yggEnabled && yggKey.isBlank()) throw SetupProblem("Enter your YggReborn passkey.")
         if (jackettEnabled && (jackettUrl.isBlank() || jackettKey.isBlank())) throw SetupProblem("Enter your Jackett URL and API key.")
         val size = maxSize.trim().takeIf { it.isNotEmpty() }?.let { it.replace(',', '.').toDoubleOrNull() ?: throw SetupProblem("Enter a positive maximum size.") }
         return StandaloneConfig(apiKey.trim(), if (c411Enabled) c411Key.trim() else "", c411Url.trim(),
             if (tr4kerEnabled) tr4kerKey.trim() else "", tr4kerUrl.trim(), if (yggEnabled) yggKey.trim() else "", yggUrl.trim(),
             if (abbEnabled) StandaloneConfig.DEFAULT_ABB_DOMAIN else "", if (jackettEnabled) jackettUrl.trim().trimEnd('/') else "",
-            if (jackettEnabled) jackettKey.trim() else "", language, format, size).validate()
+            if (jackettEnabled) jackettKey.trim() else "", language, format, size, bayEnabled = bayEnabled, x1337Enabled = x1337Enabled, knabenEnabled = knabenEnabled,
+            v3xApiKey = if (v3xEnabled) v3xKey.trim() else "", v3xUrl = v3xUrl.trim()).validate()
     }
 }
 
@@ -60,14 +68,18 @@ fun StandaloneSetup(draft: SetupDraft, busy: Boolean, connected: Boolean, onLang
     Text(stringResource(R.string.source_keys_help))
     SearchSourceGroup(stringResource(R.string.french_trackers),
         stringResource(R.string.french_tracker_names),
-        listOf(draft.c411Enabled, draft.tr4kerEnabled, draft.yggEnabled).count { it }, 3) {
+        listOf(draft.c411Enabled, draft.tr4kerEnabled, draft.yggEnabled, draft.v3xEnabled).count { it }, 4) {
         SourceToggle("C411", draft.c411Enabled, busy) { draft.c411Enabled = it }
         if (draft.c411Enabled) SecretField(draft.c411Key, { draft.c411Key = it }, "C411 API key", busy)
         SourceToggle("Tr4ker", draft.tr4kerEnabled, busy) { draft.tr4kerEnabled = it }
         if (draft.tr4kerEnabled) SecretField(draft.tr4kerKey, { draft.tr4kerKey = it }, "Tr4ker API key", busy)
+        SourceToggle("V3X", draft.v3xEnabled, busy) { draft.v3xEnabled = it }
+        if (draft.v3xEnabled) SecretField(draft.v3xKey, { draft.v3xKey = it }, "V3X API key", busy)
         SourceToggle("YggReborn", draft.yggEnabled, busy) { draft.yggEnabled = it }
         if (draft.yggEnabled) SecretField(draft.yggKey, { draft.yggKey = it }, "YggReborn API passkey", busy)
     }
+    SourceToggle("Knaben (multi-tracker search)", draft.knabenEnabled, busy) { draft.knabenEnabled = it }
+    Text("Public sources need no API key and are skipped for French-only searches. Sites may block access; each source reports its own status.", style = MaterialTheme.typography.bodySmall)
     SourceToggle("AudiobookBay", draft.abbEnabled, busy) { draft.abbEnabled = it }
     var advanced by remember { mutableStateOf(false) }
     TextButton(onClick = { advanced = !advanced }) {
@@ -76,6 +88,7 @@ fun StandaloneSetup(draft: SetupDraft, busy: Boolean, connected: Boolean, onLang
     if (advanced) {
         if (draft.c411Enabled) EndpointField(draft.c411Url, { draft.c411Url = it }, "C411 endpoint", busy)
         if (draft.tr4kerEnabled) EndpointField(draft.tr4kerUrl, { draft.tr4kerUrl = it }, "Tr4ker endpoint", busy)
+        if (draft.v3xEnabled) EndpointField(draft.v3xUrl, { draft.v3xUrl = it }, "V3X endpoint", busy)
         if (draft.yggEnabled) EndpointField(draft.yggUrl, { draft.yggUrl = it }, "YggReborn endpoint", busy)
         SourceToggle("Jackett (optional)", draft.jackettEnabled, busy) { draft.jackettEnabled = it }
         if (draft.jackettEnabled) {

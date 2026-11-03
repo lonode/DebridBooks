@@ -10,6 +10,8 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class ProgressiveSearchTest {
+    // Keep these provider-specific fixtures isolated from automatic public discovery.
+    private val testedSources = setOf("C411", "Tr4ker", "YggReborn", "Jackett", "AudiobookBay")
     private val hash = "a".repeat(40)
     private val config = StandaloneConfig("synthetic-provider", abbDomain = "abb.invalid",
         jackettUrl = "https://jackett.invalid", jackettApiKey = "synthetic-tracker")
@@ -27,7 +29,7 @@ class ProgressiveSearchTest {
             "api.alldebrid.com" -> { readiness.await(); account() }
             else -> { abb.await(); DirectResponse(429, byteArrayOf()) }
         } }
-        val job = async { TorrentSearch(config, http).search("Example", 1, false) { updates.send(it) } }
+        val job = async { TorrentSearch(config, http).search("Example", 1, false, onlySources = testedSources) { updates.send(it) } }
         suspend fun matching(predicate: (SearchProgress) -> Boolean): SearchProgress = withTimeout(5000) {
             var update = updates.receive()
             while (!predicate(update)) update = updates.receive()
@@ -61,7 +63,7 @@ class ProgressiveSearchTest {
             else -> try { pending.await(); ok("") } finally { stopped.complete(Unit) }
         } }
         var session = SearchSession().requesting(SearchRequest("Example", refresh = true))
-        val job = launch { TorrentSearch(config, http).search("Example", 1, false) {
+        val job = launch { TorrentSearch(config, http).search("Example", 1, false, onlySources = testedSources) {
             session = session.progressing(it)
             if (it.page.results.isNotEmpty()) published.complete(it)
         } }
@@ -85,12 +87,12 @@ class ProgressiveSearchTest {
         )) {
             val http = DirectTransport { request -> if (URI(request.url).host == "api.alldebrid.com") account()
                 else response ?: throw DirectFailure("Service", "TIMEOUT") }
-            val failure = runCatching { TorrentSearch(abbOnly, http).search("Example", 1, false) }.exceptionOrNull() as ApiFailure
+            val failure = runCatching { TorrentSearch(abbOnly, http).search("Example", 1, false, onlySources = testedSources) }.exceptionOrNull() as ApiFailure
             assertEquals(expected, failure.warnings.single { it.source == "AudiobookBay" }.code)
             assertFalse(failure.toString().contains("synthetic"))
         }
         val http = DirectTransport { request -> if (URI(request.url).host == "api.alldebrid.com") account() else ok("<p>No results found</p>") }
-        val empty = TorrentSearch(abbOnly, http).search("Example", 1, false)
+        val empty = TorrentSearch(abbOnly, http).search("Example", 1, false, onlySources = testedSources)
         assertTrue(empty.results.isEmpty())
         assertFalse(empty.partial)
     }
@@ -106,7 +108,7 @@ class ProgressiveSearchTest {
             }
         }
         val search = TorrentSearch(abbOnly,http)
-        val page = search.search("Example",1,false)
+        val page = search.search("Example",1,false, onlySources = testedSources)
         assertEquals(2,page.results.size); assertFalse(page.partial)
         assertEquals(0,requests.count { URI(it).path.startsWith("/abss/") })
         val limited = ResolverItem.decode(page.results.single { it.title == "Limited" }.id)
@@ -121,7 +123,7 @@ class ProgressiveSearchTest {
         var session = SearchSession().requesting(SearchRequest("previous", refresh = true)).received(SearchPage(listOf(previous)))
             .requesting(SearchRequest("new", refresh = true))
         val http = DirectTransport { request -> if (URI(request.url).host == "api.alldebrid.com") account() else DirectResponse(503, byteArrayOf()) }
-        val failure = runCatching { TorrentSearch(abbOnly, http).search("new", 1, false) { session = session.progressing(it) } }.exceptionOrNull() as ApiFailure
+        val failure = runCatching { TorrentSearch(abbOnly, http).search("new", 1, false, onlySources = testedSources) { session = session.progressing(it) } }.exceptionOrNull() as ApiFailure
         session = session.failed(failure)
         assertEquals(listOf(previous), session.results)
         assertEquals("previous", session.query)

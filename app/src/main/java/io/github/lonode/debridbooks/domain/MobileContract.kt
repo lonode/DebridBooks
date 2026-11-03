@@ -39,7 +39,7 @@ fun SearchItem.detailsLanguage(): String? = when (language?.lowercase(java.util.
     else -> null
 }
 @Serializable
-data class SearchItem(val id: String, val title: String, val author: String? = null, val provider: String? = null, val type: String = "audiobook", val poster: String? = null, val description: String? = null, val format: String? = null, val sizeText: String? = null, val language: String? = null, val tracker: String? = null, val releaseName: String? = null, val cached: Boolean = false, val searchSource: String? = null)
+data class SearchItem(val id: String, val title: String, val author: String? = null, val provider: String? = null, val type: String = "audiobook", val poster: String? = null, val description: String? = null, val format: String? = null, val sizeText: String? = null, val language: String? = null, val tracker: String? = null, val releaseName: String? = null, val cached: Boolean = false, val searchSource: String? = null, val infoHash: String? = null)
 
 /** A sensitive configured prefix, never a diagnostic string. */
 class InstallLink private constructor(val prefix: String) {

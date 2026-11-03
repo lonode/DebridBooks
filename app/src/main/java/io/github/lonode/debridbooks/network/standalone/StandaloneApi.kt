@@ -9,8 +9,9 @@ import kotlinx.coroutines.sync.withLock
 /** The phone owns integrations; no local HTTP server or JavaScript runtime is embedded. */
 class StandaloneApi(private val config: StandaloneConfig, private val http: DirectTransport = DirectHttp) {
     fun capabilities(): Capabilities = Capabilities(true, "DebridBooks", "alldebrid", providerKeyValid = true,
-        sources = mapOf("comics" to (config.trackers().isNotEmpty() || config.jackettUrl.isNotBlank()), "mangadex" to true,
-            "c411" to config.c411ApiKey.isNotBlank(), "tr4ker" to config.tr4kerApiKey.isNotBlank(), "yggreborn" to config.yggrebornPasskey.isNotBlank(),
+        sources = mapOf("comics" to (config.trackers().isNotEmpty() || config.jackettUrl.isNotBlank() || config.publicSourcesAllowed), "mangadex" to true,
+            "v3x" to config.v3xApiKey.isNotBlank(), "c411" to config.c411ApiKey.isNotBlank(), "tr4ker" to config.tr4kerApiKey.isNotBlank(), "yggreborn" to config.yggrebornPasskey.isNotBlank(),
+            "knaben" to (config.publicSourcesAllowed && config.knabenEnabled), "bay" to config.publicSourcesAllowed, "1337x" to config.publicSourcesAllowed,
             "audiobookbay" to config.abbDomain.isNotBlank(), "jackett" to config.jackettUrl.isNotBlank()),
         features = ServerFeatures(bookDetails = true, searchWarnings = true, streamFileSizes = true))
     suspend fun validate() = directBoundary("Setup") {
@@ -89,7 +90,7 @@ class StandaloneApi(private val config: StandaloneConfig, private val http: Dire
     private fun releaseTitle(item: SearchItem): SearchItem = CatalogClient.cachedIdentity(item) ?: ReleaseName.parse(item.releaseName ?: item.title, item.type == "comic").let {
         item.copy(title = it.title, author = it.author ?: item.author)
     }
-    suspend fun resolve(id: String, onProgress: (OpeningProgress) -> Unit = {}): Resolution = directBoundary("AllDebrid") { AllDebridClient(config, http).resolve(TorrentSearch(config, http).resolveAbb(ResolverItem.decode(id)), onProgress) }
+    suspend fun resolve(id: String, onProgress: (OpeningProgress) -> Unit = {}): Resolution = directBoundary("AllDebrid") { AllDebridClient(config, http).resolve(PublicTorrentRuntime.forTransport(http).resolve(TorrentSearch(config, http).resolveAbb(ResolverItem.decode(id))), onProgress) }
     suspend fun chapters(id: String, offset: Int) = directBoundary("MangaDex") { MangaDexClient(http).chapters(id, offset) }
     suspend fun pages(id: String, saver: Boolean) = directBoundary("MangaDex") { MangaDexClient(http).pages(id, saver) }
     suspend fun details(id: String, language: String?): BookDetails = directBoundary("Book catalog") { CatalogClient(http).details(ResolverItem.decode(id), language) }

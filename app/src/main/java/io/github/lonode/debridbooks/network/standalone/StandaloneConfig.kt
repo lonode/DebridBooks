@@ -22,14 +22,18 @@ class StandaloneConfig(
     val languageFilter: String = "", val preferredFormat: String = "", val maxSizeGB: Double? = null,
     // Retained for saved-config compatibility; account-only restriction is currently disabled.
     val instantOnly: Boolean = false,
+    // Legacy Bay/1337x flags remain readable; these sources now run automatically outside French-only searches.
+    val bayEnabled: Boolean = false, val x1337Enabled: Boolean = false, val knabenEnabled: Boolean = false,
+    val v3xApiKey: String = "", val v3xUrl: String = "https://api.v3x.club/torznab/api",
 ) {
+    val publicSourcesAllowed: Boolean get() = languageFilter != "fr"
     fun withLanguageFilter(language: String): StandaloneConfig {
         setupRequire(language in setOf("", "fr", "en")) { "Invalid search language." }
         return StandaloneConfig(apiKey = apiKey, c411ApiKey = c411ApiKey, c411Url = c411Url,
             tr4kerApiKey = tr4kerApiKey, tr4kerUrl = tr4kerUrl, yggrebornPasskey = yggrebornPasskey,
             yggrebornUrl = yggrebornUrl, abbDomain = abbDomain, jackettUrl = jackettUrl,
             jackettApiKey = jackettApiKey, languageFilter = language, preferredFormat = preferredFormat,
-            maxSizeGB = maxSizeGB, instantOnly = instantOnly)
+            maxSizeGB = maxSizeGB, instantOnly = instantOnly, bayEnabled = bayEnabled, x1337Enabled = x1337Enabled, knabenEnabled = knabenEnabled, v3xApiKey = v3xApiKey, v3xUrl = v3xUrl)
     }
     fun validate(): StandaloneConfig = apply {
         setupRequire(apiKey.isNotBlank() && apiKey.length <= 1024 && !apiKey.any { it.isWhitespace() || it.isISOControl() }) { "Enter a valid AllDebrid API key." }
@@ -49,6 +53,7 @@ class StandaloneConfig(
     fun trackers(): List<Tracker> = listOf(
         Tracker("C411", c411Url, c411ApiKey, "3030", "7030", 4100),
         Tracker("Tr4ker", tr4kerUrl, tr4kerApiKey, "3030", "7030", 1000),
+        Tracker("V3X", v3xUrl, v3xApiKey, "3030", "7030", 2000),
         Tracker("YggReborn", yggrebornUrl, yggrebornPasskey, "7105", "7102,7103,7104", 2100),
     ).filter { it.key.isNotBlank() }
     companion object {
@@ -72,7 +77,8 @@ class StandaloneConfig(
                     str("yggrebornPasskey"), str("yggrebornUrl", "https://api.yggreborn.org/api"),
                     str("abbDomain", DEFAULT_ABB_DOMAIN).removePrefix("https://").removePrefix("http://").trimEnd('/'),
                     str("jackettUrl"), str("jackettApiKey"), str("languageFilter"), str("preferredFormat"),
-                    config["maxSizeGB"]?.jsonPrimitive?.doubleOrNull?.takeIf { it > 0 }, config["instantOnly"]?.jsonPrimitive?.booleanOrNull ?: false).validate()
+                    config["maxSizeGB"]?.jsonPrimitive?.doubleOrNull?.takeIf { it > 0 }, config["instantOnly"]?.jsonPrimitive?.booleanOrNull ?: false,
+                    v3xApiKey = str("v3xApiKey"), v3xUrl = str("v3xUrl", "https://api.v3x.club/torznab/api")).validate()
                 return Connection(accountId = connection.accountId, standalone = settings)
             } catch (_: Exception) { throw IllegalArgumentException("Set up your AllDebrid and source keys to continue. Your offline library is still available.") }
         }

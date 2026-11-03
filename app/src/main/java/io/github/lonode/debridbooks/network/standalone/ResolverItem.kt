@@ -8,7 +8,7 @@ import kotlinx.serialization.json.Json
 @Serializable
 class ResolverItem(val h: String? = null, val m: String? = null, val u: String? = null,
     val n: String, val f: String? = null, val b: String? = null, val s: Long? = null,
-    val t: String? = null, val p: String? = null, val d: String? = null, val a: String? = null) {
+    val t: String? = null, val p: String? = null, val d: String? = null, val a: String? = null, val x: String? = null) {
     fun encode(): String = "tbab:" + Base64.getUrlEncoder().withoutPadding().encodeToString(json.encodeToString(this).toByteArray(Charsets.UTF_8))
     companion object {
         private val json = Json { ignoreUnknownKeys = true; encodeDefaults = false }
@@ -19,6 +19,7 @@ class ResolverItem(val h: String? = null, val m: String? = null, val u: String? 
                 require(it.h == null || Regex("[a-fA-F0-9]{40}").matches(it.h))
                 require(it.m == null || it.m.startsWith("magnet:?"))
                 require(it.u == null || it.u.startsWith("https://"))
+                require(it.x == null || Regex("/torrent/[0-9]+/[A-Za-z0-9._%~-]+/?").matches(it.x))
                 if (it.a != null) {
                     val page = java.net.URI(it.a)
                     require(page.scheme == "https" && page.host != null && page.rawUserInfo == null && page.port == -1 && page.rawQuery == null && page.rawFragment == null)

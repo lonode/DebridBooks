@@ -19,6 +19,8 @@ import android.app.Application
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [35], application = Application::class)
 class StandaloneIntegrationTest {
+    // Keep these provider-specific fixtures isolated from automatic public discovery.
+    private val testedSources = setOf("C411", "Tr4ker", "YggReborn", "Jackett", "AudiobookBay")
     private val hash = "a".repeat(40)
     private val config = StandaloneConfig("synthetic-provider-key", abbDomain = "")
     private class FakeHttp(val handler: (DirectRequest) -> DirectResponse) : DirectTransport {
@@ -89,7 +91,7 @@ class StandaloneIntegrationTest {
             "api.alldebrid.com" -> { assertEquals("/v4.1/magnet/status", path(request)); ad("""{"magnets":[{"id":1,"hash":"$hash","statusCode":4}]}""") }
             else -> error("Unexpected destination")
         } }
-        val page = TorrentSearch(cfg, http).search("comic", 2, true)
+        val page = TorrentSearch(cfg, http).search("comic", 2, true, onlySources = testedSources)
         val item = page.results.single(); assertTrue(item.cached); assertEquals("fr", item.language); assertEquals("CBZ", item.format)
         assertEquals("c", ResolverItem.decode(item.id).t)
         assertFalse(http.requests.any { path(it).contains("upload") || path(it).contains("unlock") })
@@ -102,11 +104,11 @@ class StandaloneIntegrationTest {
             "tr4ker.net" -> ok(xml())
             else -> ad("""{"magnets":[]}""")
         } }
-        val result = TorrentSearch(cfg, http).search("book", 1, false)
+        val result = TorrentSearch(cfg, http).search("book", 1, false, onlySources = testedSources)
         assertEquals(1, result.results.size); assertTrue(result.partial); assertEquals("C411", result.warnings.single().source)
-        val noSources = runCatching { TorrentSearch(config, http).search("book", 1, false) }.exceptionOrNull() as ApiFailure
+        val noSources = runCatching { TorrentSearch(config, http).search("book", 1, false, onlySources = testedSources) }.exceptionOrNull() as ApiFailure
         assertEquals("NO_SEARCH_SOURCES", noSources.code)
-        val failed = runCatching { TorrentSearch(StandaloneConfig("key", abbDomain = "", tr4kerApiKey = "t"), FakeHttp { DirectResponse(403, byteArrayOf()) }).search("book", 1, false) }.exceptionOrNull() as ApiFailure
+        val failed = runCatching { TorrentSearch(StandaloneConfig("key", abbDomain = "", tr4kerApiKey = "t"), FakeHttp { DirectResponse(403, byteArrayOf()) }).search("book", 1, false, onlySources = testedSources) }.exceptionOrNull() as ApiFailure
         assertEquals("SEARCH_UNAVAILABLE", failed.code)
     }
     @Test fun `English search excludes French and ambiguous results and All does not prefer French`() = runBlocking {
@@ -122,15 +124,15 @@ class StandaloneIntegrationTest {
             else -> error("Unexpected destination")
         } }
         val cfg = StandaloneConfig("key", c411ApiKey = "key", abbDomain = "", languageFilter = "en")
-        val english = TorrentSearch(cfg, http).search("Harry Potter", 1, false).results
+        val english = TorrentSearch(cfg, http).search("Harry Potter", 1, false, onlySources = testedSources).results
         assertEquals(1, english.size)
         assertEquals("en", english.single().language)
         assertTrue(english.single().releaseName!!.contains("[EN]"))
-        val all = TorrentSearch(cfg.withLanguageFilter(""), http).search("Harry Potter", 1, false).results
+        val all = TorrentSearch(cfg.withLanguageFilter(""), http).search("Harry Potter", 1, false, onlySources = testedSources).results
         assertEquals(4, all.size)
         assertEquals("en", all.first().language)
         assertTrue(all.first().cached)
-        val french = TorrentSearch(cfg.withLanguageFilter("fr"), http).search("Harry Potter", 1, false).results
+        val french = TorrentSearch(cfg.withLanguageFilter("fr"), http).search("Harry Potter", 1, false, onlySources = testedSources).results
         assertEquals(2, french.size)
         assertTrue(french.all { it.language == "fr" })
         assertFalse(http.requests.any { path(it).contains("upload") || path(it).contains("unlock") })
@@ -183,7 +185,7 @@ class StandaloneIntegrationTest {
             "/v4/magnet/upload" -> ad("""{"magnets":[{"id":8}]}""")
             else -> error("Unexpected request")
         } }
-        val results = TorrentSearch(old, http).search("Book", 1, false).results
+        val results = TorrentSearch(old, http).search("Book", 1, false, onlySources = testedSources).results
         assertEquals(1, results.size)
         assertFalse(results.single().cached)
         assertFalse(http.requests.any { path(it).contains("upload") })
@@ -230,7 +232,7 @@ class StandaloneIntegrationTest {
     }
     @Test fun `source cancellation remains cancellation rather than a partial response`() = runBlocking {
         val cancel = DirectTransport { throw CancellationException("cancelled") }
-        val failure = runCatching { TorrentSearch(StandaloneConfig("key", abbDomain = "", tr4kerApiKey = "key"), cancel).search("book", 1, false) }.exceptionOrNull()
+        val failure = runCatching { TorrentSearch(StandaloneConfig("key", abbDomain = "", tr4kerApiKey = "key"), cancel).search("book", 1, false, onlySources = testedSources) }.exceptionOrNull()
         assertTrue(failure is CancellationException)
     }
     @Test fun `slow catalog request times out without losing completed covers or failing search`() = runBlocking {
@@ -250,7 +252,7 @@ class StandaloneIntegrationTest {
         }
         val start = System.nanoTime()
         val page = StandaloneApi(StandaloneConfig("key", abbDomain = "", tr4kerApiKey = "key", tr4kerUrl = "https://tracker.invalid"), http)
-            .search("Example", 1, false, false)
+            .search("Example", 1, false, false, onlySources = testedSources)
         assertTrue((System.nanoTime() - start) / 1_000_000 < 6000)
         assertEquals(2, page.results.size)
         assertTrue(page.results.first { it.title == "Quick Example" }.poster!!.contains("600x600bb.jpg"))
@@ -268,7 +270,7 @@ class StandaloneIntegrationTest {
             else -> ok("{}")
         } }
         val page = StandaloneApi(StandaloneConfig("key", abbDomain = "", tr4kerApiKey = "key", tr4kerUrl = "https://tracker.invalid"), http)
-            .search("Batch Recovery", 1, false, false)
+            .search("Batch Recovery", 1, false, false, onlySources = testedSources)
         assertEquals(2, page.results.size)
         assertEquals(2, page.results.map { it.id }.distinct().size)
         page.results.forEach { assertEquals("Batch Recovery Work", it.title); assertEquals("Batch Recovery Writer", it.author) }
@@ -281,7 +283,7 @@ class StandaloneIntegrationTest {
                 else -> ok("{}")
             }
         }
-        val page = TorrentSearch(StandaloneConfig("key", abbDomain = "", tr4kerApiKey = "key", tr4kerUrl = "https://tracker.invalid"), http).search("Example", 1, true)
+        val page = TorrentSearch(StandaloneConfig("key", abbDomain = "", tr4kerApiKey = "key", tr4kerUrl = "https://tracker.invalid"), http).search("Example", 1, true, onlySources = testedSources)
         assertEquals(listOf("CBR", "CBZ", "PDF"), page.results.map { it.format })
         assertTrue(page.results.first().cached)
     }

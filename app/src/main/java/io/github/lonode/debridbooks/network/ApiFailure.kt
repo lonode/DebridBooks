@@ -8,9 +8,13 @@ class ApiFailure(val status: Int, val code: String? = null, val warnings: List<S
     IllegalStateException("Server request failed (HTTP $status)")
 
 internal fun safeSource(source: String): String = when (source.lowercase()) {
+    "v3x" -> "V3X"
     "c411" -> "C411"
     "tr4ker" -> "Tr4ker"
     "yggreborn" -> "YggReborn"
+    "knaben" -> "Knaben"
+    "api bay" -> "API Bay"
+    "1337x" -> "1337x"
     "jackett" -> "Jackett"
     "mangadex" -> "MangaDex"
     "alldebrid" -> "AllDebrid"

@@ -27,7 +27,7 @@ data class SearchSession(
     val attempt: SearchRequest? = null, val failure: SearchFailure? = null, val wasCancelled: Boolean = false,
     val sources: List<SearchSourceProgress> = emptyList(),
 ) {
-    val results: List<SearchItem> = pages.toSortedMap().values.flatMap { it.results }.distinctBy { it.id }
+    val results: List<SearchItem> = pages.toSortedMap().values.flatMap { it.results }.distinctBy { it.uploadKey() }
     /** Unique retained uploads, across pages; source.count describes only the latest request. */
     fun loadedFrom(source: String): Int = results.count { (it.searchSource ?: it.tracker) == source }
     val partial: Boolean = pages.values.any { it.partial }
@@ -65,7 +65,7 @@ data class SearchSession(
         val merged = if (request.sources.isNotEmpty()) {
             val old = previous[request.number]
             val warnings = old?.warnings.orEmpty().filterNot { it.source in request.sources || it.source == "AllDebrid" } + page.warnings
-            page.copy(results = (old?.results.orEmpty().filterNot { (it.searchSource ?: it.tracker) in request.sources } + page.results).distinctBy { it.id },
+            page.copy(results = (old?.results.orEmpty().filterNot { (it.searchSource ?: it.tracker) in request.sources } + page.results).distinctBy { it.uploadKey() },
                 warnings = warnings, partial = warnings.isNotEmpty())
         } else page
         val updated = if (request.refresh && request.sources.isEmpty()) mapOf(request.number to merged) else previous + (request.number to merged)
@@ -103,3 +103,7 @@ fun searchIssueLabel(code: String?, source: String? = null): String = when (code
     "INVALID_RESPONSE" -> "Unexpected response from the site."
     else -> "Unavailable or incomplete. Try again later."
 }
+
+/** Keep separate recordings; only the same validated torrent hash is a duplicate. */
+private fun SearchItem.uploadKey(): String = infoHash?.takeIf { Regex("[a-fA-F0-9]{40}").matches(it) }
+    ?.let { "hash:${it.lowercase()}" } ?: "id:$id"

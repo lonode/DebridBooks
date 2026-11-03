@@ -14,6 +14,8 @@ import android.app.Application
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [35], application = Application::class)
 class AbbProtectionTest {
+    // Keep these provider-specific fixtures isolated from automatic public discovery.
+    private val testedSources = setOf("C411", "Tr4ker", "YggReborn", "Jackett", "AudiobookBay")
     private val url = "https://abb.invalid/?s=book"
     private fun ok() = DirectResponse(200,"<p>Public page</p>".toByteArray())
 
@@ -96,12 +98,12 @@ class AbbProtectionTest {
         }
         val cfg=StandaloneConfig("synthetic",abbDomain="abb.invalid",languageFilter="en")
         val search=TorrentSearch(cfg,http,AbbAccess(http,MemoryAbbStore(),{now},{now+=it}))
-        val first=search.search("Book",1,false).results.single()
+        val first=search.search("Book",1,false, onlySources = testedSources).results.single()
         assertFalse(first.cached);assertEquals("M4B",first.format);assertEquals(1,calls.count { java.net.URI(it).host=="abb.invalid" })
         val resolved=search.resolveAbb(ResolverItem.decode(first.id))
         assertEquals(hash,resolved.h)
         assertEquals(2,calls.count { java.net.URI(it).host=="abb.invalid" })
-        val second=search.search("Book",1,false).results.single()
+        val second=search.search("Book",1,false, onlySources = testedSources).results.single()
         assertEquals(first.id,second.id);assertTrue(second.cached)
         assertEquals(2,calls.count { java.net.URI(it).host=="abb.invalid" })
         search.resolveAbb(ResolverItem.decode(second.id));assertEquals(2,calls.count { java.net.URI(it).host=="abb.invalid" })

@@ -12,8 +12,8 @@ import org.xmlpull.v1.XmlPullParserFactory
 
 class TorrentResult(val name: String, val hash: String? = null, val magnet: String? = null, val torrentUrl: String? = null,
     val size: Long = 0, val seeders: Int = 0, val tracker: String, val language: String? = null, val format: String? = null,
-    val abbPage: String? = null, val origin: String? = null) {
-    fun fromSource(source: String) = TorrentResult(name, hash, magnet, torrentUrl, size, seeders, tracker, language, format, abbPage, source)
+    val abbPage: String? = null, val origin: String? = null, val detail1337x: String? = null) {
+    fun fromSource(source: String) = TorrentResult(name, hash, magnet, torrentUrl, size, seeders, tracker, language, format, abbPage, source, detail1337x)
 }
 
 class TorrentSearch internal constructor(private val config: StandaloneConfig, private val http: DirectTransport = DirectHttp,
@@ -23,7 +23,15 @@ class TorrentSearch internal constructor(private val config: StandaloneConfig, p
         if (config.jackettUrl.isNotBlank()) jackett("DebridBooks", false)
     }
     suspend fun search(query: String, page: Int, comic: Boolean, onlySources: Set<String> = emptySet(), forceAbb: Boolean = false, onProgress: suspend (SearchProgress) -> Unit = {}): SearchPage = coroutineScope {
+        val events = Channel<SourceResult>(Channel.UNLIMITED)
         val requests = config.trackers().map { source -> source.name to suspend { tracker(source, query, page, comic) } }.toMutableList()
+        if (config.publicSourcesAllowed) {
+            if (config.knabenEnabled) requests += "Knaben" to suspend { publicPage("Knaben", query, page, comic) }
+            requests += "API Bay" to suspend { publicPage("API Bay", query, page, comic) }
+            requests += "1337x" to suspend { publicPage("1337x", query, page, comic) { partial ->
+                events.send(SourceResult("1337x", partial.copy(results = partial.results.map { it.fromSource("1337x") }), pending = true))
+            } }
+        }
         if (config.jackettUrl.isNotBlank() && page == 1) requests += "Jackett" to suspend { jackett(query, comic) }
         if (config.abbDomain.isNotBlank() && !comic) requests += "AudiobookBay" to suspend { abb(query, page, forceAbb) }
         requests.removeAll { onlySources.isNotEmpty() && it.first !in onlySources }
@@ -38,7 +46,6 @@ class TorrentSearch internal constructor(private val config: StandaloneConfig, p
         var hashes: Set<String> = emptySet()
         fun snapshot() = buildPage(requests.flatMap { settled[it.first]?.results.orEmpty() }, hashes, warnings.values.toList(), comic)
         onProgress(SearchProgress(snapshot(), statuses.toList()))
-        val events = Channel<SourceResult>(Channel.UNLIMITED)
         try {
             requests.forEach { (name, block) -> launch {
                 val result = try { SourceResult(name, block().let { it.copy(results = it.results.map { result -> result.fromSource(name) }) }) }
@@ -52,8 +59,10 @@ class TorrentSearch internal constructor(private val config: StandaloneConfig, p
                 catch (failure: Exception) { SourceResult("AllDebrid", issue = (failure as? DirectFailure)?.reason ?: "SOURCE_UNAVAILABLE", retryAt = (failure as? DirectFailure)?.retryAt) }
                 events.send(result)
             }
-            repeat(requests.size + 1) { index ->
+            var remaining = requests.size + 1
+            while (remaining > 0) {
                 val event = events.receive()
+                if (!event.pending) remaining--
                 event.items?.let { settled[event.name] = it }
                 event.hashes?.let { hashes = it }
                 val issue = event.issue ?: event.items?.takeIf { it.partial }?.issue
@@ -64,32 +73,38 @@ class TorrentSearch internal constructor(private val config: StandaloneConfig, p
                 if (issue != null) warnings[event.name] = SearchWarning(event.name, issue, "Source unavailable or incomplete.")
                 val position = statuses.indexOfFirst { it.source == event.name }
                 statuses[position] = SearchSourceProgress(event.name,
-                    if (event.items?.partial == true) SearchSourceState.Partial else if (issue != null) SearchSourceState.Failed else SearchSourceState.Complete,
-                    event.items?.let { buildPage(it.results, hashes, emptyList(), comic).results.size } ?: 0, issue, event.retryAt ?: event.items?.retryAt, event.items?.cached ?: false)
-                onProgress(SearchProgress(snapshot(), statuses.toList(), finished = index == requests.size && settled.isNotEmpty()))
+                    if (event.pending) SearchSourceState.Pending else if (event.items?.partial == true || issue != null && settled[event.name]?.results?.isNotEmpty() == true) SearchSourceState.Partial else if (issue != null) SearchSourceState.Failed else SearchSourceState.Complete,
+                    settled[event.name]?.let { buildPage(it.results, hashes, emptyList(), comic).results.size } ?: 0, issue, event.retryAt ?: event.items?.retryAt, event.items?.cached ?: false)
+                onProgress(SearchProgress(snapshot(), statuses.toList(), finished = remaining == 0 && settled.isNotEmpty()))
             }
         } finally { events.cancel() }
         if (settled.isEmpty()) throw ApiFailure(503, "SEARCH_UNAVAILABLE", warnings.values.toList())
         snapshot()
     }
     private fun buildPage(items: List<TorrentResult>, hashes: Set<String>, warnings: List<SearchWarning>, comic: Boolean): SearchPage {
-        val results = items.distinctBy { it.hash?.lowercase() ?: it.abbPage ?: it.torrentUrl ?: it.magnet ?: it.name }
-            .filter { config.languageFilter.isEmpty() || language(it) == config.languageFilter }
+        val results = items.filter { config.languageFilter.isEmpty() || language(it) == config.languageFilter }
             .filter { config.maxSizeGB == null || it.size <= 0 || it.size <= config.maxSizeGB * 1_073_741_824 }
+            .distinctBy { it.hash?.lowercase() ?: it.detail1337x ?: it.abbPage ?: it.torrentUrl ?: it.magnet ?: it.name }
             .sortedWith(compareByDescending<TorrentResult> { it.hash?.lowercase() in hashes }
                 .thenByDescending { config.preferredFormat.isNotEmpty() && format(it).equals(config.preferredFormat, true) }
                 .thenByDescending { quality(it, comic) }.thenByDescending { it.seeders })
             .take(1000).map { result ->
                 val format = format(result)
-                val payload = if (result.abbPage != null) ResolverItem(n = result.name, a = result.abbPage) else ResolverItem(result.hash, result.magnet, result.torrentUrl, result.name, format, s = result.size.takeIf { it > 0 }, t = if (comic) "c" else null, a = result.abbPage)
+                val payload = if (result.abbPage != null) ResolverItem(n = result.name, a = result.abbPage) else ResolverItem(result.hash, result.magnet, result.torrentUrl, result.name, format, s = result.size.takeIf { it > 0 }, t = if (comic) "c" else null, a = result.abbPage, x = result.detail1337x)
                 SearchItem(payload.encode(), result.name, type = if (comic) "comic" else "audiobook", format = format,
                     sizeText = result.size.takeIf { it > 0 }?.let { io.github.lonode.debridbooks.network.fileSizeLabel(it) },
-                    language = language(result), tracker = result.tracker, releaseName = result.name, cached = result.hash?.lowercase() in hashes, searchSource = result.origin ?: result.tracker)
+                    language = language(result), tracker = result.tracker, releaseName = result.name, cached = result.hash?.lowercase() in hashes, searchSource = result.origin ?: result.tracker, infoHash = result.hash)
             }
         return SearchPage(results, partial = warnings.isNotEmpty(), warnings = warnings)
     }
-    private class SourceResult(val name: String, val items: SourcePage? = null, val hashes: Set<String>? = null, val issue: String? = null, val retryAt: Long? = null)
+    private class SourceResult(val name: String, val items: SourcePage? = null, val hashes: Set<String>? = null, val issue: String? = null, val retryAt: Long? = null, val pending: Boolean = false)
     private data class SourcePage(val results: List<TorrentResult>, val partial: Boolean = false, val issue: String = "SOURCE_UNAVAILABLE", val retryAt: Long? = null, val cached: Boolean = false)
+    private suspend fun publicPage(source: String, query: String, page: Int, comic: Boolean, onPartial: suspend (SourcePage) -> Unit = {}): SourcePage {
+        val result = PublicTorrentRuntime.forTransport(http).search(source, query, page, comic) { partial ->
+            onPartial(SourcePage(partial.results, cached = partial.cached))
+        }
+        return SourcePage(result.results, result.cooldown != null, "COOLDOWN", result.cooldown, result.cached)
+    }
     private suspend fun tracker(source: Tracker, query: String, page: Int, comic: Boolean): SourcePage {
         val params = listOf("apikey" to source.key, "t" to "search", "q" to query, "cat" to if (comic) source.comicCategory else source.audioCategory,
             "limit" to "40", "offset" to ((page.toLong() - 1) * 40).toString())
@@ -208,7 +223,7 @@ class TorrentSearch internal constructor(private val config: StandaloneConfig, p
             if (Regex("(?i)(?:^|[^a-z])(?:multi|multilingual)(?:$|[^a-z])").containsMatchIn(name)) return null
             val french = Regex("(?i)(?:^|[^a-z])(?:french|francais|vff|vfq|vf|vfi)(?:$|[^a-z])|\\[FR]|\\(FR\\)|(?:^|[._ -])FR$").containsMatchIn(name)
             val english = Regex("(?i)(?:^|[^a-z])(?:english|anglais|eng)(?:$|[^a-z])|\\[EN]|\\(EN\\)|(?:^|[._ -])EN$").containsMatchIn(name)
-            return when { french && english -> null; french -> "fr"; english -> "en"; result.tracker.lowercase() in setOf("c411", "tr4ker", "yggreborn") -> "fr"; else -> null }
+            return when { french && english -> null; french -> "fr"; english -> "en"; result.tracker.lowercase() in setOf("c411", "tr4ker", "yggreborn", "v3x") -> "fr"; else -> null }
         }
         private fun result(title: String?, hash: String?, magnet: String?, link: String?, size: String?, seeds: String?, tracker: String, language: String?): TorrentResult? {
             val m = magnet ?: link?.takeIf { it.startsWith("magnet:?") }

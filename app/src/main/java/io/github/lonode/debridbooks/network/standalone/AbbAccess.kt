@@ -36,7 +36,8 @@ internal class AbbDocument(val html: String, val cached: Boolean = false, val co
 
 /** One queue covers every ABB search/detail request; public HTML and cooldowns stay out of backups. */
 internal class AbbAccess(private val http: DirectTransport, private val store: AbbStore = MemoryAbbStore(),
-    private val clock: () -> Long = System::currentTimeMillis, private val wait: suspend (Long) -> Unit = { delay(it) }) {
+    private val clock: () -> Long = System::currentTimeMillis, private val wait: suspend (Long) -> Unit = { delay(it) }, private val service: String = "AudiobookBay",
+    private val accept: String = "text/html") {
     private val mutex = Mutex()
     private var state: AbbStored? = null
     suspend fun peek(url: String): String? = mutex.withLock {
@@ -53,7 +54,7 @@ internal class AbbAccess(private val http: DirectTransport, private val store: A
         val cached = saved.cache[url]
         if (!force && cached != null && (cached.expires > now || pause.until > now))
             return@withLock AbbDocument(cached.html, true, pause.until.takeIf { it > now })
-        if (!force && pause.until > now) throw DirectFailure("AudiobookBay", "COOLDOWN", pause.until)
+        if (!force && pause.until > now) throw DirectFailure(service, "COOLDOWN", pause.until)
         var current = url
         try {
             repeat(5) {
@@ -64,9 +65,9 @@ internal class AbbAccess(private val http: DirectTransport, private val store: A
                 pause = pause.copy(nextRequest = clock() + 5000)
                 saved = saved.copy(pauses = saved.pauses + (host to pause))
                 store.write(saved); state = saved
-                val response = http.execute(DirectRequest(current, mapOf("Accept" to "text/html")))
+                val response = http.execute(DirectRequest(current, mapOf("Accept" to accept)))
                 if (response.status in setOf(301, 302, 303, 307, 308)) {
-                    val target = URI(current).resolve(response.location ?: throw DirectFailure("AudiobookBay"))
+                    val target = URI(current).resolve(response.location ?: throw DirectFailure(service))
                     require(target.scheme == "https" && target.host.equals(host, true) && target.port == -1 && target.rawUserInfo == null)
                     current = target.toString()
                 } else {
@@ -79,7 +80,7 @@ internal class AbbAccess(private val http: DirectTransport, private val store: A
                     }
                     if (issue != null) {
                         val retry = retryAfterMillis(response.retryAfter, clock())
-                        throw DirectFailure("AudiobookBay", issue, retry?.let { clock() + it })
+                        throw DirectFailure(service, issue, retry?.let { clock() + it })
                     }
                     val record = AbbCache(html, clock() + if (detail) 7 * 86400000L else 1800000L, clock())
                     val records = (saved.cache + (url to record)).entries.sortedByDescending { it.value.saved }
@@ -90,7 +91,7 @@ internal class AbbAccess(private val http: DirectTransport, private val store: A
                     return@withLock AbbDocument(html)
                 }
             }
-            throw DirectFailure("AudiobookBay")
+            throw DirectFailure(service)
         } catch (cancel: CancellationException) { throw cancel }
         catch (failure: Exception) {
             val issue = (failure as? DirectFailure)?.reason ?: "UNAVAILABLE"
@@ -103,7 +104,7 @@ internal class AbbAccess(private val http: DirectTransport, private val store: A
             store.write(saved); state = saved
             // A cached page can remain useful while the network is paused; never pretend it is fresh.
             if (cached != null) return@withLock AbbDocument(cached.html, true, until)
-            throw DirectFailure("AudiobookBay", issue, until)
+            throw DirectFailure(service, issue, until)
         }
     }
     companion object {

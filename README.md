@@ -35,7 +35,9 @@ DebridBooks is intended for accessing public-domain works, openly licensed conte
 
 # Source
 
-- All languages : Audiobookbay for general content
+- English : 
+  - Torrent : Knaben, Audiobookbay
+  - Comics-only: Mangadex
 - French: C411, Tr4ker, YGGReborn
 
 # Install
@@ -57,6 +59,7 @@ The below depends on the requests received:
 - Goodreads or other audiobook catalog integration
 - Add normal books ?
 - Adapting speed ?
+- Add mobilism  ?
 
 # Developpement
 

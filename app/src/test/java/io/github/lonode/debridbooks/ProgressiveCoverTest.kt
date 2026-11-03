@@ -17,6 +17,8 @@ import org.robolectric.annotation.Config
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [35], application = Application::class)
 class ProgressiveCoverTest {
+    // Keep these provider-specific fixtures isolated from automatic public discovery.
+    private val testedSources = setOf("C411", "Tr4ker", "YggReborn", "Jackett", "AudiobookBay")
     private fun ok(body: String) = DirectResponse(200, body.toByteArray())
     private fun config(abb: Boolean = false) = StandaloneConfig("synthetic", abbDomain = if (abb) "cover-abb.invalid" else "",
         jackettUrl = "https://cover-jackett.invalid", jackettApiKey = "synthetic")
@@ -52,7 +54,7 @@ class ProgressiveCoverTest {
             }
             else -> error("Unexpected metadata fallback")
         } }
-        val job = async { StandaloneApi(config(abb = true), http).search("Progressive", 1, false, false) { updates.send(it) } }
+        val job = async { StandaloneApi(config(abb = true), http).search("Progressive", 1, false, false, onlySources = testedSources) { updates.send(it) } }
         val raw = next(updates) { it.page.results.size == 6 }
         assertTrue(raw.page.results.all { it.poster == null })
         val four = next(updates) { it.page.results.count { item -> item.poster != null } == 4 }
@@ -82,7 +84,7 @@ class ProgressiveCoverTest {
             "api.audible.com" -> ok("""{"products":[{"asin":"B012345678","title":"Fallback Cedar","language":"english","authors":[{"name":"Regression Writer"}],"product_images":{"500":"https://images.invalid/fallback.jpg"}}]}""")
             else -> ok("{}")
         } }
-        val result = StandaloneApi(config(), http).search("Fallback Cedar", 1, false, false)
+        val result = StandaloneApi(config(), http).search("Fallback Cedar", 1, false, false, onlySources = testedSources)
         assertTrue(timedOut)
         assertEquals("https://images.invalid/fallback.jpg", result.results.single().poster)
         assertFalse(result.partial)
@@ -133,7 +135,7 @@ class ProgressiveCoverTest {
                 try { awaitCancellation() } finally { cancelled.incrementAndGet() }
             }
         } }
-        val job = launch { StandaloneApi(config(), http).search("Cancel", 1, false, false) { emitted.incrementAndGet(); updates.send(it) } }
+        val job = launch { StandaloneApi(config(), http).search("Cancel", 1, false, false, onlySources = testedSources) { emitted.incrementAndGet(); updates.send(it) } }
         val raw = next(updates) { it.page.results.size == 5 }
         assertFalse(raw.finished)
         withTimeout(5000) { active.await() }

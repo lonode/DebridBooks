@@ -16,6 +16,7 @@ class DebridApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         io.github.lonode.debridbooks.network.standalone.AbbRuntime.initialize(noBackupFilesDir)
+        io.github.lonode.debridbooks.network.standalone.PublicTorrentRuntime.initialize(noBackupFilesDir)
         io.github.lonode.debridbooks.network.standalone.ProviderRegistry.current = io.github.lonode.debridbooks.data.RoomMagnetRegistry { database }
         startup.launch {
             try { database.audio().reconcileInterrupted(processOwner); audio.sweepOrphans() }
