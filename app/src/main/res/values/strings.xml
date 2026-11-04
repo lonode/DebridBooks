@@ -1,4 +1,7 @@
 <resources>
+    <string name="clear_search">Clear search</string>
+    <string name="full_filename">Full filename</string>
+    <string name="original_release_name">Original release name</string>
     <string name="update_available">Update available</string>
     <string name="update_available_description">DebridBooks %1$s is available. You have %2$s. Open GitHub to view the release and download the APK.</string>
     <string name="update_view_release">View release</string>

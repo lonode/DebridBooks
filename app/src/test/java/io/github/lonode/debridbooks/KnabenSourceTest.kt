@@ -38,6 +38,26 @@ class KnabenSourceTest {
         assertTrue(PublicTorrentSources.parseKnaben(body(), false).isEmpty())
     }
 
+    @Test fun `long dotted release name stays exact through parsing metadata updates and serialization`() = runBlocking {
+        val raw = "Preserved.Dotted.Release." + "Original_Segment.".repeat(24) + "[EN].MP3-GROUP"
+        val row = hit().replace(JsonPrimitive("Jules Verne [English] MP3").toString(), JsonPrimitive(raw).toString())
+        val updates = mutableListOf<SearchProgress>()
+        val http = DirectTransport { request -> when (URI(request.url).host) {
+            "api.knaben.org" -> ok(body(row))
+            "api.alldebrid.com" -> ok("""{"status":"success","data":{"magnets":[]}}""")
+            else -> ok("{}") // Optional catalogue misses still exercise the readable-title parser.
+        } }
+        val result = StandaloneApi(StandaloneConfig("synthetic", abbDomain = "", knabenEnabled = true), http)
+            .search("Preserved Dotted Release", 1, false, false, onlySources = setOf("Knaben")) { updates += it }
+            .results.single()
+        assertTrue(result.title.startsWith("Preserved Dotted Release"))
+        assertEquals(raw, result.releaseName)
+        assertEquals(raw, ResolverItem.decode(result.id).n)
+        assertTrue(updates.flatMap { it.page.results }.all { it.releaseName == raw })
+        val restored = Json.decodeFromString<io.github.lonode.debridbooks.domain.SearchItem>(Json.encodeToString(result))
+        assertEquals(raw, restored.releaseName)
+    }
+
     @Test fun `English keeps unlabelled Divergent audiobooks and source counts without inventing their language`() = runBlocking {
         // Titles observed in the public API; identifiers are synthetic, no live service is required.
         val titles = listOf(

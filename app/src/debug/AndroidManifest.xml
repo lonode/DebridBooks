@@ -1,3 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
-    <application android:usesCleartextTraffic="true" tools:replace="android:usesCleartextTraffic" />
+    <application android:usesCleartextTraffic="true" tools:replace="android:usesCleartextTraffic">
+        <!-- Empty host for instrumentation layout checks; absent from release APKs. -->
+        <activity android:name="androidx.activity.ComponentActivity" android:exported="false" />
+    </application>
 </manifest>

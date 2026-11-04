@@ -4,6 +4,9 @@ import io.github.lonode.debridbooks.ui.LibraryCover
 import io.github.lonode.debridbooks.ui.LibraryIcon
 import io.github.lonode.debridbooks.ui.LibrarySymbol
 import io.github.lonode.debridbooks.ui.ShelfHeading
+import io.github.lonode.debridbooks.ui.ClearSearchButton
+import io.github.lonode.debridbooks.ui.ReleaseFilename
+import io.github.lonode.debridbooks.ui.ReleaseName
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import io.github.lonode.debridbooks.network.MediaPart
@@ -114,6 +117,7 @@ fun ComicPanel(connection: Connection?, historyOnly: Boolean = false) {
                     }
                 }
                 OutlinedTextField(query, { query = it }, label = { Text(stringResource(R.string.comic_search)) }, singleLine = true,
+                    trailingIcon = if (query.isNotEmpty()) { { ClearSearchButton { query = "" } } } else null,
                     keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
                     keyboardActions = KeyboardActions(onSearch = { submitSearch() }), modifier = Modifier.fillMaxWidth())
                 if(state.searching) {
@@ -225,7 +229,6 @@ private fun ComicDetailsContent(model: ComicViewModel, state: ComicState, item: 
     val volumes = state.streams.filter { (it.filename ?: it.title).endsWith(".cbz", true) }
     val images = state.streams.filter { ComicArchive.image(it.filename ?: it.title) }
     val otherFiles = state.streams.filter { it !in volumes && it !in images }
-    var showDetails by remember(item.id) { mutableStateOf(false) }
     val firstChapter = state.chapters.firstOrNull()
     Column(Modifier.fillMaxSize().padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
@@ -266,6 +269,7 @@ private fun ComicDetailsContent(model: ComicViewModel, state: ComicState, item: 
                     item.sizeText?.let { Text(it, style = MaterialTheme.typography.bodySmall) }
                 }
             }
+            if (!manga) ReleaseName(item.releaseName)
             if (manga) item.description?.takeIf { it.isNotBlank() }?.let { Text(it.take(4000)) }
             else io.github.lonode.debridbooks.ui.BookDetailsPanel(connection, item)
             if (manga) {
@@ -286,11 +290,12 @@ private fun ComicDetailsContent(model: ComicViewModel, state: ComicState, item: 
                 }
                 if (state.hasMoreChapters) TextButton(enabled = !state.busy, onClick = model::moreChapters) { Text("More chapters") }
             } else {
-                if (volumes.size > 1) volumes.forEach { volume ->
+                volumes.forEach { volume ->
                     Card(Modifier.fillMaxWidth()) {
                         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             Text((volume.filename ?: volume.title).substringAfterLast('/').substringBeforeLast('.').replace('_', ' '), style = MaterialTheme.typography.titleMedium)
-                            Button(enabled = !state.busy, onClick = { model.open(item, streams = listOf(volume)) }) { Text("Read this volume") }
+                            ReleaseFilename(volume.filename)
+                            if (volumes.size > 1) Button(enabled = !state.busy, onClick = { model.open(item, streams = listOf(volume)) }) { Text("Read this volume") }
                         }
                     }
                 }
@@ -301,12 +306,8 @@ private fun ComicDetailsContent(model: ComicViewModel, state: ComicState, item: 
                         OutlinedButton(enabled = !state.busy, onClick = { onExport(file) }) { Text("Save for another reader") }
                     }
                 }
-                TextButton(onClick = { showDetails = !showDetails }) { Text(if (showDetails) "Hide upload details" else "Upload details") }
-                if (showDetails) {
-                    item.releaseName?.let { Text(it, style = MaterialTheme.typography.bodySmall) }
-                    item.format?.let { Text(it, style = MaterialTheme.typography.bodySmall) }
-                    if (state.streams.isNotEmpty()) Text(state.streams.sizeEstimateLabel(), style = MaterialTheme.typography.bodySmall)
-                }
+                item.format?.let { Text(it, style = MaterialTheme.typography.bodySmall) }
+                if (state.streams.isNotEmpty()) Text(state.streams.sizeEstimateLabel(), style = MaterialTheme.typography.bodySmall)
                 if (state.streams.isNotEmpty()) TextButton(enabled = !state.busy, onClick = model::prepareSelection) { Text("Check availability again") }
             }
         }

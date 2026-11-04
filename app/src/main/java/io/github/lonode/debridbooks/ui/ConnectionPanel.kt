@@ -210,6 +210,7 @@ fun ConnectionPanel(controller: MediaController?, destination: MainTab, external
                             }
                         }
                         OutlinedTextField(query, { query = it }, label = { Text("Title or author") }, singleLine = true,
+                            trailingIcon = if (query.isNotEmpty()) { { ClearSearchButton { query = "" } } } else null,
                             keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
                             keyboardActions = KeyboardActions(onSearch = { if (!busy && query.isNotBlank()) search(SearchRequest(query.trim(), refresh = true)) }),
                             modifier = Modifier.fillMaxWidth())

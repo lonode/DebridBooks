@@ -65,7 +65,9 @@ class AndroidRuntimeChecks : Instrumentation() {
                 stage = "download recovery and offline file integrity"
                 AudioDownloadQualification.run(targetContext)
             }
-            result.putString("stream", "Android runtime checks passed: title cleanup, resolver preservation, XML search, metadata enrichment, expired download links, interrupted multi-file recovery and offline file integrity.\n")
+            stage = "original release name wrapping"
+            ReleaseNameLayoutQualification.run(this)
+            result.putString("stream", "Android runtime checks passed: title cleanup, resolver preservation, XML search, metadata enrichment, expired download links, interrupted multi-file recovery, offline file integrity and original release name wrapping.\n")
             sendStatus(0, status)
             finish(-1, result)
         } catch (failure: Exception) {

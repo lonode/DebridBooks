@@ -1,0 +1,1 @@
+Various QoL: X to erase search, display full release names

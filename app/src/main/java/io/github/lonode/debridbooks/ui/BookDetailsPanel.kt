@@ -65,7 +65,7 @@ fun BookFilesPanel(connection: Connection, item: SearchItem, onChapter: ((MediaP
             catch (_: Exception) { failed = true }
             finally { loading = false }
         }
-        TextButton(enabled = !loading, onClick = { attempt++ }) { Text(if (attempt == 0) "Show files and sizes" else "Refresh files") }
+        TextButton(enabled = !loading, onClick = { attempt++ }) { Text(if (attempt == 0) "Show actual filenames and sizes" else "Refresh files") }
         if (loading) LinearProgressIndicator(Modifier.fillMaxWidth())
         if (failed) Text("Files could not be loaded. Please retry.", style = MaterialTheme.typography.bodySmall)
         result?.let { resolution ->
@@ -73,7 +73,9 @@ fun BookFilesPanel(connection: Connection, item: SearchItem, onChapter: ((MediaP
             else Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
                 Text(resolution.streams.sizeEstimateLabel(), style = MaterialTheme.typography.bodyMedium)
                 resolution.streams.forEach { part -> key(part.id) {
-                    Text(part.fileLabel(), style = MaterialTheme.typography.bodySmall)
+                    ReleaseFilename(part.filename)
+                    if (part.filename.isNullOrBlank()) Text(part.title, style = MaterialTheme.typography.bodySmall)
+                    Text(part.size?.let(::fileSizeLabel) ?: "Size unknown", style = MaterialTheme.typography.bodySmall)
                     var contents by remember { mutableStateOf<List<io.github.lonode.debridbooks.data.AudioChapter>?>(null) }
                     var loadingContents by remember { mutableStateOf(false) }
                     var visible by remember { mutableIntStateOf(50) }
@@ -111,11 +113,10 @@ fun AudioBookDialog(connection: Connection?, item: SearchItem, busy: Boolean, me
                 if (message.isNotEmpty()) Text(message)
                 Column(Modifier.weight(1f).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     Text(item.title, style = MaterialTheme.typography.titleLarge)
-                    item.releaseName?.takeIf { it != item.title }?.let { Text(it, style = MaterialTheme.typography.bodySmall) }
+                    ReleaseName(item.releaseName)
                     Text(item.displayMetadata().joinToString(" · "))
                     item.poster?.let { CoverArt(it, item.title, Modifier.size(120.dp, 160.dp)) }
                     item.author?.let { Text(it) }
-                    if (onSearch != null) TextButton(onClick = { onSearch(listOfNotNull(item.title, item.author).joinToString(" ")) }) { Text("Find another upload") }
                     if (account != null) BookPersonalActions(account, item)
                     if (connection != null) {
                         BookDetailsPanel(connection, item)
