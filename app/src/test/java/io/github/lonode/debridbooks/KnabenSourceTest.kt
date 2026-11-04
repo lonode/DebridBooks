@@ -1,6 +1,8 @@
 package io.github.lonode.debridbooks
 
 import io.github.lonode.debridbooks.network.standalone.*
+import io.github.lonode.debridbooks.domain.SearchProgress
+import io.github.lonode.debridbooks.domain.displayMetadata
 import io.github.lonode.debridbooks.ui.SetupDraft
 import java.net.URI
 import java.net.URLDecoder
@@ -34,6 +36,55 @@ class KnabenSourceTest {
         assertTrue(PublicTorrentSources.parseKnaben(body(hit()), true).isEmpty())
         assertEquals(1, PublicTorrentSources.parseKnaben(body(hit(9002000)), true).size)
         assertTrue(PublicTorrentSources.parseKnaben(body(), false).isEmpty())
+    }
+
+    @Test fun `English keeps unlabelled Divergent audiobooks and source counts without inventing their language`() = runBlocking {
+        // Titles observed in the public API; identifiers are synthetic, no live service is required.
+        val titles = listOf(
+            "Divergent (Divergent trilogy 1) audiobook by Veronica Roth [HTD",
+            "Allegiant (Divergent trilogy 3) audiobook by Veronica Roth [HTD",
+            "Divergent (Audiobook) [Chapterized]", "Divergent (Audiobook)",
+            "Allegiant: Divergent Trilogy, Book 3 (Audiobook) [Chapterized]",
+            "Insurgent: Divergent, Book 2 (Audiobook) [Chapterized]",
+            "Insurgent: Divergent, Book 2 (Audiobook)",
+        )
+        val rows = titles.mapIndexed { index, title ->
+            hit(value = (index + 1).toString(16).padStart(40, '0'))
+                .replace(JsonPrimitive("Jules Verne [English] MP3").toString(), JsonPrimitive(title).toString())
+        }
+        val http = DirectTransport { request -> when (URI(request.url).host) {
+            "api.knaben.org" -> ok(body(*rows.toTypedArray()))
+            "api.alldebrid.com" -> ok("""{"status":"success","data":{"magnets":[]}}""")
+            else -> error("Unexpected destination")
+        } }
+        val updates = mutableListOf<SearchProgress>()
+        val result = TorrentSearch(StandaloneConfig("synthetic", abbDomain = "", knabenEnabled = true, languageFilter = "en"), http)
+            .search("divergent", 1, false, onlySources = setOf("Knaben")) { updates += it }
+        assertEquals(titles.toSet(), result.results.map { it.releaseName }.toSet())
+        assertTrue(result.results.all { it.language == null && "Language unspecified" in it.displayMetadata() })
+        assertEquals(7, updates.last().sources.single { it.source == "Knaben" }.count)
+        assertFalse(result.partial)
+    }
+
+    @Test fun `English excludes explicit other languages and mixed public releases without treating title words as language tags`() = runBlocking {
+        val titles = listOf("Book [EN]", "Book FRENCH", "Book.FR.MP3", "Book [German]", "Book [ES]",
+            "Book MULTI", "Book French English", "The Russian (Audiobook)", "Unlabelled (Audiobook)",
+            "The.Russian.(Audiobook)", "Stephen.King.It.(Audiobook)", "No.Country.for.Old.Men", "Divergent - Svensk")
+        val rows = titles.mapIndexed { index, title ->
+            hit(value = (index + 1).toString(16).padStart(40, '0'))
+                .replace(JsonPrimitive("Jules Verne [English] MP3").toString(), JsonPrimitive(title).toString())
+        }
+        val http = DirectTransport { request -> when (URI(request.url).host) {
+            "api.knaben.org" -> ok(body(*rows.toTypedArray()))
+            "api.alldebrid.com" -> ok("""{"status":"success","data":{"magnets":[]}}""")
+            else -> error("Unexpected destination")
+        } }
+        val config = StandaloneConfig("synthetic", abbDomain = "", knabenEnabled = true, languageFilter = "en")
+        val english = TorrentSearch(config, http).search("book", 1, false, onlySources = setOf("Knaben")).results
+        assertEquals(setOf("Book [EN]", "The Russian (Audiobook)", "Unlabelled (Audiobook)",
+            "The.Russian.(Audiobook)", "Stephen.King.It.(Audiobook)", "No.Country.for.Old.Men"), english.map { it.releaseName }.toSet())
+        val all = TorrentSearch(config.withLanguageFilter(""), http).search("book", 1, false, onlySources = setOf("Knaben")).results
+        assertEquals(titles.size, all.size)
     }
 
     @Test fun `normalizes deduplicates and validates hashes including magnet fallback`() {

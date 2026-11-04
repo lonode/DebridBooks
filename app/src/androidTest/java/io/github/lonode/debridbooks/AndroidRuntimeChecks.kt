@@ -12,7 +12,7 @@ import io.github.lonode.debridbooks.network.standalone.StandaloneConfig
 import java.net.URI
 import kotlinx.coroutines.runBlocking
 
-/** Dependency-free checks of Android's actual regex/XML runtime. No network or saved account access. */
+/** Android runtime checks. Only synthetic fixtures and loopback HTTP; no saved account access. */
 class AndroidRuntimeChecks : Instrumentation() {
     override fun onCreate(arguments: Bundle?) {
         super.onCreate(arguments)
@@ -59,11 +59,13 @@ class AndroidRuntimeChecks : Instrumentation() {
                     DirectResponse(200, body.toByteArray())
                 }
                 val page = StandaloneApi(StandaloneConfig("synthetic-key", abbDomain = "", c411ApiKey = "synthetic-source", c411Url = "https://tracker.invalid"), http)
-                    .search("Android Example", 1, false, false)
+                    .search("Android Example", 1, false, false, onlySources = setOf("C411"))
                 check(page.results.single().title == "Android Example {edition}")
                 check(!page.partial)
+                stage = "download recovery and offline file integrity"
+                AudioDownloadQualification.run(targetContext)
             }
-            result.putString("stream", "Android runtime checks passed: title cleanup, resolver preservation, XML search and metadata enrichment.\n")
+            result.putString("stream", "Android runtime checks passed: title cleanup, resolver preservation, XML search, metadata enrichment, expired download links, interrupted multi-file recovery and offline file integrity.\n")
             sendStatus(0, status)
             finish(-1, result)
         } catch (failure: Exception) {

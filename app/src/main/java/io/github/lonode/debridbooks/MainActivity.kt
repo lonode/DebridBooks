@@ -11,6 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import io.github.lonode.debridbooks.ui.AppUpdateViewModel
 import io.github.lonode.debridbooks.ui.DebridApp
 import io.github.lonode.debridbooks.ui.LibraryViewModel
 
@@ -32,7 +33,10 @@ class MainActivity : ComponentActivity() {
             val model: LibraryViewModel = viewModel(factory = viewModelFactory {
                 initializer { LibraryViewModel(app.database.library(), app.preferences) }
             })
-            DebridApp(model, incomingSearch, libraryEvent)
+            val updates: AppUpdateViewModel = viewModel(factory = viewModelFactory {
+                initializer { AppUpdateViewModel() }
+            })
+            DebridApp(model, incomingSearch, libraryEvent, updates)
         }
     }
 }

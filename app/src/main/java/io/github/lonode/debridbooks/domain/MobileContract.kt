@@ -64,8 +64,9 @@ fun SearchItem.displayMetadata(): List<String> {
     val knownLanguage = language?.takeIf { it.isNotBlank() }?.let {
         when (it.lowercase()) { "fr" -> "French"; "en" -> "English"; "multi" -> "Multilingual"; else -> it.uppercase(java.util.Locale.ROOT) }
     }
+    val displayedLanguage = knownLanguage ?: "Language unspecified".takeIf { searchSource in setOf("Knaben", "API Bay", "1337x") }
     val source = tracker?.takeIf { it.isNotBlank() } ?: provider?.takeIf { it == "mangadex" }?.let { "MangaDex" }
     val extension = format?.takeIf { it.isNotBlank() && !it.equals(source, ignoreCase = true) } ?: Regex("""(?i)\b(m4b|mp3|flac|m4a|ogg|opus|cbz|cbr|cb7|cbt|pdf)\b""")
         .find(releaseName.orEmpty())?.value?.uppercase(java.util.Locale.ROOT)
-    return listOfNotNull(knownLanguage, sizeText?.takeIf { it.isNotBlank() }, extension, source)
+    return listOfNotNull(displayedLanguage, sizeText?.takeIf { it.isNotBlank() }, extension, source)
 }

@@ -223,7 +223,8 @@ class PlaybackService : MediaLibraryService() {
         val id = identity() ?: return
         val media = player.currentMediaItem ?: return
         if (media.localConfiguration?.uri?.scheme !in setOf("http", "https")) return
-        val part = media.mediaId; val position = player.currentPosition; val intent = player.playWhenReady; val speed = player.playbackParameters.speed
+        // The retry button is an explicit play request; background refresh preserves a pause.
+        val part = media.mediaId; val position = player.currentPosition; val intent = manual || player.playWhenReady; val speed = player.playbackParameters.speed
         lastRecovery = SystemClock.elapsedRealtime()
         recovery = work.launch {
             app.playbackRuntime.update { it.copy(recovering = true) }

@@ -33,8 +33,9 @@ import kotlinx.coroutines.CancellationException
 import io.github.lonode.debridbooks.audio.ReadinessJobs
 
 @Composable
-fun DebridApp(model: LibraryViewModel, externalQuery: String? = null, libraryEvent: Int = 0) {
+fun DebridApp(model: LibraryViewModel, externalQuery: String? = null, libraryEvent: Int = 0, updates: AppUpdateViewModel) {
     val state by model.state.collectAsStateWithLifecycle()
+    val availableUpdate by updates.available.collectAsStateWithLifecycle()
     val controller = rememberPlayerController()
     val uriHandler = LocalUriHandler.current
     var tab by rememberSaveable { mutableStateOf(MainTab.Library) }
@@ -151,6 +152,17 @@ fun DebridApp(model: LibraryViewModel, externalQuery: String? = null, libraryEve
                     }
                 }
             }
+        }
+        if (!whatsNew) availableUpdate?.let { release ->
+            val openError = stringResource(R.string.update_open_failed)
+            AlertDialog(onDismissRequest = updates::dismiss,
+                title = { Text(stringResource(R.string.update_available)) },
+                text = { Text(stringResource(R.string.update_available_description, release.version, BuildConfig.VERSION_NAME)) },
+                confirmButton = { TextButton(onClick = {
+                    try { uriHandler.openUri(release.releaseUrl); updates.dismiss() }
+                    catch (_: Exception) { scope.launch { snackbar.showSnackbar(openError) } }
+                }) { Text(stringResource(R.string.update_view_release)) } },
+                dismissButton = { TextButton(onClick = updates::dismiss) { Text(stringResource(R.string.update_later)) } })
         }
         if (whatsNew) AlertDialog(onDismissRequest = { whatsNew = false; scope.launch { app.preferences.setOptions { it.copy(whatsNewSeen = notesVersion) } } },
             title = { Text("What’s new in DebridBooks") }, text = { Text("Embedded audiobook chapters, chapter search and progress. Sleep and bedtime tools, bookmarks, listening goals, offline audio, library views and protected backup. Comics and MangaDex remain available.") },

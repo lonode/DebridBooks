@@ -11,5 +11,9 @@ class SearchMetadataTest {
         assertEquals(listOf("MangaDex"), SearchItem("series", "Manga", provider = "mangadex", format = "MangaDex").displayMetadata())
         assertTrue(page.results.single().cached)
         assertTrue(SearchItem("synthetic", "Title FR from unverified tracker").displayMetadata().isEmpty())
+        assertEquals(listOf("Language unspecified", "Knaben"),
+            SearchItem("synthetic", "A book", tracker = "Knaben", searchSource = "Knaben").displayMetadata())
+        assertEquals(listOf("English", "Knaben"),
+            SearchItem("synthetic", "A book", language = "en", tracker = "Knaben", searchSource = "Knaben").displayMetadata())
     }
 }

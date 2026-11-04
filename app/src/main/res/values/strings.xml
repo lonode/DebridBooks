@@ -1,4 +1,9 @@
 <resources>
+    <string name="update_available">Update available</string>
+    <string name="update_available_description">DebridBooks %1$s is available. You have %2$s. Open GitHub to view the release and download the APK.</string>
+    <string name="update_view_release">View release</string>
+    <string name="update_later">Later</string>
+    <string name="update_open_failed">Could not open GitHub. Please try again.</string>
     <string name="french_trackers">French trackers</string>
     <string name="french_tracker_names">C411 · Tr4ker · V3X · YggReborn</string>
     <string name="source_group_enabled">%1$d of %2$d enabled</string>
@@ -80,7 +85,7 @@
     <string name="jackett_optional_help">Jackett is optional and runs separately. Use an address reachable from your phone.</string>
     <string name="mangadex_no_key">MangaDex is available for manga and needs no API key.</string>
     <string name="book_language">Book language</string>
-    <string name="language_filter_help">Language changes apply automatically to new searches. French and English show only matching results; unlabelled releases on French trackers are treated as French. All has no language preference.</string>
+    <string name="language_filter_help">Language changes apply automatically to new searches. English also includes public-index releases with unspecified language, labelled on each result. French remains strict; unlabelled releases on French trackers are treated as French. All has no language preference.</string>
     <string name="preferred_format">Preferred audiobook format</string>
     <string name="maximum_size">Maximum release size in GB (optional)</string>
     <string name="account_ready_only">Only show torrents ready in my AllDebrid account</string>

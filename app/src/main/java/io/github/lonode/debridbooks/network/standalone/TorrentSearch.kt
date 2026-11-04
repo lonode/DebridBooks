@@ -82,7 +82,7 @@ class TorrentSearch internal constructor(private val config: StandaloneConfig, p
         snapshot()
     }
     private fun buildPage(items: List<TorrentResult>, hashes: Set<String>, warnings: List<SearchWarning>, comic: Boolean): SearchPage {
-        val results = items.filter { config.languageFilter.isEmpty() || language(it) == config.languageFilter }
+        val results = items.filter { matchesLanguage(it, config.languageFilter) }
             .filter { config.maxSizeGB == null || it.size <= 0 || it.size <= config.maxSizeGB * 1_073_741_824 }
             .distinctBy { it.hash?.lowercase() ?: it.detail1337x ?: it.abbPage ?: it.torrentUrl ?: it.magnet ?: it.name }
             .sortedWith(compareByDescending<TorrentResult> { it.hash?.lowercase() in hashes }
@@ -219,11 +219,37 @@ class TorrentSearch internal constructor(private val config: StandaloneConfig, p
                 Regex("[a-z]{2}(?:[-_][a-z]{2})?").matches(declared) -> declared.take(2)
                 else -> null
             }
-            val name = Normalizer.normalize(result.name, Normalizer.Form.NFD).replace(Regex("\\p{M}"), "")
-            if (Regex("(?i)(?:^|[^a-z])(?:multi|multilingual)(?:$|[^a-z])").containsMatchIn(name)) return null
-            val french = Regex("(?i)(?:^|[^a-z])(?:french|francais|vff|vfq|vf|vfi)(?:$|[^a-z])|\\[FR]|\\(FR\\)|(?:^|[._ -])FR$").containsMatchIn(name)
-            val english = Regex("(?i)(?:^|[^a-z])(?:english|anglais|eng)(?:$|[^a-z])|\\[EN]|\\(EN\\)|(?:^|[._ -])EN$").containsMatchIn(name)
-            return when { french && english -> null; french -> "fr"; english -> "en"; result.tracker.lowercase() in setOf("c411", "tr4ker", "yggreborn", "v3x") -> "fr"; else -> null }
+            val evidence = releaseLanguages(result.name)
+            if (evidence.isNotEmpty()) return evidence.singleOrNull()?.takeUnless { it == "multi" }
+            return if (result.tracker.lowercase() in setOf("c411", "tr4ker", "yggreborn", "v3x")) "fr" else null
+        }
+        private fun matchesLanguage(result: TorrentResult, filter: String): Boolean {
+            if (filter.isEmpty()) return true
+            val detected = language(result)
+            if (detected != null) return detected == filter
+            // Public indexes commonly omit language. Keep these discoverable without calling them English.
+            // French-only searches remain strict; explicit conflicting/multilingual tags are excluded.
+            return filter == "en" && result.origin in setOf("Knaben", "API Bay", "1337x") &&
+                result.language.isNullOrBlank() && releaseLanguages(result.name).isEmpty()
+        }
+        private val languagePatterns = mapOf(
+            "fr" to "french|francais|vff|vfq|vf|vfi", "en" to "english|anglais|eng",
+            "de" to "german|deutsch", "es" to "spanish|espanol|castellano", "it" to "italian|italiano",
+            "ru" to "russian|russkiy", "nl" to "dutch|nederlands", "pt" to "portuguese|portugues",
+            "pl" to "polish|polski", "sv" to "swedish|svenska|svensk", "da" to "danish|dansk",
+            "no" to "norwegian|norsk", "fi" to "finnish|suomi", "ja" to "japanese", "zh" to "chinese",
+            "ko" to "korean", "uk" to "ukrainian", "cs" to "czech",
+        ).mapValues { (code, words) ->
+            val explicit = "\\[(?:$code|$words)]|\\((?:$code|$words)\\)|\\s[-–—]\\s(?:$words)\\s*$"
+            // Dotted book titles can contain words/codes such as Russian, It or No.
+            // Preserve existing English/French detection and accept uppercase FR/EN release tags.
+            val familiar = if (code in setOf("fr", "en")) "|(?:^|[^a-z])(?:$words)(?:$|[^a-z])|(?:^|[._ -])$code$|[._](?-i:${code.uppercase()})(?=[._-]|$)" else ""
+            Regex("(?i)$explicit$familiar")
+        }
+        private fun releaseLanguages(title: String): Set<String> {
+            val name = Normalizer.normalize(title, Normalizer.Form.NFD).replace(Regex("\\p{M}"), "")
+            if (Regex("(?i)(?:^|[^a-z])(?:multi|multilingual)(?:$|[^a-z])").containsMatchIn(name)) return setOf("multi")
+            return languagePatterns.filterValues { it.containsMatchIn(name) }.keys
         }
         private fun result(title: String?, hash: String?, magnet: String?, link: String?, size: String?, seeds: String?, tracker: String, language: String?): TorrentResult? {
             val m = magnet ?: link?.takeIf { it.startsWith("magnet:?") }
