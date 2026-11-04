@@ -62,10 +62,21 @@ Builds:
     gradle:
       - yes
 
+  - versionName: 1.3.0
+    versionCode: 5
+    commit: 1.3.0
+    subdir: app
+    sudo:
+      - echo 'deb https://deb.debian.org/debian bookworm main' > /etc/apt/sources.list.d/db-jdk17.list
+      - apt-get update
+      - apt-get install -y --no-install-recommends openjdk-17-jdk-headless
+    gradle:
+      - yes
+
 AllowedAPKSigningKeys: 4a79631adb8e9edf853a81edb4a702f588b20af70956c58726b143a4215f2a76
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags ^[0-9]+\.[0-9]+\.[0-9]+$
 UpdateCheckData: version.properties|versionCode=(\d+)|.|versionName=(.+)
-CurrentVersion: 1.2.0
-CurrentVersionCode: 4
+CurrentVersion: 1.3.0
+CurrentVersionCode: 5
