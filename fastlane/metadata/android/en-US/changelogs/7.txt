@@ -1,0 +1,1 @@
+Add comic format support and improve English source discovery

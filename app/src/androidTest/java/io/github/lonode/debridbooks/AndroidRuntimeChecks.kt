@@ -14,8 +14,10 @@ import kotlinx.coroutines.runBlocking
 
 /** Android runtime checks. Only synthetic fixtures and loopback HTTP; no saved account access. */
 class AndroidRuntimeChecks : Instrumentation() {
+    private var comicsOnly = false
     override fun onCreate(arguments: Bundle?) {
         super.onCreate(arguments)
+        comicsOnly = arguments?.getString("comicsOnly") == "true"
         start()
     }
 
@@ -32,6 +34,10 @@ class AndroidRuntimeChecks : Instrumentation() {
         var stage = "title fixtures"
         try {
             runBlocking {
+                if (comicsOnly) {
+                    ComicFormatQualification.run(this@AndroidRuntimeChecks) { stage = it }
+                    return@runBlocking
+                }
                 val emptyCatalog = DirectTransport { DirectResponse(200, "{}".toByteArray()) }
                 val catalog = CatalogClient(emptyCatalog)
                 val cases = mapOf("Example [MP3] (retail) {edition}" to "Example {edition}", "Example.FR.MP3" to "Example", "Example_EN-M4B" to "Example",
@@ -64,11 +70,13 @@ class AndroidRuntimeChecks : Instrumentation() {
                 check(!page.partial)
                 stage = "download recovery and offline file integrity"
                 AudioDownloadQualification.run(targetContext)
+                ComicFormatQualification.run(this@AndroidRuntimeChecks) { stage = it }
             }
             stage = "original release name wrapping"
             ReleaseNameLayoutQualification.run(this)
-            result.putString("stream", "Android runtime checks passed: title cleanup, resolver preservation, XML search, metadata enrichment, expired download links, interrupted multi-file recovery, offline file integrity and original release name wrapping.\n")
+            result.putString("stream", "Android runtime checks passed: title cleanup, resolver preservation, XML search, metadata enrichment, expired download links, interrupted multi-file recovery, offline file integrity, RAR4/RAR5/7z/TAR/PDF comic decoding and offline progress, and original release name wrapping.\n")
             sendStatus(0, status)
+            if (comicsOnly) result.putString("stream", "Comic format checks passed: decoding, page order, offline progress, limits and cancellation.\n")
             finish(-1, result)
         } catch (failure: Exception) {
             // Class names suffice for diagnostics; messages can contain request or resolver data.

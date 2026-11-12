@@ -51,7 +51,8 @@ class StandaloneOptionalSourcesTest {
             requests += request
             if (URI(request.url).host == "api.alldebrid.com") ok(account) else {
                 assertEquals("/", URI(request.url).path)
-                ok("""<a href="/abss/english/" rel="bookmark">English book</a>
+                assertEquals("s=book&tt=1", URI(request.url).rawQuery)
+                ok("""<title>Book Audiobook</title><a href="/abss/english/" rel="bookmark">English book</a>
                     <p>Language: <span itemprop="inLanguage">English</span></p>
                     <p>Format: <span itemprop="encodingFormat">M4B</span></p>
                     <table><tr><td>Combined File Size:</td><td><span>1.5</span> MBs</td></tr></table>

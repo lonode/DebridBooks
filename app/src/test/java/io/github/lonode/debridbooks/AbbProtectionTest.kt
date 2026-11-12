@@ -92,7 +92,7 @@ class AbbProtectionTest {
             val text=when {
                 java.net.URI(request.url).host=="api.alldebrid.com" -> """{"status":"success","data":{"magnets":[{"hash":"$hash","statusCode":4}]}}"""
                 java.net.URI(request.url).path=="/abss/book/" -> "Info Hash: $hash <p>Language: English</p><p>Format: M4B / Bitrate: 64 Kbps</p>"
-                else -> """<a href="/abss/book/" rel="bookmark">Book</a><p>Language: English</p><p>Format: M4B / Bitrate: 64 Kbps</p>"""
+                else -> """<title>Book Audiobook</title><a href="/abss/book/" rel="bookmark">Book</a><p>Language: English</p><p>Format: M4B / Bitrate: 64 Kbps</p>"""
             }
             DirectResponse(200,text.toByteArray())
         }
@@ -117,7 +117,7 @@ class AbbProtectionTest {
             val host=java.net.URI(request.url).host;hosts+=host
             assertTrue(host in setOf("abb.invalid","api.alldebrid.com"))
             if(host=="api.alldebrid.com") DirectResponse(200,"""{"status":"success","data":{"magnets":[]}}""".toByteArray())
-            else ok()
+            else DirectResponse(200,"<title>Book Audiobook</title><h3>Not Found</h3>".toByteArray())
         }
         val cfg=StandaloneConfig("synthetic",abbDomain="abb.invalid",c411ApiKey="synthetic-tracker")
         TorrentSearch(cfg,http,AbbAccess(http,MemoryAbbStore(),{now},{now+=it})).search("book",1,false,setOf("AudiobookBay"),true)

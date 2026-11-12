@@ -70,6 +70,7 @@ class ComicViewModel(private val app: DebridApplication) : ViewModel() {
             try { action(); ensureActive() }
             catch (cancel: CancellationException) { throw cancel }
             catch (preparing: MediaPreparingException) { mutable.update { it.copy(message = preparing.displayStatus) } }
+            catch (format: ComicFormatProblem) { mutable.update { it.copy(message = format.message.orEmpty()) } }
             catch (_: Exception) { mutable.update { it.copy(message = "Could not complete comic operation. Check connectivity, storage and format, then retry.") } }
             finally { if (isActive) mutable.update { it.copy(busy = false, searching=false, loadProgress = null) } }
         }
@@ -132,7 +133,7 @@ class ComicViewModel(private val app: DebridApplication) : ViewModel() {
                 currentCoroutineContext().ensureActive()
                 mutable.update { it.copy(streams = result.streams, message = if (result.ready) "" else result.preparationMessage()) }
                 if (readWhenReady && result.ready) {
-                    val volumes = result.streams.filter { (it.filename ?: it.title).endsWith(".cbz", true) }
+                    val volumes = result.streams.filter { ComicArchive.document(it.filename ?: it.title) }
                     val pages = result.streams.filter { ComicArchive.image(it.filename ?: it.title) }
                     if (volumes.size == 1) openSession(item, null, volumes)
                     else if (volumes.isEmpty() && pages.isNotEmpty()) openSession(item, null, pages)
@@ -180,7 +181,7 @@ class ComicViewModel(private val app: DebridApplication) : ViewModel() {
             } else {
                 val result = MobileApi(current).resolve(item.id)
                 if (!result.ready) throw MediaPreparingException(result.preparationMessage())
-                val archive = result.streams.filter { (it.filename ?: it.title).endsWith(".cbz", true) }
+                val archive = result.streams.filter { ComicArchive.document(it.filename ?: it.title) }
                     .firstOrNull { io.github.lonode.debridbooks.domain.MobileContract.localId(entry.itemId + ":" + it.id) == entry.volumeId }
                 activeStreams = archive?.let { listOf(it) }
                 repository.resolveSaved(current, entry, saver = mutable.value.saver, onProgress = ::reportProgress)

@@ -27,7 +27,7 @@ class SetupDraft {
     var tr4kerEnabled by mutableStateOf(false); var tr4kerKey by mutableStateOf(""); var tr4kerUrl by mutableStateOf("https://tr4ker.net/api/torznab/all")
     var yggEnabled by mutableStateOf(false); var yggKey by mutableStateOf(""); var yggUrl by mutableStateOf("https://api.yggreborn.org/api")
     var v3xEnabled by mutableStateOf(false); var v3xKey by mutableStateOf(""); var v3xUrl by mutableStateOf("https://api.v3x.club/torznab/api")
-    var knabenEnabled by mutableStateOf(false)
+    var knabenEnabled by mutableStateOf(true)
     var bayEnabled by mutableStateOf(false); var x1337Enabled by mutableStateOf(false)
     var abbEnabled by mutableStateOf(true)
     var jackettEnabled by mutableStateOf(false); var jackettUrl by mutableStateOf(""); var jackettKey by mutableStateOf("")

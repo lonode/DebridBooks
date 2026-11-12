@@ -163,13 +163,35 @@ class KnabenSourceTest {
     }
 
     @Test fun `saved settings preserve the toggle through language edits and setup`() {
-        assertFalse(Json.decodeFromString<StandaloneConfig>("""{"apiKey":"synthetic"}""").knabenEnabled)
+        assertTrue(Json.decodeFromString<StandaloneConfig>("""{"apiKey":"synthetic"}""").knabenEnabled)
+        assertFalse(Json.decodeFromString<StandaloneConfig>("""{"apiKey":"synthetic","knabenEnabled":false}""").knabenEnabled)
         val config = StandaloneConfig("synthetic", abbDomain = "", bayEnabled = true, knabenEnabled = true)
         assertTrue(config.withLanguageFilter("en").knabenEnabled)
         val draft = SetupDraft().apply { load(config) }
         assertTrue(draft.config().knabenEnabled)
         assertTrue(draft.config().bayEnabled)
         assertTrue(StandaloneApi(config).capabilities().sources["comics"] == true)
+        val disabled = Json.decodeFromString<StandaloneConfig>("""{"apiKey":"synthetic","knabenEnabled":false}""")
+        assertFalse(disabled.withLanguageFilter("en").knabenEnabled)
+        assertFalse(SetupDraft().apply { load(disabled) }.config().knabenEnabled)
+    }
+
+    @Test fun `new English setup and legacy missing preference search Knaben without tracker keys`() = runBlocking {
+        val draft = SetupDraft().apply { apiKey = "synthetic"; language = "en" }
+        assertTrue(draft.config().knabenEnabled)
+        val config = Json.decodeFromString<StandaloneConfig>("""{"apiKey":"synthetic","languageFilter":"en","abbDomain":""}""")
+        val hosts = mutableListOf<String>()
+        val http = DirectTransport { request ->
+            hosts += URI(request.url).host
+            when (URI(request.url).host) {
+                "api.knaben.org" -> ok(body(hit()))
+                "api.alldebrid.com" -> ok("""{"status":"success","data":{"magnets":[]}}""")
+                else -> error("Unexpected source")
+            }
+        }
+        val page = TorrentSearch(config, http).search("Jules Verne", 1, false, onlySources = setOf("Knaben"))
+        assertEquals("Knaben", page.results.single().searchSource)
+        assertEquals(setOf("api.knaben.org", "api.alldebrid.com"), hosts.toSet())
     }
 
     @Test fun `Knaben streams with other sources deduplicates by hash and never uploads torrents during search`() = runBlocking {

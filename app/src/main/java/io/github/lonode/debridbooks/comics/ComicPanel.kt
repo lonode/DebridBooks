@@ -226,7 +226,7 @@ fun ComicPanel(connection: Connection?, historyOnly: Boolean = false) {
 private fun ComicDetailsContent(model: ComicViewModel, state: ComicState, item: io.github.lonode.debridbooks.domain.SearchItem,
     history: List<ComicEntity>, connection: Connection, onExport: (MediaPart) -> Unit) {
     val manga = item.provider == "mangadex"
-    val volumes = state.streams.filter { (it.filename ?: it.title).endsWith(".cbz", true) }
+    val volumes = state.streams.filter { ComicArchive.document(it.filename ?: it.title) }
     val images = state.streams.filter { ComicArchive.image(it.filename ?: it.title) }
     val otherFiles = state.streams.filter { it !in volumes && it !in images }
     val firstChapter = state.chapters.firstOrNull()
@@ -270,6 +270,7 @@ private fun ComicDetailsContent(model: ComicViewModel, state: ComicState, item: 
                 }
             }
             if (!manga) ReleaseName(item.releaseName)
+            if (!manga) Text("Reads CBZ/ZIP, CBR/RAR, CB7/7z, CBT/TAR and PDF.", style = MaterialTheme.typography.bodySmall)
             if (manga) item.description?.takeIf { it.isNotBlank() }?.let { Text(it.take(4000)) }
             else io.github.lonode.debridbooks.ui.BookDetailsPanel(connection, item)
             if (manga) {

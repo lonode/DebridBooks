@@ -125,11 +125,23 @@ class TorrentSearch internal constructor(private val config: StandaloneConfig, p
     }
     private suspend fun abb(query: String, page: Int, force: Boolean): SourcePage {
         val base = "https://${config.abbDomain}"
-        val document = abbAccess.get("$base${if (page > 1) "/page/$page" else ""}/?s=${encoded(query)}", force = force)
+        // ABB can silently return its front page for capitalized queries. Send a
+        // lowercase title search; its cache key cannot reuse those old responses.
+        val searchQuery = query.lowercase(java.util.Locale.ROOT)
+        val document = abbAccess.get("$base${if (page > 1) "/page/$page" else ""}/?s=${encoded(searchQuery)}&tt=1", force = force)
         val html = document.html
+        fun normalized(value: String) = Normalizer.normalize(plainText(value), Normalizer.Form.NFKD)
+            .replace(Regex("\\p{M}+"), "").lowercase(java.util.Locale.ROOT)
+            .replace(Regex("[^\\p{L}\\p{N}]+"), " ").trim()
+        val pageTitle = Regex("(?is)<title\\b[^>]*>(.*?)</title>").find(html)?.groupValues?.get(1)?.let(::normalized)
+        val expected = normalized("$query Audiobook")
+        if (pageTitle == null || pageTitle != expected && !pageTitle.startsWith("$expected "))
+            throw DirectFailure("AudiobookBay", "INVALID_RESPONSE")
         val anchors = Regex("""(?is)<a\b[^>]*href=["'](/(?:abss|audio-books)/[^"']+)["'][^>]*>(.*?)</a>""").findAll(html).toList()
-        val bookmarks = anchors.filter { Regex("""(?i)\brel=["']bookmark["']""").containsMatchIn(it.value) }
-        val titles = bookmarks.ifEmpty { anchors }.filter { plainText(it.groupValues[2]).isNotBlank() }.distinctBy { it.groupValues[1] }.take(12)
+        val titles = anchors.filter { Regex("""(?i)\brel=["']bookmark["']""").containsMatchIn(it.value) }
+            .filter { plainText(it.groupValues[2]).isNotBlank() }.distinctBy { it.groupValues[1] }.take(12)
+        if (titles.isEmpty() && !Regex("(?is)<h[1-6]\\b[^>]*>\\s*Not Found\\s*</h[1-6]>").containsMatchIn(html))
+            throw DirectFailure("AudiobookBay", "INVALID_RESPONSE")
         val results = titles.mapIndexed { index, anchor ->
             val url = base + anchor.groupValues[1]
             val title = plainText(anchor.groupValues[2])
@@ -173,7 +185,7 @@ class TorrentSearch internal constructor(private val config: StandaloneConfig, p
         }
         internal fun quality(result: TorrentResult, comic: Boolean): Int {
             val format = format(result)?.lowercase()
-            val container = if (comic) when (format) { "cbz" -> 400; "cb7", "cbt" -> 250; "pdf" -> 150; "cbr" -> 50; else -> 0 }
+            val container = if (comic) when (format) { "cbz", "zip", "cbr", "rar" -> 400; "cb7", "7z", "cbt", "tar" -> 250; "pdf" -> 150; else -> 0 }
                 else when (format) { "m4b" -> 400; "flac", "m4a", "aac" -> 200; "mp3" -> 100; else -> 0 }
             val size = minOf(result.size.coerceAtLeast(0) / 1_048_576.0, if (comic) 4000.0 else 2000.0) * 0.1
             return kotlin.math.round(container + size).toInt()
@@ -210,7 +222,7 @@ class TorrentSearch internal constructor(private val config: StandaloneConfig, p
             val nextLabel = Regex("(?i)\\s+(?:Language|Format|Bitrate|Keywords):").find(cleaned)?.range?.first ?: cleaned.length
             return cleaned.take(nextLabel).trim().takeIf { it.isNotBlank() }
         }
-        fun format(result: TorrentResult): String? = result.format ?: Regex("(?i)\\b(mp3|m4b|m4a|flac|aac|ogg|opus|wav|cbz|cbr|cb7|cbt|pdf)\\b").find(result.name)?.value?.uppercase()
+        fun format(result: TorrentResult): String? = result.format ?: Regex("(?i)\\b(mp3|m4b|m4a|flac|aac|ogg|opus|wav|cbz|cbr|cb7|cbt|pdf|7z|zip|rar|tar)\\b").find(result.name)?.value?.uppercase()
         fun language(result: TorrentResult): String? {
             val declared = result.language?.lowercase()?.trim().orEmpty()
             if (declared.isNotEmpty()) return when {

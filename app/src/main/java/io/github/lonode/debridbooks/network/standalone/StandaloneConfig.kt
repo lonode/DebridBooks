@@ -23,7 +23,7 @@ class StandaloneConfig(
     // Retained for saved-config compatibility; account-only restriction is currently disabled.
     val instantOnly: Boolean = false,
     // Legacy Bay/1337x flags remain readable; these sources now run automatically outside French-only searches.
-    val bayEnabled: Boolean = false, val x1337Enabled: Boolean = false, val knabenEnabled: Boolean = false,
+    val bayEnabled: Boolean = false, val x1337Enabled: Boolean = false, val knabenEnabled: Boolean = true,
     val v3xApiKey: String = "", val v3xUrl: String = "https://api.v3x.club/torznab/api",
 ) {
     val publicSourcesAllowed: Boolean get() = languageFilter != "fr"

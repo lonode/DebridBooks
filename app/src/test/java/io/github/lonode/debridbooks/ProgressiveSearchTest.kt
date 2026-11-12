@@ -91,7 +91,7 @@ class ProgressiveSearchTest {
             assertEquals(expected, failure.warnings.single { it.source == "AudiobookBay" }.code)
             assertFalse(failure.toString().contains("synthetic"))
         }
-        val http = DirectTransport { request -> if (URI(request.url).host == "api.alldebrid.com") account() else ok("<p>No results found</p>") }
+        val http = DirectTransport { request -> if (URI(request.url).host == "api.alldebrid.com") account() else ok("<title>Example Audiobook</title><h3>Not Found</h3>") }
         val empty = TorrentSearch(abbOnly, http).search("Example", 1, false, onlySources = testedSources)
         assertTrue(empty.results.isEmpty())
         assertFalse(empty.partial)
@@ -104,7 +104,7 @@ class ProgressiveSearchTest {
             when {
                 URI(request.url).host == "api.alldebrid.com" -> account()
                 URI(request.url).path == "/abss/limited/" -> DirectResponse(429,byteArrayOf())
-                else -> ok("""<a href="/abss/good/" rel="bookmark">Good</a><a href="/abss/limited/" rel="bookmark">Limited</a>""")
+                else -> ok("""<title>Example Audiobook</title><a href="/abss/good/" rel="bookmark">Good</a><a href="/abss/limited/" rel="bookmark">Limited</a>""")
             }
         }
         val search = TorrentSearch(abbOnly,http)

@@ -5,8 +5,14 @@ import java.util.zip.ZipInputStream
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.ensureActive
 
-/** ZIP only. Enforce limits using bytes read, never trusted ZIP metadata. */
+/** Comic containers share the same bounded, generated-page cache representation. */
 object ComicArchive {
+    private val documentExtensions = setOf("cbz", "zip", "cbr", "rar", "cb7", "7z", "cbt", "tar", "pdf", "tgz", "tbz2", "txz", "tzst")
+    fun document(name: String): Boolean = name.lowercase(java.util.Locale.ROOT).let {
+        it.substringAfterLast('.', "") in documentExtensions ||
+            listOf(".tar.gz", ".tar.bz2", ".tar.xz", ".tar.zst").any(it::endsWith)
+    }
+    fun supported(name: String): Boolean = document(name) || image(name)
     fun image(name: String): Boolean = name.substringAfterLast('/').let {
         !it.startsWith('.') && !name.contains("__MACOSX", true) &&
             it.substringAfterLast('.', "").lowercase() in setOf("jpg", "jpeg", "png", "webp", "avif", "gif")
@@ -27,6 +33,15 @@ object ComicArchive {
         if (result != 0) result else left.size.compareTo(right.size).takeIf { it != 0 } ?: a.compareTo(b)
     }
     suspend fun extract(archive: File, destination: File, maxBytes: Long = 1_000_000_000, maxEntries: Int = 5000): List<File> {
+        val signature = archive.inputStream().use { input -> ByteArray(8).let { bytes -> val size = input.read(bytes); bytes.take(size.coerceAtLeast(0)).toByteArray() } }
+        // Keep existing ZIP behavior and its JVM tests; detect actual content, not a provider's suffix.
+        return when {
+            signature.take(2) == listOf(0x50.toByte(), 0x4b.toByte()) -> extractZip(archive, destination, maxBytes, maxEntries)
+            signature.take(5).toByteArray().contentEquals("%PDF-".toByteArray()) -> PdfComicDocument.extract(archive, destination, maxBytes, maxEntries)
+            else -> NativeComicArchive.extract(archive, destination, maxBytes, maxEntries)
+        }
+    }
+    private suspend fun extractZip(archive: File, destination: File, maxBytes: Long, maxEntries: Int): List<File> {
         check(destination.mkdirs()) { "Extraction directory exists" }
         val images = mutableListOf<Pair<String, File>>()
         val names = mutableSetOf<String>()

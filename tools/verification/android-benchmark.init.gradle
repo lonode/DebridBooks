@@ -1,0 +1,10 @@
+// Opt-in live audit runner; never part of normal builds or CI.
+allprojects { project ->
+    project.afterEvaluate {
+        if (project.path == ':app') {
+            project.android.defaultConfig.testInstrumentationRunner = project.findProperty('dbAuditRunner') ?: 'io.github.lonode.debridbooks.EnglishDiscoveryChecks'
+            project.android.sourceSets.getByName('androidTest').java.srcDir(
+                project.rootProject.file('tools/verification/android'))
+        }
+    }
+}

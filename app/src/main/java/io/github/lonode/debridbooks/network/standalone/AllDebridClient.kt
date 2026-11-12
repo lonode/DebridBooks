@@ -88,7 +88,8 @@ class AllDebridClient(private val config: StandaloneConfig, private val http: Di
             val entry = api("magnet/files", listOf("id[]" to id)).objects("magnets").firstOrNull { it.string("id") == id } ?: throw DirectFailure("AllDebrid")
             if (entry["error"] != null && entry["error"] != JsonNull) throw DirectFailure("AllDebrid")
             val files = flatten(entry["files"]).filter { file ->
-                file.name.substringAfterLast('.', "").lowercase() in if (item.t == "c") comicFormats else audioFormats
+                if (item.t == "c") io.github.lonode.debridbooks.comics.ComicArchive.supported(file.name)
+                else file.name.substringAfterLast('.', "").lowercase() in audioFormats
             }.sortedWith { a, b -> naturalCompare(a.name, b.name) }
             if (files.isEmpty()) return@withLock Resolution(false, emptyList(), "No supported files found in this torrent.")
             require(files.size <= 500)
@@ -130,7 +131,6 @@ class AllDebridClient(private val config: StandaloneConfig, private val http: Di
         private val gate = RequestGate(110)
         private val resolverMutex = Mutex()
         private val audioFormats = setOf("mp3", "m4b", "m4a", "flac", "aac", "ogg", "opus", "wav", "wma")
-        private val comicFormats = setOf("cbz", "zip", "cbr", "rar", "cb7", "7z", "cbt", "tar", "pdf", "jpg", "jpeg", "png", "webp", "gif", "avif")
         fun flatten(value: JsonElement?, prefix: String = "", depth: Int = 0): List<FileEntry> {
             require(depth <= 30)
             val nodes = when (value) { is JsonArray -> value; is JsonObject -> JsonArray(listOf(value)); else -> JsonArray(emptyList()) }

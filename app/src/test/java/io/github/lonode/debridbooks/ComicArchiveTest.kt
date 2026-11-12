@@ -48,6 +48,20 @@ class ComicArchiveTest {
         try { ComicArchive.extract(archive("readme.txt" to byteArrayOf(1)), File(temp.root, "empty")); fail("No pages accepted") }
         catch (_: IllegalStateException) { }
     }
+    @Test fun `all readable document extensions are recognized without accepting unrelated files`() {
+        for (name in listOf("book.CBZ", "book.zip", "book.cbr", "book.RAR", "book.cb7", "book.7z", "book.cbt", "book.tar", "book.pdf", "book.tar.gz", "book.tar.bz2", "book.tar.xz", "book.tar.zst", "book.tgz"))
+            assertTrue(name, ComicArchive.document(name))
+        for (name in listOf("readme.txt", "book.epub", "book.pdf.exe", "audio.mp3", "plain.gz", "image.jpg"))
+            assertFalse(name, ComicArchive.document(name))
+        assertTrue(ComicArchive.supported("folder/image.jpg"))
+        assertTrue(ComicArchive.supported("folder/book.cbr"))
+    }
+    @Test fun `ZIP content is recognized even when the provider names it CBR`() = runTest {
+        val source = archive("page1.png" to byteArrayOf(1))
+        val renamed = File(temp.root, "actually-zip.cbr")
+        check(source.renameTo(renamed))
+        assertEquals(1.toByte(), ComicArchive.extract(renamed, File(temp.root, "renamed")).single().readBytes().single())
+    }
     @Test fun `page contracts validate URLs counts and chapter pagination`() {
         assertEquals(1, ComicContract.pages("""{"pages":["https://example.invalid/one.jpg"],"pageCount":1}""").pages.size)
         listOf("""{"pages":["file:///private"],"pageCount":1}""", """{"pages":[],"pageCount":0}""",

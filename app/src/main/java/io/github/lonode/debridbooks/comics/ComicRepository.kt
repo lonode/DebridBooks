@@ -118,7 +118,7 @@ class ComicRepository(context: Context, private val dao: ComicDao, private val s
                 links = selected.filter { ComicArchive.image(it.filename ?: it.title) }
                     .sortedWith { a, b -> ComicArchive.naturalOrder.compare(a.filename ?: a.title, b.filename ?: b.title) }.map { it.url }
             }
-            val archive = selected.singleOrNull()?.takeIf { (it.filename ?: it.title).endsWith(".cbz", true) }
+            val archive = selected.singleOrNull()?.takeIf { ComicArchive.document(it.filename ?: it.title) }
             val localPages: List<String>
             if (archive != null) {
                 val parent = folder(cache, connection.accountId, volume).parentFile!!
@@ -127,15 +127,15 @@ class ComicRepository(context: Context, private val dao: ComicDao, private val s
                 val staging = File(parent, "staging-${UUID.randomUUID()}")
                 check(staging.mkdir())
                 try {
-                    val zip = File(staging, "archive.cbz")
-                    try { HttpBoundary.download(archive.url, zip, 512L * 1024 * 1024, networkCheck) { downloaded, total -> onProgress(ComicLoadProgress(downloaded, total)) } }
+                    val archiveFile = File(staging, "archive.bin")
+                    try { HttpBoundary.download(archive.url, archiveFile, 512L * 1024 * 1024, networkCheck) { downloaded, total -> onProgress(ComicLoadProgress(downloaded, total)) } }
                     catch (cancel: CancellationException) { throw cancel }
                     catch (_: Exception) {
                         val renewed = api.resolveReady(item.id).streams.single { it.id == archive.id }
-                        HttpBoundary.download(renewed.url, zip, 512L * 1024 * 1024, networkCheck) { downloaded, total -> onProgress(ComicLoadProgress(downloaded, total)) }
+                        HttpBoundary.download(renewed.url, archiveFile, 512L * 1024 * 1024, networkCheck) { downloaded, total -> onProgress(ComicLoadProgress(downloaded, total)) }
                     }
-                    onProgress(ComicLoadProgress(zip.length(), zip.length(), extracting = true))
-                    val extracted = ComicArchive.extract(zip, File(staging, "extracted"))
+                    onProgress(ComicLoadProgress(archiveFile.length(), archiveFile.length(), extracting = true))
+                    val extracted = ComicArchive.extract(archiveFile, File(staging, "extracted"))
                     extracted.forEach(::checkImage)
                     val extractedDir = File(staging, "extracted")
                     File(extractedDir, "pages.txt").writeText(extracted.joinToString("\n") { it.name })
@@ -165,7 +165,7 @@ class ComicRepository(context: Context, private val dao: ComicDao, private val s
         val result = MobileApi(connection).resolve(item.id)
         if (!result.ready) throw MediaPreparingException(result.preparationMessage())
         val archive = result.streams.firstOrNull {
-            (it.filename ?: it.title).endsWith(".cbz", true) && MobileContract.localId(entry.itemId + ":" + it.id) == entry.volumeId
+            ComicArchive.document(it.filename ?: it.title) && MobileContract.localId(entry.itemId + ":" + it.id) == entry.volumeId
         }
         val streams = archive?.let { listOf(it) } ?: result.streams
         require(MobileContract.localId(entry.itemId + ":" + (streams.singleOrNull()?.id ?: "images")) == entry.volumeId)

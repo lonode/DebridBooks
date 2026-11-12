@@ -14,3 +14,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "DebridBooks"
 include(":app")
+include(":comic-codecs")

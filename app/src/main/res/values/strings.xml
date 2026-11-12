@@ -3,8 +3,8 @@
     <string name="full_filename">Full filename</string>
     <string name="original_release_name">Original release name</string>
     <string name="update_available">Update available</string>
-    <string name="update_available_description">DebridBooks %1$s is available. You have %2$s. Open GitHub to view the release and download the APK.</string>
-    <string name="update_view_release">View release</string>
+    <string name="update_available_description">A new version, %1$s, is available. Current is %2$s.</string>
+    <string name="update_view_release">Download new release</string>
     <string name="update_later">Later</string>
     <string name="update_open_failed">Could not open GitHub. Please try again.</string>
     <string name="french_trackers">French trackers</string>
